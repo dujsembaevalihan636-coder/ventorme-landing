@@ -4,7 +4,9 @@
 
 Сделан командой **093** на хакатоне **HACKNEXT × Ventorme**.
 
-**Сайт:** https://dujsembaevalihan636-coder.github.io/ventorme-landing/
+**Сайт:** https://ventorme-six.vercel.app
+
+Копия на GitHub Pages: https://dujsembaevalihan636-coder.github.io/ventorme-landing/
 
 ## Что на странице
 
@@ -55,7 +57,7 @@ python3 -m http.server 8000
 
 ## Как обновить сайт
 
-Сайт публикуется через **GitHub Pages** из ветки `main`. После каждого `git push` GitHub обновляет сайт за 1–2 минуты.
+Основной адрес — **Vercel** (проект `ventorme`). Копия на **GitHub Pages** обновляется сама после каждого `git push` в ветку `main`, обычно за 1–2 минуты.
 
 ```bash
 git add -A
@@ -63,7 +65,14 @@ git commit -m "что изменилось"
 git push
 ```
 
-Статус публикации виден во вкладке **Actions** репозитория (workflow «pages build and deployment»).
+Статус публикации GitHub Pages виден во вкладке **Actions** репозитория (workflow «pages build and deployment»).
+
+Выложить на Vercel (нужен [Vercel CLI](https://vercel.com/docs/cli) и вход в аккаунт):
+
+```bash
+npx vercel link --project ventorme --yes   # один раз
+npx vercel deploy --prod --yes
+```
 
 ## Настройки в коде
 
