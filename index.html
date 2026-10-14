@@ -1,0 +1,1830 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ventorme — узнай, кем тебе быть, за 1 минуту</title>
+<meta name="description" content="5 вопросов — и ты увидишь своё направление и что сдавать. Бесплатно. Дальше — вузы и гранты в Ventorme.">
+<link rel="canonical" href="https://ventorme-six.vercel.app">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ventorme-six.vercel.app">
+<meta property="og:title" content="Узнай, кем тебе быть, за 1 минуту">
+<meta property="og:description" content="5 вопросов — и ты увидишь своё направление и что сдавать. Бесплатно. Дальше — вузы и гранты в Ventorme.">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="https://ventorme.ai/opengraph-image">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Узнай, кем тебе быть, за 1 минуту">
+<meta name="twitter:description" content="5 вопросов — и ты увидишь своё направление и что сдавать. Бесплатно. Дальше — вузы и гранты в Ventorme.">
+<meta name="twitter:image" content="https://ventorme.ai/opengraph-image">
+<meta name="theme-color" content="#F5F6F8">
+<script>
+(function(){
+  var d = document.documentElement, t = "light", l = "ru";
+  try { localStorage.removeItem("vt-theme"); } catch (e) {}
+  try { var s = sessionStorage.getItem("vt-theme"); if (s === "dark" || s === "light") t = s; } catch (e) {}
+  d.setAttribute("data-theme", t);
+  var q = (location.search.match(/[?&]lang=([a-z]{2})/i) || [])[1];
+  if (q) q = q.toLowerCase() === "kz" ? "kk" : q.toLowerCase();
+  try { if (!q) q = localStorage.getItem("vt-lang"); } catch (e) {}
+  if (q === "kk" || q === "en") l = q;
+  d.setAttribute("lang", l);
+  d.classList.add("js");
+})();
+</script>
+<link rel="icon" href="https://ventorme.ai/figma/studentlanding/logo-ventorme.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ventorme.ai">
+<link rel="preload" href="https://fonts.gstatic.com/s/unbounded/v12/Yq6W-LOTXCb04q32xlpwv8ZfvRIkSYZH.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://fonts.gstatic.com/s/unbounded/v12/Yq6W-LOTXCb04q32xlpwtsZfvRIkSYZH.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://fonts.gstatic.com/s/unbounded/v12/Yq6W-LOTXCb04q32xlpwu8ZfvRIkSQ.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggOxSvfedN62Zw.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSvfedN4.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* Manrope + Unbounded: cyrillic-ext (ә ғ қ ң ө ұ ү һ і), cyrillic, latin-ext, latin; swap + запасной шрифт с теми же метриками */
+/* cyrillic-ext */ @font-face { font-family: 'Manrope'; font-style: normal; font-weight: 400 700; font-display: swap; src: url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggqxSvfedN62Zw.woff2) format('woff2'); unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+/* cyrillic */ @font-face { font-family: 'Manrope'; font-style: normal; font-weight: 400 700; font-display: swap; src: url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggOxSvfedN62Zw.woff2) format('woff2'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+/* latin-ext */ @font-face { font-family: 'Manrope'; font-style: normal; font-weight: 400 700; font-display: swap; src: url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggmxSvfedN62Zw.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+/* latin */ @font-face { font-family: 'Manrope'; font-style: normal; font-weight: 400 700; font-display: swap; src: url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSvfedN4.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+/* cyrillic-ext */ @font-face { font-family: 'Unbounded'; font-style: normal; font-weight: 500 600; font-display: swap; src: url(https://fonts.gstatic.com/s/unbounded/v12/Yq6W-LOTXCb04q32xlpwtsZfvRIkSYZH.woff2) format('woff2'); unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+/* cyrillic */ @font-face { font-family: 'Unbounded'; font-style: normal; font-weight: 500 600; font-display: swap; src: url(https://fonts.gstatic.com/s/unbounded/v12/Yq6W-LOTXCb04q32xlpwv8ZfvRIkSYZH.woff2) format('woff2'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+/* latin-ext */ @font-face { font-family: 'Unbounded'; font-style: normal; font-weight: 500 600; font-display: swap; src: url(https://fonts.gstatic.com/s/unbounded/v12/Yq6W-LOTXCb04q32xlpwtcZfvRIkSYZH.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+/* latin */ @font-face { font-family: 'Unbounded'; font-style: normal; font-weight: 500 600; font-display: swap; src: url(https://fonts.gstatic.com/s/unbounded/v12/Yq6W-LOTXCb04q32xlpwu8ZfvRIkSQ.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+/* запасные шрифты с метриками Unbounded/Manrope: пока веб-шрифт грузится, текст не прыгает (CLS) */
+@font-face{font-family:"Unbounded Fallback";src:local("Arial Bold"),local("Arial-BoldMT"),local("Roboto Bold"),local("Roboto-Bold");font-weight:500 700;
+  size-adjust:128.8%;ascent-override:77.3%;descent-override:19%;line-gap-override:0%}
+@font-face{font-family:"Manrope Fallback";src:local("Arial"),local("ArialMT"),local("Roboto"),local("Roboto-Regular");font-weight:400 700;
+  size-adjust:102.8%;ascent-override:103.6%;descent-override:29.2%;line-gap-override:0%}
+:root{
+  color-scheme:light;
+  --bg:#F5F6F8; --card:#fff; --surface:#F5F6F8; --ink:#111322; --ink-2:#2A2D3D; --muted:#6B7080;
+  --line:#E4E6EC; --line-2:#CFD2DB; --track:#EDEFF4;
+  --blue:#3B47FF; --blue-d:#2B36E0; --hero:#3B47FF; --cta:#3B47FF; --blue-text:#3B47FF;
+  --aqua:#8FF0FF; --aqua-soft:#D9FAFF; --on-aqua:#111322; --chip-ink:#0A6B7A;
+  --header-bg:rgba(245,246,248,.92); --logo-pill:#fff;
+  --tt-track:#E4E6EC; --tt-knob:#fff; --tt-icon:#F5A524;
+  --r:28px; --r-sm:20px;
+  --pad:clamp(16px, 4vw, 40px);
+  --font:"Manrope", "Manrope Fallback", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --display:"Unbounded", "Unbounded Fallback", "Manrope", system-ui, sans-serif;
+  --nav-bg:rgba(255,255,255,.94); --nav-line:rgba(17,19,34,.07); --nav-ink:#3b3b3b;
+  --gap:72px;
+}
+[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0D0F15; --card:#151821; --surface:#1C202B; --ink:#F4F5F8; --ink-2:rgba(244,245,248,.86); --muted:rgba(244,245,248,.68);
+  --line:#262A36; --line-2:#3A3F4E; --track:#2A2F3C;
+  --blue:#5864FF; --blue-d:#6B76FF; --hero:#2E38D9; --cta:#4B56F2; --blue-text:#8C95FF;
+  --aqua:#6EE7F5; --aqua-soft:rgba(110,231,245,.14); --on-aqua:#0D0F15; --chip-ink:#6EE7F5;
+  --header-bg:rgba(13,15,21,.88); --logo-pill:#F4F5F8;
+  --nav-bg:rgba(21,24,33,.94); --nav-line:#262A36; --nav-ink:rgba(244,245,248,.82);
+  --tt-track:#262B44; --tt-knob:#0D0F15; --tt-icon:#E9ECFF;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.5 var(--font);overflow-x:hidden;transition:background .3s, color .3s}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+h1,h2,h3,p{margin:0}
+h1,h2{font-family:var(--display);font-weight:600;letter-spacing:-.02em;line-height:1.08;hyphens:none;overflow-wrap:normal}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:12px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.section{margin-top:var(--gap)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* pills */
+.tag{display:inline-flex;align-items:center;height:30px;padding:0 14px;border:1px solid var(--line-2);border-radius:999px;
+  font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);white-space:nowrap}
+
+/* ---------- Interactive Hover Button ---------- */
+.ibtn{position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:12px 30px 12px 46px;
+  border-radius:999px;border:1.5px solid var(--line-2);background:var(--card);color:var(--ink);font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.2;
+  text-align:center;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.ibtn__dot{position:absolute;z-index:-1;left:22px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--cta);
+  transition:transform .3s ease-out}
+.ibtn__txt{display:inline-block;transition:transform .3s ease-out, opacity .3s ease-out}
+.ibtn__hov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:8px;padding:0 18px;color:#fff;
+  opacity:0;transform:translateX(48px);transition:transform .3s ease-out, opacity .3s ease-out}
+.ibtn__hov svg{width:18px;height:18px;flex:none}
+.ibtn:hover .ibtn__dot,.ibtn:focus-visible .ibtn__dot{transform:scale(90)}
+.ibtn:hover .ibtn__txt,.ibtn:focus-visible .ibtn__txt{transform:translateX(48px);opacity:0}
+.ibtn:hover .ibtn__hov,.ibtn:focus-visible .ibtn__hov{transform:none;opacity:1}
+.ibtn--block{display:flex;width:100%}
+.ibtn--lg{min-height:60px;font-size:18px}
+.ibtn--sm{min-height:46px;font-size:15px;padding:8px 22px 8px 40px}
+.ibtn--sm .ibtn__dot{left:18px;width:9px;height:9px;margin-top:-4.5px}
+.ibtn--on-blue{border-color:transparent;background:#fff;color:#111322}
+.ibtn--on-blue .ibtn__dot{background:var(--aqua)}
+.ibtn--on-blue .ibtn__hov{color:#111322}
+@media (hover: none){
+  .ibtn{padding-left:24px;padding-right:24px;border-color:transparent}
+  .ibtn .ibtn__dot{transform:scale(90)}
+  .ibtn .ibtn__txt{opacity:0}
+  .ibtn .ibtn__hov{transform:none;opacity:1}
+  .ibtn--sm{padding-left:16px;padding-right:16px}
+}
+
+/* secondary buttons */
+.sbtn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:10px 16px;border-radius:999px;border:1.5px solid var(--line);
+  background:var(--surface);color:var(--ink);font-size:15px;font-weight:600;line-height:1.2;text-align:center;cursor:pointer;transition:border-color .2s}
+.sbtn:hover{border-color:var(--blue)}
+.sbtn svg{width:18px;height:18px;flex:none}
+
+/* header — повторяет шапку ventorme.ai */
+.header{position:sticky;top:0;z-index:40;padding:12px var(--pad) 0;pointer-events:none}
+.header .wrap{pointer-events:auto;max-width:1180px;height:56px;padding:0 10px 0 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  background:var(--nav-bg);border:1px solid var(--nav-line);border-radius:20px;box-shadow:0 10px 30px -20px rgba(17,19,34,.35);
+  -webkit-backdrop-filter:saturate(1.4) blur(12px);backdrop-filter:saturate(1.4) blur(12px);font-family:"Manrope", "Manrope Fallback", system-ui, sans-serif}
+.header__logo img{height:26px;width:auto}
+.logo-dark{display:none}
+[data-theme="dark"] .logo-light{display:none}
+[data-theme="dark"] .logo-dark{display:block}
+.nav{display:flex;gap:4px}
+.nav a{padding:8px 12px;border-radius:10px;font-size:14px;font-weight:500;color:var(--nav-ink);transition:background .2s}
+.nav a:hover{background:var(--surface)}
+.header__right{display:flex;align-items:center;gap:8px}
+.hbtn{display:inline-flex;align-items:center;justify-content:center;height:38px;padding:0 15px;border-radius:10px;font-family:"Manrope", "Manrope Fallback", system-ui, sans-serif;
+  font-size:14px;font-weight:500;line-height:1;white-space:nowrap;transition:transform .2s}
+.hbtn:hover{transform:translateY(-2px)}
+.hbtn--login{background:#fff;color:#3b3b3b;border:1px solid #d9d9d9}
+.hbtn--reg{background:#dfff00;color:#3b3b3b}
+[data-theme="dark"] .hbtn--login{background:transparent;color:var(--ink);border-color:var(--line-2)}
+
+/* Sun-Moon toggle */
+.tt{display:inline-flex;align-items:center;height:48px;padding:0 2px;border:0;background:none;cursor:pointer;border-radius:999px}
+.tt__track{position:relative;display:block;width:60px;height:34px;border-radius:999px;background:var(--tt-track);transition:background .4s ease}
+.tt__knob{position:absolute;left:4px;top:4px;width:26px;height:26px;border-radius:50%;background:var(--tt-knob);color:var(--tt-icon);
+  box-shadow:0 2px 6px rgba(0,0,0,.18);display:grid;place-items:center;transition:transform .4s cubic-bezier(.4,.1,.2,1), background .4s, color .4s}
+.tt__knob svg{width:20px;height:20px;overflow:visible}
+.tt__core,.tt__rays{transform-box:view-box;transform-origin:12px 12px;transition:transform .4s ease, opacity .4s ease}
+.tt__core{transform:scale(.62)}
+.tt__cut{transition:transform .4s ease;transform:translate(12px,-12px)}
+.tt__star{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;opacity:0;transform:scale(.2);transition:opacity .4s ease, transform .4s ease}
+.tt__star:nth-child(1){left:10px;top:9px}
+.tt__star:nth-child(2){left:19px;top:19px;width:2px;height:2px}
+.tt__star:nth-child(3){left:13px;top:23px;width:2px;height:2px}
+[data-theme="dark"] .tt__knob{transform:translateX(26px)}
+[data-theme="dark"] .tt__core{transform:scale(1)}
+[data-theme="dark"] .tt__rays{transform:rotate(90deg) scale(.4);opacity:0}
+[data-theme="dark"] .tt__cut{transform:none}
+[data-theme="dark"] .tt__star{opacity:.9;transform:none}
+
+/* ---------- hero with quiz ---------- */
+.hero{position:relative;overflow:hidden;isolation:isolate;container-type:inline-size;background:var(--hero);color:#fff;border-radius:var(--r);
+  display:grid;grid-template-columns:1fr minmax(360px, 460px);gap:24px 48px;align-items:center;padding:clamp(40px, 5vw, 64px);min-height:620px;transition:background .3s}
+.hero::before{content:"";position:absolute;inset:auto -20% -45% -20%;height:70%;z-index:-1;background:radial-gradient(closest-side, rgba(143,240,255,.4), rgba(143,240,255,0))}
+.hero__word{position:absolute;top:clamp(10px, 2vw, 24px);left:0;right:0;z-index:-1;font-weight:700;letter-spacing:-.06em;line-height:.8;
+  font-size:18vw;font-size:20.5cqw;color:rgba(255,255,255,.12);user-select:none;white-space:nowrap;text-align:center}
+.hero__lead{display:flex;flex-direction:column;gap:22px;align-self:center}
+.hero h1{font-size:clamp(30px, 4.2vw, 56px)}
+.hero h1 span{color:var(--aqua)}
+.hero__meta{display:flex;flex-wrap:wrap;gap:8px;font-size:14px;font-weight:500}
+.hero__meta span{display:inline-flex;align-items:center;white-space:nowrap;background:rgba(17,19,34,.24);padding:8px 12px;border-radius:999px}
+
+/* Venti reacts to the quiz */
+.qwrap{position:relative;width:100%;padding-top:132px}
+.venti{position:absolute;z-index:2;right:22px;top:0;height:142px;pointer-events:none}
+.venti img{height:100%;width:auto}
+.venti img.is-hop{animation:hop .45s cubic-bezier(.34,1.56,.64,1)}
+.venti img.is-hop2{animation:hop .45s cubic-bezier(.34,1.56,.64,1) 2}
+@keyframes hop{0%,100%{transform:none}45%{transform:translateY(-10px)}}
+.venti__bubble{position:absolute;right:100%;top:16px;margin-right:4px;padding:8px 12px;border-radius:16px 16px 4px 16px;background:#fff;color:#111322;
+  font-size:14px;font-weight:600;line-height:1.2;white-space:nowrap;box-shadow:0 10px 24px -12px rgba(0,0,0,.45);
+  opacity:0;transform:translateY(6px) scale(.92);transform-origin:100% 100%;transition:opacity .25s ease, transform .3s cubic-bezier(.34,1.56,.64,1)}
+.venti__bubble.is-on{opacity:1;transform:none}
+.venti__fx{position:absolute;left:50%;top:38%}
+.venti__fx i{position:absolute;left:-4px;top:-4px;width:8px;height:8px;border-radius:50%;opacity:0}
+.venti__fx i:nth-child(1){--dx:-58px;--dy:-34px;background:var(--aqua)}
+.venti__fx i:nth-child(2){--dx:-40px;--dy:-66px;background:#DFFF00}
+.venti__fx i:nth-child(3){--dx:-4px;--dy:-80px;background:#fff}
+.venti__fx i:nth-child(4){--dx:36px;--dy:-66px;background:var(--aqua)}
+.venti__fx i:nth-child(5){--dx:58px;--dy:-30px;background:#DFFF00}
+.venti__fx i:nth-child(6){--dx:54px;--dy:10px;background:#fff;width:6px;height:6px}
+.venti__fx i:nth-child(7){--dx:-54px;--dy:8px;background:#fff;width:6px;height:6px}
+.venti__fx i:nth-child(8){--dx:18px;--dy:-48px;background:#111322;width:6px;height:6px}
+.venti.is-party .venti__fx i{animation:burst .7s cubic-bezier(.2,.7,.3,1) both}
+@keyframes burst{0%{opacity:1;transform:translate(0,0) scale(.4)}70%{opacity:1}100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(1)}}
+
+/* quiz card */
+.qcard{position:relative;background:var(--card);color:var(--ink);border-radius:24px;padding:18px;box-shadow:0 24px 50px -30px rgba(0,0,0,.55);text-align:left}
+.qtop{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.qback{flex:none;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:var(--surface);display:grid;place-items:center;cursor:pointer}
+.qback[disabled]{visibility:hidden}
+.qback svg{width:18px;height:18px}
+.qprog{flex:1;display:grid;gap:6px}
+.qprog__l{display:flex;justify-content:space-between;font-size:13px;font-weight:600;color:var(--muted)}
+.qprog__bar{height:6px;border-radius:3px;background:var(--track);overflow:hidden}
+.qprog__bar i{display:block;height:100%;border-radius:3px;background:var(--blue);transition:width .45s cubic-bezier(.34,1.56,.64,1)}
+.qq{font-size:21px;font-weight:600;letter-spacing:-.02em;line-height:1.2;margin-bottom:12px;outline:none}
+.qopts{display:grid;gap:8px}
+.qopt{display:flex;align-items:center;gap:12px;width:100%;min-height:52px;padding:10px 14px;border-radius:16px;border:1.5px solid var(--line);background:var(--surface);
+  font-size:16px;font-weight:500;line-height:1.25;text-align:left;cursor:pointer;transition:border-color .2s, background .2s}
+.qopt:hover{border-color:var(--blue)}
+.qopt i{flex:none;width:20px;height:20px;border-radius:50%;border:2px solid var(--line-2);transition:border .15s}
+.qopt.is-picked{background:var(--aqua);border-color:var(--aqua);color:var(--on-aqua)}
+.qopt.is-picked i{border:6px solid var(--on-aqua)}
+.js .qcard .noscript-only{display:none}
+
+/* result */
+.res small{display:block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.res__dir{font-family:var(--display);font-size:21px;font-weight:600;letter-spacing:-.02em;line-height:1.2;margin:0 0 12px}
+.res__dir b{font-weight:600;color:var(--blue-text)}
+.res__exam{background:var(--surface);border-radius:14px;padding:12px 14px;margin-bottom:12px;font-size:15px;line-height:1.4}
+.res__exam p + p{margin-top:6px}
+.res__exam b{font-weight:600}
+.locked{position:relative;border-radius:14px;overflow:hidden;margin-bottom:12px}
+.locked__rows{display:grid;gap:10px;padding:12px 14px;filter:blur(6px);user-select:none;pointer-events:none}
+.locked__row{display:flex;justify-content:space-between;font-size:14px;font-weight:600}
+.locked__row + i{display:block;height:6px;border-radius:3px;background:var(--blue);margin-top:-4px}
+.locked__over{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:10px;padding:10px 14px;text-align:left;
+  font-size:14px;font-weight:600;line-height:1.3;color:var(--ink);background:color-mix(in srgb, var(--card) 62%, transparent)}
+.locked__over svg{flex:none;width:30px;height:30px;padding:6px;border-radius:50%;background:var(--ink);color:var(--card)}
+.res__cap{text-align:center;font-size:13px;color:var(--muted);margin-top:8px}
+.res__note{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.4}
+.share{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+.share-alt{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:6px}
+.share-alt a{font-size:14px;font-weight:600;color:var(--blue-text);text-decoration:underline;text-underline-offset:3px;padding:12px 0}
+.share-alt button{min-height:44px;border:0;background:none;font-size:14px;font-weight:600;color:var(--muted);cursor:pointer;padding:0 4px}
+
+/* universities marquee */
+.unis{margin-top:var(--gap);background:var(--card);border-radius:var(--r);padding:clamp(20px, 3vw, 32px) 0}
+.unis h2{text-align:center;font-size:clamp(18px, 2vw, 24px);letter-spacing:-.02em;margin:0 var(--pad) 16px}
+.mq{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.mq + .mq{margin-top:10px}
+.mq__track{display:flex;width:max-content;animation:mq 46s linear infinite}
+.mq--rev .mq__track{animation-direction:reverse}
+.mq:hover .mq__track{animation-play-state:paused}
+.mq__item{padding-right:10px}
+.logo-pill{display:flex;align-items:center;height:60px;padding:0 22px;border-radius:999px;background:var(--logo-pill);border:1px solid var(--line)}
+.logo-pill img{height:40px;width:auto}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* admissions strip */
+.strip{position:relative;overflow:hidden;margin-top:var(--gap);background:var(--hero);color:#fff;border-radius:var(--r);
+  padding:clamp(24px, 4vw, 40px);display:flex;align-items:center;justify-content:space-between;gap:18px 32px;flex-wrap:wrap;isolation:isolate}
+.strip__arc{position:absolute;z-index:-1;width:520px;height:520px;border-radius:50%;border:56px solid var(--aqua);right:-160px;top:-330px;opacity:.95}
+.strip h2{font-size:clamp(24px, 3.4vw, 42px)}
+.strip h2{position:relative;z-index:1}
+.strip h2 small{display:block;font-size:inherit;color:rgba(255,255,255,.75)}
+
+/* about (compact) */
+.about{display:grid;grid-template-columns:140px 1fr;gap:12px 28px;align-items:start}
+.about p{font-size:clamp(20px, 2.2vw, 28px);font-weight:500;letter-spacing:-.01em;line-height:1.3;max-width:40ch}
+.about p span{color:var(--muted)}
+
+/* facts line */
+.facts{display:grid;grid-template-columns:repeat(3, 1fr);margin:20px var(--pad) 0;padding-top:18px;border-top:1px solid var(--line)}
+.facts div{display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:0 10px}
+.facts div + div{border-left:1px solid var(--line)}
+.facts b{font-family:var(--display);font-size:clamp(20px, 2.6vw, 32px);font-weight:600;letter-spacing:-.02em;line-height:1}
+.facts span{font-size:14px;color:var(--muted);line-height:1.3}
+
+.note{margin-top:12px;font-size:13px;color:var(--muted)}
+/* parents (compact) */
+.parents{display:flex;align-items:center;justify-content:space-between;gap:16px 28px;flex-wrap:wrap;background:var(--card);border-radius:var(--r);padding:clamp(20px, 3vw, 32px)}
+.parents__t{display:flex;align-items:center;gap:16px}
+.parents__venti{flex:none;height:120px;width:auto;margin:-8px 0}
+.parents h2{font-size:clamp(20px, 2.2vw, 28px);margin-bottom:6px}
+.parents p{color:var(--ink-2);font-size:16px}
+
+/* ---------- stagger testimonials ---------- */
+.head-row{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:8px}
+.head-row h2{font-size:clamp(24px, 3.4vw, 44px);margin-top:14px}
+.stg{position:relative;height:430px;overflow:hidden;touch-action:pan-y;user-select:none}
+.stg__card{position:absolute;left:50%;top:50%;width:min(340px, 78vw);min-height:290px;margin:0;padding:30px 26px 24px;display:flex;flex-direction:column;gap:20px;
+  background:var(--card);color:var(--ink);border:0;text-align:left;cursor:pointer;
+  clip-path:polygon(46px 0,100% 0,100% 100%,0 100%,0 46px);
+  transform:translate(-50%,-50%);transition:transform .5s cubic-bezier(.2,.7,.2,1), background .3s, color .3s}
+.stg__card::before{content:"";position:absolute;left:0;top:0;width:65px;height:2px;background:var(--line-2);transform-origin:0 0;transform:translate(0,46px) rotate(-45deg)}
+.stg__card.is-center{background:var(--hero);color:#fff;cursor:default}
+.stg__card.is-center::before{background:rgba(255,255,255,.4)}
+.stg__card blockquote{margin:0;font-size:18px;line-height:1.45;font-weight:500;letter-spacing:-.01em;flex:1}
+.stg__card blockquote::before{content:"“";display:block;font-family:var(--display);font-size:48px;line-height:.6;font-weight:600;color:var(--blue-text);margin-bottom:6px}
+.stg__card.is-center blockquote::before{color:var(--aqua)}
+.who{display:flex;align-items:center;gap:12px}
+.ava{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:18px;background:var(--aqua);color:var(--on-aqua);flex:none}
+.who b{display:block;font-weight:600}
+.who small{color:var(--muted);font-size:14px}
+.stg__card.is-center .who small{color:rgba(255,255,255,.9)}
+.stg__nav{display:flex;justify-content:center;gap:10px;margin-top:0}
+.stg__nav button{width:52px;height:52px;border-radius:50%;border:1.5px solid var(--line-2);background:var(--card);display:grid;place-items:center;cursor:pointer;transition:background .2s, color .2s, border-color .2s}
+.stg__nav button:hover{background:var(--cta);border-color:var(--cta);color:#fff}
+.stg__nav svg{width:20px;height:20px}
+
+/* faq */
+.faq{max-width:860px;margin-left:auto;margin-right:auto;text-align:center}
+.faq h2{font-size:clamp(24px, 3.4vw, 44px);margin:14px 0 clamp(20px, 3vw, 32px)}
+.faq details{background:var(--card);border-radius:20px;margin-bottom:8px;text-align:left;transition:background .25s}
+.faq details[open]{background:var(--aqua);color:var(--on-aqua)}
+.faq summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;padding:14px 22px;cursor:pointer;
+  font-size:18px;font-weight:600;letter-spacing:-.02em}
+.faq summary::-webkit-details-marker{display:none}
+.faq details[open] .plus{transform:rotate(45deg);background:#fff;color:#111322}
+.faq details p{padding:0 22px 20px;font-size:16px;max-width:64ch}
+
+/* final */
+.final{position:relative;overflow:hidden;background:var(--hero);color:#fff;border-radius:var(--r);padding:clamp(32px, 6vw, 72px);
+  display:grid;grid-template-columns:1.4fr 1fr;align-items:center;gap:24px;isolation:isolate}
+.final::before{content:"";position:absolute;z-index:-1;width:560px;height:560px;border-radius:50%;border:60px solid var(--aqua);opacity:.9;right:-250px;bottom:-440px}
+.final h2{font-size:clamp(26px, 4vw, 54px);margin-bottom:24px}
+.final h2 span{color:var(--aqua)}
+.final__note{margin-top:14px;font-size:14px;color:rgba(255,255,255,.85)}
+.final img{width:min(100%, 340px);justify-self:center;margin-bottom:calc(-1 * clamp(32px, 6vw, 72px))}
+
+/* footer */
+.footer{margin-top:var(--gap);background:#111322;color:#B8BBC8;padding:40px 0 calc(40px + env(safe-area-inset-bottom))}
+[data-theme="dark"] .footer{background:#07080C;border-top:1px solid var(--line)}
+.footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px}
+.footer img{height:26px;width:auto}
+.footer nav{display:flex;flex-wrap:wrap;gap:8px 22px}
+.footer a:hover{color:#fff}
+.footer p{width:100%;font-size:14px;border-top:1px solid #2A2D40;padding-top:20px}
+
+/* sticky mobile cta */
+.dock{position:fixed;z-index:45;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));display:none;
+  transform:translateY(150%);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.dock.is-on{transform:none}
+.dock .ibtn{box-shadow:0 14px 34px -10px rgba(0,0,0,.5)}
+
+/* in-app browser sheet */
+.sheet{position:fixed;inset:0;z-index:60;display:none}
+.sheet.is-open{display:block}
+.sheet__bg{position:absolute;inset:0;background:rgba(0,0,0,.55);animation:fade .25s ease both}
+.sheet__box{position:absolute;left:0;right:0;bottom:0;background:var(--card);color:var(--ink);border-radius:28px 28px 0 0;padding:26px 20px calc(22px + env(safe-area-inset-bottom));
+  max-width:560px;margin:0 auto;animation:up .3s cubic-bezier(.2,.7,.2,1) both}
+.sheet__box::before{content:"";display:block;width:44px;height:5px;border-radius:3px;background:var(--line);margin:-12px auto 18px}
+.sheet h3{font-size:22px;font-weight:600;letter-spacing:-.02em;line-height:1.2}
+.sheet__sub{margin:8px 0 20px;color:var(--ink-2)}
+.sheet__acts{display:grid;gap:10px}
+.btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:54px;padding:0 20px;border-radius:999px;border:0;font-size:17px;font-weight:600;cursor:pointer}
+.btn--blue{background:var(--cta);color:#fff}
+.btn--ghost{background:var(--surface);color:var(--ink)}
+.sheet__msg{min-height:22px;margin-top:10px;font-size:14px;font-weight:600;color:var(--chip-ink);text-align:center}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(8px);transition:opacity .4s ease, transform .4s ease}
+.js .rv.is-in{opacity:1;transform:none}
+@keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.fade-in{animation:up .35s ease-out both}
+
+/* ---------- tablet / phone ---------- */
+@media (max-width: 960px){
+  .nav{display:none}
+  .hero{grid-template-columns:1fr;min-height:0;text-align:center;justify-items:center}
+  .hero__lead{display:contents}
+  .hero h1{order:1}
+  .qwrap{order:2;max-width:520px}
+  .hero__meta{order:3;justify-content:center}
+  .final{grid-template-columns:1fr}
+  .about{grid-template-columns:1fr}
+  .final img{width:200px;justify-self:end;margin-top:-6px}
+  .dock{display:block}
+}
+@media (max-width: 560px){
+  .header{padding:0}
+  .header .wrap{height:66px;gap:8px;padding:0 var(--pad);border:0;border-bottom:1px solid var(--nav-line);border-radius:0;box-shadow:none}
+  .header__logo img{height:24px}
+  .hbtn--login{display:none}
+  .hbtn--reg{height:50px;padding:0 18px;border-radius:14px;font-size:16px}
+  .hero{padding:18px 14px 0;gap:12px;border-radius:24px}
+  .hero__word{top:8px}
+  .hero h1{font-size:30px;margin-top:14px}
+  h2{font-size:24px !important}
+  .unis h2{font-size:17px !important}
+  :root{--gap:48px}
+  .qcard{padding:14px}
+  .qtop{margin-bottom:10px}
+  .qq{font-size:19px;margin-bottom:10px}
+  .qopt{font-size:15px;min-height:50px;padding:8px 12px}
+  .hero__meta{flex-wrap:nowrap;font-size:12px;gap:6px;padding-bottom:16px}
+  .hero__meta span{padding:7px 10px}
+  .qwrap{padding-top:88px}
+  .venti{height:100px;right:12px}
+  .venti__bubble{font-size:13px;top:10px}
+  .strip{flex-direction:column;align-items:flex-start}
+  .strip__arc{width:220px;height:220px;border-width:28px;right:-140px;top:-165px}
+  .strip .ibtn{width:100%}
+  .stg__card{min-height:0}
+  .stg__card:not(.is-center) blockquote{opacity:0}
+  .faq summary{font-size:17px;padding:12px 18px}
+  .faq details p{padding:0 18px 18px}
+  .final{padding-bottom:0}
+  .faq summary{min-height:56px}
+  .final img{width:160px}
+  .final::before{width:340px;height:340px;border-width:40px;right:-170px;bottom:-230px}
+  .parents{display:grid;grid-template-columns:auto 1fr;gap:14px 14px;padding:18px}
+  .parents__t{display:contents}
+  .parents__venti{height:96px;margin:0;align-self:center}
+  .parents .sbtn{grid-column:1 / -1}
+  .strip{padding:22px 20px;gap:16px}
+  .qwrap{padding-top:80px}
+  .venti{height:92px}
+  .final .ibtn{width:100%}
+  .logo-pill{height:52px;padding:0 16px}
+  .logo-pill img{height:34px}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .rv{opacity:1;transform:none}
+  .mq{overflow-x:auto}
+}
+
+/* ================= Animated Hero (порт tommyjepsen/animated-hero) ================= */
+:root{--lime:#C6F432;--rot:#3B47FF}
+[data-theme="dark"]{--rot:#C6F432}
+.ahero{display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px;padding:clamp(40px, 7vw, 96px) 0 clamp(32px, 5vw, 64px)}
+.ahero h1{font-size:clamp(32px, 5.6vw, 72px);line-height:1.08;max-width:15ch;margin:0 auto}
+.ahero__rot{position:relative;display:flex;justify-content:center;width:100%;overflow:hidden;padding:.06em 0 .14em;color:var(--rot)}
+.ahero__rot > span{position:absolute;left:0;right:0;white-space:nowrap;opacity:0;transform:translateY(150%);
+  transition:transform .9s cubic-bezier(.34,1.25,.5,1), opacity 0s}
+.ahero__rot > span.is-on{opacity:1;transform:none}
+.ahero__rot > span.is-past{opacity:1;transform:translateY(-150%)}
+.ahero__rot > span.is-reset{transition:none}
+.ahero__rot > .ahero__sizer{position:static;visibility:hidden;opacity:0;transform:none}
+.ahero__sub{font-size:clamp(17px, 1.6vw, 20px);line-height:1.5;color:var(--ink-2);max-width:40ch;margin:0 auto}
+.ahero__btns{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.abtn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;padding:0 26px;border-radius:14px;font-size:17px;font-weight:600;
+  white-space:nowrap;transition:transform .2s, background .2s, border-color .2s}
+.abtn svg{width:18px;height:18px;flex:none}
+.abtn:hover{transform:translateY(-2px)}
+.abtn--primary{background:var(--cta);color:#fff;box-shadow:0 14px 30px -14px rgba(59,71,255,.7)}
+.abtn--outline{background:transparent;color:var(--ink);border:1.5px solid var(--line-2)}
+.abtn--outline:hover{border-color:var(--ink)}
+
+/* quiz block right under the hero (reuses the old blue card) */
+.qsec{position:relative;overflow:hidden;isolation:isolate;container-type:inline-size;background:var(--hero);color:#fff;border-radius:var(--r);
+  display:flex;flex-direction:column;align-items:center;gap:14px;padding:clamp(28px, 4vw, 48px) clamp(14px, 4vw, 48px) clamp(20px, 3vw, 40px)}
+.qsec::before{content:"";position:absolute;inset:auto -20% -45% -20%;height:70%;z-index:-1;background:radial-gradient(closest-side, rgba(143,240,255,.4), rgba(143,240,255,0))}
+.qsec .hero__word{position:absolute;top:clamp(10px, 2vw, 24px);left:0;right:0;z-index:-1;font-weight:700;letter-spacing:-.06em;line-height:.8;
+  font-size:18vw;font-size:20.5cqw;color:rgba(255,255,255,.12);user-select:none;white-space:nowrap;text-align:center}
+.qsec__tag{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(17,19,34,.26);font-size:14px;font-weight:600}
+.qsec__tag i{width:8px;height:8px;border-radius:50%;background:var(--lime)}
+.qsec .qwrap{max-width:560px}
+
+/* ================= Zoom Blur Image Carousel (порт kedhareswer/lens-zoom-carousel) ================= */
+.unis2 h2{font-size:clamp(24px, 3.4vw, 44px);margin-bottom:20px}
+.lz{position:relative;height:70vh;min-height:420px;max-height:780px;border-radius:24px;overflow:hidden;background:#0D0F15;color:#fff;
+  isolation:isolate;touch-action:pan-y;outline-offset:4px}
+.lz__stage{position:absolute;inset:0;overflow:hidden}
+.lz__slide{position:absolute;inset:0}
+.lz__slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;will-change:transform, filter, opacity}
+.lz__ghost{mix-blend-mode:screen;pointer-events:none}
+.lz::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg, rgba(13,15,21,.45) 0%, rgba(13,15,21,0) 22%, rgba(13,15,21,0) 50%, rgba(13,15,21,.86) 100%)}
+.lz__ui{position:absolute;inset:auto 0 0 0;z-index:2;display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding:clamp(18px, 3vw, 36px)}
+.lz__idx{display:block;font-size:13px;font-weight:600;letter-spacing:.08em;color:rgba(255,255,255,.82);margin-bottom:10px}
+.lz__idx b{color:var(--lime);font-weight:700}
+.lz__title{font-family:var(--display);font-size:clamp(24px, 3.8vw, 52px);font-weight:600;letter-spacing:-.02em;line-height:1.05;margin:0}
+.lz__sub{font-size:clamp(15px, 1.4vw, 18px);color:rgba(255,255,255,.88);margin-top:8px}
+.lz__text.is-new{animation:lz-text .6s cubic-bezier(.2,.8,.2,1) both}
+@keyframes lz-text{from{opacity:0;transform:translateY(14px);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+.lz__nav{display:flex;gap:10px;flex:none}
+.lz__nav button{width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(13,15,21,.35);color:#fff;display:grid;place-items:center;cursor:pointer;
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);transition:background .2s, border-color .2s}
+.lz__nav button:hover{background:var(--lime);border-color:var(--lime);color:#0D0F15}
+.lz__nav svg{width:20px;height:20px}
+.lz__bar{position:absolute;left:0;right:0;top:0;z-index:2;height:3px;background:rgba(255,255,255,.18)}
+.lz__bar i{display:block;height:100%;width:100%;background:var(--lime);transform-origin:0 50%;transform:scaleX(0)}
+.lz__credit{position:absolute;right:12px;top:12px;z-index:2;max-width:60%;font-size:11px;line-height:1.3;color:rgba(255,255,255,.82);text-align:right;
+  background:rgba(13,15,21,.45);padding:4px 8px;border-radius:8px}
+.lz__credit a{text-decoration:underline;text-underline-offset:2px}
+.logos-row{margin-top:16px}
+.logos-row .logo-pill{height:48px;padding:0 16px}
+.logos-row .logo-pill img{height:28px;width:auto}
+
+@media (max-width: 560px){
+  .ahero{gap:18px;padding:28px 0 28px}
+  .ahero h1{font-size:30px}
+    .abtn{width:100%}
+  .lz{height:60vh;min-height:360px}
+  .lz__ui{flex-direction:column;align-items:flex-start}
+  .lz__nav{align-self:flex-end;margin-top:-8px}
+  .lz__credit{max-width:80%;font-size:10px}
+}
+@media (prefers-reduced-motion: reduce){
+  .ahero__rot > span{transition:none}
+}
+
+.unis2 .facts{margin:20px 0 0}
+
+/* ================= Language switch ================= */
+.lang-wrap{position:relative;display:inline-flex}
+.lang{display:inline-flex;align-items:center;gap:2px;padding:3px;border-radius:10px;background:var(--surface);border:1px solid var(--line)}
+.lang__btn{all:unset;box-sizing:border-box;cursor:pointer;min-width:34px;height:30px;padding:0 7px;border-radius:7px;font:600 13px/30px var(--font);text-align:center;color:var(--ink-2)}
+.lang__btn:hover{background:var(--card)}
+.lang__btn[aria-pressed="true"]{background:var(--cta);color:#fff}
+.lang__btn:focus-visible{outline:2px solid var(--blue);outline-offset:1px}
+
+/* mock screen labels keep the ink colour */
+.bar div span.bar__n{color:inherit}
+
+@media (max-width: 960px){
+  /* the floating «Зарегистрироваться» button never covers content */
+  body{padding-bottom:calc(80px + env(safe-area-inset-bottom))}
+  .footer{padding-bottom:calc(40px + env(safe-area-inset-bottom))}
+}
+@media (max-width: 767px){
+}
+@media (max-width: 560px){
+  .header .wrap{gap:6px}
+  .header__logo img{height:22px}
+  .header__right{gap:6px}
+  .hbtn--reg{padding:0 12px;font-size:15px}
+  .tt__track{width:52px;height:30px}
+  [data-theme="dark"] .tt__knob{transform:translateX(22px)}
+  .tt__knob{width:22px;height:22px}
+  .lang-wrap{width:40px;height:36px}
+  .lang{position:absolute;top:0;right:0;flex-direction:column;align-items:stretch;padding:2px;z-index:5}
+  .lang__btn{min-width:34px;height:30px}
+  .lang:not(.is-open) .lang__btn[aria-pressed="false"]{display:none}
+  .lang.is-open{box-shadow:0 12px 30px -12px rgba(17,19,34,.4);background:var(--card)}
+}
+@media (prefers-reduced-motion: reduce){
+}
+
+
+/* ================= calm palette ================= */
+:root{--accent:#3B47FF;--qsec-bg:#EDEFF4;--fd-body:#FFFFFF;--fd-line:#E4E6EC}
+[data-theme="dark"]{--accent:#C6F432;--qsec-bg:#151821;--fd-body:#1C1F2A;--fd-line:#2A2D3D}
+
+/* header floats over the hero photo */
+.header{position:fixed;left:0;right:0}
+main{padding-top:0}
+
+/* ================= HERO: campus photo synced with the rotating university ================= */
+.ahero{position:relative;isolation:isolate;margin:0 calc(50% - 50vw);min-height:min(88vh, 760px);display:flex;align-items:center;justify-content:center;
+  padding:calc(var(--hdr, 80px) + 24px) var(--pad) 72px;color:#F4F5F8;text-align:center;gap:0}
+.ahero__in{position:relative;width:100%;max-width:1200px;display:flex;flex-direction:column;align-items:center;gap:26px}
+.hbg{position:absolute;inset:0;z-index:-1;overflow:hidden;background:#0D0F15}
+.hbg__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;opacity:0;transition:opacity .6s ease}
+.hbg picture{position:absolute;inset:0}
+.hbg__img.is-on{opacity:1}
+.hbg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(13,15,21,.55) 0%, rgba(13,15,21,.75) 70%, var(--bg) 100%)}
+.hbg__credit{position:absolute;right:var(--pad);bottom:14px;z-index:1;margin:0;font-size:11px;line-height:1.3;opacity:.7;color:#F4F5F8;
+  background:rgba(13,15,21,.6);padding:3px 8px;border-radius:6px;max-width:70%;text-align:right}
+.hbg__credit a{text-decoration:underline;text-underline-offset:2px}
+.ahero h1{font-size:clamp(36px, 6vw, 84px);line-height:1.08;max-width:none;margin:0 auto;color:#F4F5F8;text-wrap:balance}
+html[lang="kk"] .ahero h1,html[lang="en"] .ahero h1{font-size:clamp(32.4px, 5.4vw, 75.6px)}
+/* every university sits in one grid cell: the box is always as wide as the longest name, so the title never reflows */
+.ahero__rot{display:grid;width:max-content;max-width:100%;margin:0 auto;justify-items:center;color:#C6F432;overflow:hidden;line-height:1.08;padding:0 .04em}
+.ahero__rot > span{position:static;left:auto;right:auto;grid-area:1 / 1;justify-self:center;white-space:nowrap;opacity:0;transform:translateY(.45em);
+  transition:opacity .45s ease, transform .55s cubic-bezier(.34,1.25,.5,1)}
+.ahero__rot > span.is-on{opacity:1;transform:none}
+.ahero__rot > span.is-past{opacity:0;transform:translateY(-.45em)}
+.ahero__rot > span.is-reset{transition:none}
+.ahero__sub{color:rgba(244,245,248,.88);max-width:42ch}
+.abtn{min-height:52px;padding:0 24px;white-space:normal;text-align:center;line-height:1.25;height:auto}
+.ahero .abtn--outline{color:#F4F5F8;border-color:rgba(244,245,248,.55);background:rgba(13,15,21,.25)}
+.ahero .abtn--outline:hover{border-color:#F4F5F8}
+
+/* ================= QUIZ: white card on a quiet panel ================= */
+.qsec{background:var(--qsec-bg);color:var(--ink);margin-top:8px}
+.qsec::before{content:none}
+.qsec .hero__word{display:none}
+.qsec__tag{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+[data-theme="dark"] .qcard{background:#1C202B}
+
+/* ================= FAQ / reviews / final: no big colour fills ================= */
+.faq details[open]{background:var(--card);color:var(--ink);box-shadow:inset 3px 0 0 var(--accent)}
+.faq details[open] .plus{background:var(--surface);color:var(--ink)}
+.stg__card.is-center{background:var(--card);color:var(--ink);box-shadow:inset 0 0 0 2px var(--accent)}
+.stg__card.is-center .who small{color:var(--muted)}
+.stg__card.is-center blockquote::before{color:var(--blue-text)}
+[data-theme="dark"] .stg__card.is-center blockquote::before{color:var(--accent)}
+.stg__card.is-center::before{background:var(--line-2)}
+.final{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.final::before{content:none}
+.final h2 span{color:var(--blue-text)}
+[data-theme="dark"] .final h2 span{color:var(--accent)}
+.final__note{color:var(--muted)}
+
+/* ================= FOLDERS: calm paper folders, motion from the glass-folder component ================= */
+.folders__sub{color:var(--muted);margin:8px 0 0;font-size:16px}
+.fds{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-top:-24px}
+.fds__dots{display:none}
+.fds__note{text-align:center;margin-top:8px}
+.fd{--k:1;--px:0;--py:0;--hinge:0deg;--lift:0px;--spread:0px;--fan:0deg;--stack:18px;--ease:cubic-bezier(.2,.8,.2,1);--spring:cubic-bezier(.34,1.36,.5,1);
+  position:relative;flex:none;width:340px;-webkit-tap-highlight-color:transparent}
+.fd__stage{position:absolute;left:0;top:0;width:340px;height:272px;transform-origin:0 0}
+.fd__tilt{position:absolute;inset:0;transform:perspective(1400px) rotateX(calc(var(--py) * -3deg)) rotateY(calc(var(--px) * 4deg));transition:transform .9s var(--ease)}
+.fd__shadow{position:absolute;left:22px;right:22px;bottom:-4px;height:44px;border-radius:30px;background:rgba(17,19,34,.16);filter:blur(18px);
+  transform:translateX(calc(var(--px) * -8px));transition:transform .9s var(--ease), opacity .6s ease}
+[data-theme="dark"] .fd__shadow{background:rgba(0,0,0,.5)}
+.fd__back{position:absolute;left:0;right:0;top:20px;bottom:0;background:var(--fd-body);border:1px solid var(--fd-line);border-radius:0 14px 14px 14px}
+.fd__back::before{content:"";position:absolute;left:-1px;top:-21px;width:38%;height:22px;background:var(--tab);border-radius:9px 9px 0 0}
+.fd__sheets{position:absolute;inset:0;z-index:5;pointer-events:none;clip-path:inset(-400px -400px 6px -400px)}
+.fd__sheet{position:absolute;left:34px;top:62px;width:272px;height:184px;border-radius:12px;overflow:hidden;cursor:pointer;pointer-events:auto;
+  background:#FFFFFF;color:#111322;border:1px solid #E4E6EC;box-shadow:0 8px 20px -10px rgba(17,19,34,.28);text-decoration:none;
+  transform-origin:50% 100%;
+  transform:translate(calc(var(--jx) + var(--slot) * var(--spread)), calc(var(--lift) + var(--depth) * var(--stack) * -1)) rotate(calc(var(--jr) + var(--slot) * var(--fan)));
+  transition:transform .75s var(--spring) calc(var(--depth) * 40ms), box-shadow .3s ease, translate .4s ease-out, opacity .4s ease-out}
+[data-theme="dark"] .fd__sheet{background:#262A36;color:#F4F5F8;border-color:#343849}
+.fd__sheet:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.fd[data-open] .fd__sheet:hover,.fd[data-open] .fd__sheet:focus-visible{
+  transform:translate(calc(var(--jx) + var(--slot) * var(--spread)), calc(var(--lift) + var(--depth) * var(--stack) * -1 - 16px)) rotate(calc(var(--slot) * var(--fan) * .6));
+  box-shadow:0 22px 40px -16px rgba(17,19,34,.4);transition-delay:0s}
+.fd__head{position:absolute;left:12px;right:12px;top:5px;z-index:1;display:flex;align-items:baseline;justify-content:space-between;gap:8px;white-space:nowrap}
+.fd__name{overflow:hidden;text-overflow:ellipsis;font-size:12.5px;font-weight:700}
+.fd__meta{flex:none;font-size:10.5px;font-weight:600;opacity:.65}
+.fd__lines{position:absolute;left:12px;right:12px;top:34px;display:grid;gap:8px}
+.fd__lines i{display:block;height:5px;border-radius:3px;background:currentColor;opacity:.09}
+.fd__lines i:first-child{height:8px;opacity:.16}
+.fd__sheet--photo{color:#FFFFFF;border-color:transparent;background:#0D0F15}
+.fd__sheet--photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fd__sheet--photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(13,15,21,.6) 0%, rgba(13,15,21,0) 40%)}
+.fd__sheet--photo .fd__meta{opacity:.85}
+/* mock screens moved here from the old «Возможности» section */
+.fd__mock{position:absolute;left:12px;right:12px;top:34px;display:grid;gap:9px}
+.fd__bar{font-size:10.5px;font-weight:600}
+.fd__bar div{display:flex;justify-content:space-between}
+.fd__bar div span:last-child{color:var(--blue-text)}
+.fd__bar i{display:block;height:5px;border-radius:3px;background:rgba(17,19,34,.1);margin-top:4px;overflow:hidden}
+[data-theme="dark"] .fd__bar i{background:rgba(255,255,255,.12)}
+.fd__bar i b{display:block;height:100%;border-radius:3px;background:var(--blue)}
+.fd__big{font-family:var(--display);font-size:22px;font-weight:600;line-height:1}
+.fd__big small{font-family:var(--font);font-size:11px;font-weight:600;opacity:.7}
+.fd__scale{position:relative;height:9px;border-radius:5px;background:linear-gradient(90deg,#FFB4B4 0 33%,#FFE58A 33% 66%,#6EE7F5 66%);margin-top:6px}
+.fd__scale::after{content:"";position:absolute;left:74%;top:-4px;width:4px;height:17px;border-radius:2px;background:currentColor;transform:translateX(-50%)}
+.fd__scale-l{display:flex;justify-content:space-between;font-size:10px;font-weight:600;opacity:.7}
+/* front wall: white, hinged at the bottom; only the tab carries colour */
+.fd__front{position:absolute;left:0;right:0;bottom:0;height:180px;z-index:10;background:var(--fd-body);border:1px solid var(--fd-line);border-radius:14px;
+  box-shadow:0 -1px 0 rgba(17,19,34,.03);transform-origin:50% 100%;transform:perspective(760px) rotateX(var(--hinge));
+  transition:transform .35s var(--ease), translate 1s var(--ease), opacity 1s var(--ease)}
+.fd__hit{all:unset;position:absolute;inset:0;z-index:2;cursor:pointer;border-radius:14px}
+.fd__hit:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.fd__label{position:absolute;left:22px;bottom:20px;display:flex;flex-direction:column;gap:3px;text-align:left;pointer-events:none}
+.fd__title{display:flex;align-items:center;gap:8px;font-size:18px;font-weight:700;color:var(--ink)}
+.fd__title i{width:9px;height:9px;border-radius:50%;background:var(--tab)}
+.fd__count{font-size:13px;font-weight:600;color:var(--muted)}
+.fd__chev{position:absolute;right:20px;bottom:20px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--surface);color:var(--ink);transition:transform .35s var(--ease)}
+.fd__chev svg{width:14px;height:14px}
+.fd[data-open] .fd__chev{transform:rotate(45deg)}
+/* states, as in the original component: rest → hover (lean) → open (fan) */
+@media (hover: hover){
+  .fd:hover{--hinge:-11deg;--lift:-10px;--spread:8px;--fan:1.4deg;--stack:12px}
+  .fd:hover .fd__stage{translate:0 -4px}
+}
+.fd:focus-within{--hinge:-11deg;--lift:-10px;--spread:8px;--fan:1.4deg;--stack:12px}
+.fd[data-open]{--hinge:-30deg;--lift:-62px;--spread:38px;--fan:5deg;--stack:22px}
+.fd__stage{transition:translate .2s ease}
+/* entrance: the sheets drop into the folder one by one */
+.fd:not([data-entered]) .fd__sheet{translate:0 -40px;opacity:0}
+.fd:not([data-entered]) .fd__back,.fd:not([data-entered]) .fd__front{opacity:0;translate:0 16px}
+.fd:not([data-entered]) .fd__shadow{opacity:0}
+.fd__back{transition:translate .5s var(--ease), opacity .5s var(--ease)}
+.fd[data-entered] .fd__sheet{transition-delay:calc(var(--depth) * 40ms), 0s, calc(.12s + var(--order) * 80ms), calc(.12s + var(--order) * 80ms)}
+
+@media (max-width: 767px){
+  .fds{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 var(--pad);gap:16px;
+    margin:-36px calc(-1 * var(--pad)) 0;padding:0 var(--pad) 8px;scrollbar-width:none}
+  .fds::-webkit-scrollbar{display:none}
+  .fd{width:78vw;scroll-snap-align:start}
+  .fds__dots{display:flex;justify-content:center;gap:6px;margin-top:10px}
+  .fds__dots i{width:6px;height:6px;border-radius:3px;background:var(--line-2);transition:width .2s ease, background .2s ease}
+  .fds__dots i.is-on{width:18px;background:var(--accent)}
+}
+@media (max-width: 560px){
+  .ahero{min-height:min(88vh, 720px);padding-top:calc(66px + 24px);padding-bottom:64px}
+  .ahero__in{gap:20px}
+  .ahero h1{font-size:36px}
+  html[lang="kk"] .ahero h1,html[lang="en"] .ahero h1{font-size:32.4px}
+  /* «болатыныңды» is one long word: on narrow phones Kazakh needs a bit more room to stay within 4 lines */
+  html[lang="kk"] .ahero h1{font-size:min(32.4px, 7.6vw)}
+  .ahero__btns{flex-direction:column;align-self:stretch}
+  .abtn{width:100%}
+  .hbg__credit{bottom:10px;max-width:calc(100% - 2 * var(--pad))}
+  /* language: one compact button with a dropdown */
+  .lang__btn[aria-pressed="true"]::after{content:" ▾";font-size:10px}
+  .lang.is-open .lang__btn[aria-pressed="true"]::after{content:""}
+}
+@media (prefers-reduced-motion: reduce){
+  .hbg__img{transition:none}
+  .ahero__rot > span{transition:none}
+  .fd *,.fd{transition:none !important;animation:none !important}
+  .fd__tilt{transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="wrap">
+    <a class="header__logo" href="#top" data-i18n-attr="aria-label:logo.aria" aria-label="Ventorme, наверх">
+      <img class="logo-light" src="https://ventorme.ai/figma/studentlanding/logo-ventorme.svg" alt="Ventorme" width="130" height="28">
+      <img class="logo-dark" src="https://ventorme.ai/figma/studentlanding/logo-ventorme-white.svg" alt="Ventorme" width="130" height="28">
+    </a>
+    <nav class="nav" data-i18n-attr="aria-label:nav.aria" aria-label="Разделы">
+      <a href="#folders" data-i18n="nav.features">Возможности</a>
+      <a href="#reviews" data-i18n="nav.reviews">Отзывы</a>
+      <a href="#faq" data-i18n="nav.faq">Вопросы</a>
+    </nav>
+    <div class="header__right">
+      <a class="hbtn hbtn--login" href="https://ventorme.ai/login" data-i18n="hdr.login">Вход</a>
+      <a class="hbtn hbtn--reg" data-reg="header" href="https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-093" data-i18n="hdr.reg">Регистрация</a>
+      <div class="lang-wrap"><div class="lang" role="group" data-i18n-attr="aria-label:lang.aria" aria-label="Язык">
+        <button type="button" class="lang__btn" data-lang="ru" lang="ru" aria-pressed="true">RU</button>
+        <button type="button" class="lang__btn" data-lang="kk" lang="kk" aria-pressed="false">KZ</button>
+        <button type="button" class="lang__btn" data-lang="en" lang="en" aria-pressed="false">EN</button>
+      </div></div>
+      <button class="tt" type="button" id="themeToggle" role="switch" aria-checked="false" data-i18n-attr="aria-label:theme.aria" aria-label="Переключить тему">
+        <span class="tt__track">
+          <span class="tt__star"></span><span class="tt__star"></span><span class="tt__star"></span>
+          <span class="tt__knob">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <mask id="ttMask"><rect width="24" height="24" fill="#fff"/><circle class="tt__cut" cx="17" cy="7" r="7" fill="#000"/></mask>
+              <circle class="tt__core" cx="12" cy="12" r="8" fill="currentColor" mask="url(#ttMask)"/>
+              <g class="tt__rays" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M12 1.5v2.2M12 20.3v2.2M1.5 12h2.2M20.3 12h2.2M4.6 4.6l1.5 1.5M17.9 17.9l1.5 1.5M4.6 19.4l1.5-1.5M17.9 6.1l1.5-1.5"/>
+              </g>
+            </svg>
+          </span>
+        </span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top" class="wrap">
+
+  <!-- 1. HERO: campus photo synced with the rotating university -->
+  <section class="ahero" id="hero" aria-labelledby="hero-title">
+    <div class="hbg" aria-hidden="true">
+      <picture><source media="(max-width: 767px)" srcset="universities/hku-800.webp"><img class="hbg__img is-on" id="hbgA" src="universities/hku.webp" alt="" width="1600" height="1067" fetchpriority="high" decoding="async"></picture>
+      <img class="hbg__img" id="hbgB" alt="" width="1600" height="1067" decoding="async">
+    </div>
+    <div class="ahero__in">
+      <h1 id="hero-title"><span data-i18n="hero.l1">Узнай, кем тебе быть. Поступи&nbsp;в</span> <span class="ahero__rot" id="heroRot" aria-hidden="true"><span class="is-on" data-k="hku">HKU</span><span data-k="ucl">UCL</span><span data-k="bocconi">Bocconi</span><span data-k="nu">NU</span><span data-k="kcl">King's College</span></span><span class="sr-only" data-i18n="hero.sr">HKU, UCL, Bocconi, NU или King's College</span></h1>
+      <p class="ahero__sub" data-i18n="hero.sub">5 вопросов, 1 минута, бесплатно. Дальше вузы и гранты в Ventorme.</p>
+      <div class="ahero__btns">
+        <a class="abtn abtn--primary" href="#quizsec"><span data-i18n="hero.cta1">Пройти тест за 1 минуту</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="abtn abtn--outline" data-reg="hero" href="https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-093" data-i18n="hero.cta2">Зарегистрироваться</a>
+      </div>
+    </div>
+    <p class="hbg__credit" id="hbgCredit"></p>
+  </section>
+
+  <!-- 2. QUIZ — сразу под hero -->
+  <section class="qsec" id="quizsec" data-i18n-attr="aria-label:quiz.aria" aria-label="Мини-тест">
+    <span class="qsec__tag"><i aria-hidden="true"></i><span data-i18n="quiz.tag">Мини-тест · 5 вопросов · 1 мин</span></span>
+    <div class="qwrap">
+      <div class="venti" id="venti" aria-hidden="true">
+        <span class="venti__bubble" id="ventiBubble"></span>
+        <span class="venti__fx"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        <img src="https://ventorme.ai/figma/studentlanding/v4f/hero-venti-quiz.webp" alt="" width="960" height="1052" fetchpriority="high">
+      </div>
+      <div class="qcard" id="quiz" aria-live="polite">
+        <div id="quizBody"><div class="qtop"><button class="qback" type="button" aria-label="Назад" disabled><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16 10H5M9 5l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="qprog"><div class="qprog__l"><span>Вопрос 1/5</span><span>1/5</span></div><div class="qprog__bar"><i style="width:0%"></i></div></div></div><p class="qq" tabindex="-1">Где планируешь поступать?</p><div class="qopts" role="group"><button class="qopt" type="button" data-k="0"><i></i>В Казахстане, на грант по ЕНТ</button><button class="qopt" type="button" data-k="1"><i></i>За рубежом</button><button class="qopt" type="button" data-k="2"><i></i>Пока не решил(а)</button></div></div>
+        <noscript>
+          <p class="qq">Включи JavaScript, чтобы пройти тест, или сразу <a href="https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-093" style="color:var(--blue-text);text-decoration:underline">зарегистрируйся в Ventorme</a>.</p>
+        </noscript>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. КАРУСЕЛЬ ВУЗОВ -->
+  <section class="section unis2" id="unis" aria-labelledby="unis-title">
+    <h2 id="unis-title" class="rv" data-i18n="unis.title">Куда поступают наши ученики</h2>
+    <div class="lz" id="lz" role="region" aria-roledescription="карусель" aria-label="Вузы, куда поступают ученики Ventorme" data-i18n-attr="aria-label:lz.aria;aria-roledescription:lz.role" tabindex="0">
+      <div class="lz__stage" id="lzStage">
+        <noscript><img src="universities/hku-800.webp" alt="The University of Hong Kong" style="width:100%;height:100%;object-fit:cover"></noscript>
+      </div>
+      <div class="lz__bar" aria-hidden="true"><i id="lzBar"></i></div>
+      <p class="lz__credit" id="lzCredit"></p>
+      <div class="lz__ui">
+        <div class="lz__text" id="lzText" aria-live="polite">
+          <span class="lz__idx" id="lzIdx"><b>01</b> / 08</span>
+          <h3 class="lz__title" id="lzTitle">The University of Hong Kong</h3>
+          <p class="lz__sub" id="lzSub">Гонконг</p>
+        </div>
+        <div class="lz__nav">
+          <button type="button" id="lzPrev" aria-label="Предыдущий вуз" data-i18n-attr="aria-label:lz.prev"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16 10H5M9 5l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button type="button" id="lzNext" aria-label="Следующий вуз" data-i18n-attr="aria-label:lz.next"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <div class="logos-row">
+      <div class="mq">
+        <div class="mq__track">
+          <div class="mq__item"><div class="logo-pill"><img src="https://ventorme.ai/figma/studentlanding/v4f/uni-cuhk.webp" alt="The Chinese University of Hong Kong" width="155" height="40" loading="lazy"></div></div>
+          <div class="mq__item"><div class="logo-pill"><img src="https://ventorme.ai/figma/studentlanding/v4f/uni-polyu.webp" alt="The Hong Kong Polytechnic University" width="155" height="40" loading="lazy"></div></div>
+          <div class="mq__item"><div class="logo-pill"><img src="https://ventorme.ai/figma/studentlanding/v4f/uni-hku.webp" alt="The University of Hong Kong" width="155" height="40" loading="lazy"></div></div>
+          <div class="mq__item"><div class="logo-pill"><img src="https://ventorme.ai/figma/studentlanding/v4f/uni-sjtu.webp" alt="Shanghai Jiao Tong University" width="121" height="40" loading="lazy"></div></div>
+          <div class="mq__item"><div class="logo-pill"><img src="https://ventorme.ai/figma/studentlanding/v4f/uni-kings.webp" alt="King's College London" width="86" height="40" loading="lazy"></div></div>
+          <div class="mq__item"><div class="logo-pill"><img src="https://ventorme.ai/figma/studentlanding/v4f/uni-illinois.webp" alt="University of Illinois" width="155" height="40" loading="lazy"></div></div>
+          <div class="mq__item"><div class="logo-pill"><img src="https://ventorme.ai/figma/studentlanding/v4f/uni-ucl.webp" alt="UCL" width="111" height="40" loading="lazy"></div></div>
+          <div class="mq__item"><div class="logo-pill"><img src="https://ventorme.ai/figma/studentlanding/v4f/uni-bocconi.webp" alt="Bocconi University" width="155" height="40" loading="lazy"></div></div>
+          <div class="mq__item"><div class="logo-pill"><img src="https://ventorme.ai/figma/studentlanding/v4f/uni-nazarbayev.webp" alt="Nazarbayev University" width="155" height="40" loading="lazy"></div></div>
+          <div class="mq__item"><div class="logo-pill"><img src="https://ventorme.ai/figma/studentlanding/v4f/uni-nyu-shanghai.webp" alt="NYU Shanghai" width="155" height="40" loading="lazy"></div></div>
+          <div class="mq__item"><div class="logo-pill"><img src="https://ventorme.ai/figma/studentlanding/v4f/uni-taylors.webp" alt="Taylor's University" width="101" height="40" loading="lazy"></div></div>
+          <div class="mq__item"><div class="logo-pill"><img src="https://ventorme.ai/figma/studentlanding/v4f/uni-birmingham.webp" alt="University of Birmingham" width="155" height="40" loading="lazy"></div></div>
+          <div class="mq__item"><div class="logo-pill"><img src="https://ventorme.ai/figma/studentlanding/v4f/uni-padova.webp" alt="Università degli Studi di Padova" width="104" height="40" loading="lazy"></div></div>
+          <div class="mq__item"><div class="logo-pill"><img src="https://ventorme.ai/figma/studentlanding/v4f/uni-wollongong.webp" alt="University of Wollongong in Dubai" width="123" height="40" loading="lazy"></div></div>
+          <div class="mq__item"><div class="logo-pill"><img src="https://ventorme.ai/figma/studentlanding/v4f/uni-heriot-watt.webp" alt="Heriot-Watt University" width="86" height="40" loading="lazy"></div></div>
+          <div class="mq__item"><div class="logo-pill"><img src="https://ventorme.ai/figma/studentlanding/v4f/uni-lancaster.webp" alt="Lancaster University" width="110" height="40" loading="lazy"></div></div>
+          <div class="mq__item"><div class="logo-pill"><img src="https://ventorme.ai/figma/studentlanding/v4f/uni-james-cook.webp" alt="James Cook University" width="95" height="40" loading="lazy"></div></div>
+          <div class="mq__item"><div class="logo-pill"><img src="https://ventorme.ai/figma/studentlanding/v4f/uni-nottingham.webp" alt="University of Nottingham" width="123" height="40" loading="lazy"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="facts">
+      <div><b>1000+</b><span data-i18n="facts.unis">вузов</span></div>
+      <div><b>5000+</b><span data-i18n="facts.grants">грантов и стипендий</span></div>
+      <div><b>0&nbsp;₸</b><span data-i18n="facts.free">старт бесплатно</span></div>
+    </div>
+  </section>
+
+  <!-- 4. ПАПКИ -->
+  <section class="section folders" id="folders" aria-labelledby="fold-title">
+    <h2 id="fold-title" class="rv" data-i18n="fold.title">Что ты соберёшь в Ventorme</h2>
+    <p class="folders__sub" data-i18n="fold.sub">Открой папку — внутри то, что будет в твоём аккаунте</p>
+    <div class="fds" id="fds"></div>
+    <div class="fds__dots" id="fdsDots" aria-hidden="true"><i class="is-on"></i><i></i><i></i></div>
+    <p class="note fds__note" data-i18n="scr.note">Примеры экранов упрощены, цифры условные.</p>
+  </section>
+
+  <!-- 6. ОТЗЫВЫ (публикуются на русском на всех языках) -->
+  <section class="section" id="reviews" aria-labelledby="rev-title">
+    <div class="head-row">
+      <div><span class="tag" data-i18n="rev.tag">Отзывы</span><h2 id="rev-title" class="rv" data-i18n="rev.title">Твой путь — твой выбор.</h2></div>
+    </div>
+    <div class="stg" id="stg" lang="ru">
+      <figure class="stg__card"><blockquote>Сначала сомневался, но после первого шага стало ясно, что тут реально помогают выстроить план, а не дают общие советы.</blockquote><figcaption class="who"><span class="ava" aria-hidden="true">А</span><span><b>Айбек</b><small>ученик</small></span></figcaption></figure>
+      <figure class="stg__card"><blockquote>Все дедлайны и документы собраны в одном месте. Раньше я держала это в заметках и постоянно что-то теряла.</blockquote><figcaption class="who"><span class="ava" aria-hidden="true">Д</span><span><b>Дана</b><small>ученица</small></span></figcaption></figure>
+      <figure class="stg__card"><blockquote>Подготовка к IELTS, SAT и даже ЕНТ, подборка вузов со всеми данными — всё в одном месте.</blockquote><figcaption class="who"><span class="ava" aria-hidden="true">А</span><span><b>Айдана</b><small>мама выпускника</small></span></figcaption></figure>
+      <figure class="stg__card"><blockquote>Профтест стал для нас маяком, куда двигаться. Особенно понравилось, что показывает, что ребёнку не подойдёт.</blockquote><figcaption class="who"><span class="ava" aria-hidden="true">А</span><span><b>Айым</b><small>мама</small></span></figcaption></figure>
+      <figure class="stg__card"><blockquote>Понравилось, что есть карта развития и путь подготовки.</blockquote><figcaption class="who"><span class="ava" aria-hidden="true">А</span><span><b>Айгуль</b><small>мама</small></span></figcaption></figure>
+    </div>
+    <div class="stg__nav">
+      <button type="button" id="stgPrev" aria-label="Предыдущий отзыв" data-i18n-attr="aria-label:rev.prev"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16 10H5M9 5l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button type="button" id="stgNext" aria-label="Следующий отзыв" data-i18n-attr="aria-label:rev.next"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+    <p class="sr-only" id="stgStatus" aria-live="polite"></p>
+    <p class="note" style="text-align:center" data-i18n="rev.note">Отзывы опубликованы на ventorme.ai</p>
+  </section>
+
+  <!-- 7. FAQ -->
+  <section class="section faq" id="faq" aria-labelledby="faq-title">
+    <span class="tag" data-i18n="faq.tag">Вопросы</span>
+    <h2 id="faq-title" class="rv" data-i18n="faq.title">Есть вопросы? Есть ответы.</h2>
+    <div>
+      <details name="faq" open>
+        <summary><span data-i18n="faq.q1">Это бесплатно?</span><span class="plus" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
+        <p data-i18n="faq.a1">Да, регистрация бесплатная. Сразу открываются мини-тест на профессию, уровень IELTS и SAT и портфолио. Есть платная подписка, но для старта платить не нужно.</p>
+      </details>
+      <details name="faq">
+        <summary><span data-i18n="faq.q2">Что я получу после регистрации?</span><span class="plus" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
+        <p data-i18n="faq.a2">Тест на профессию, проверку уровня IELTS и SAT и портфолио: хватит, чтобы понять направление.</p>
+      </details>
+      <details name="faq">
+        <summary><span data-i18n="faq.q3">У меня не идеальные оценки. Есть смысл?</span><span class="plus" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
+        <p data-i18n="faq.a3">Да, вузы подбираются под реальный профиль, видно, где шансы уже высокие и что подтянуть.</p>
+      </details>
+      <details name="faq">
+        <summary><span data-i18n="faq.q4">Мои данные в безопасности?</span><span class="plus" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
+        <p data-i18n="faq.a4">Данные шифруются и не передаются третьим лицам без согласия.</p>
+      </details>
+      <details name="faq">
+        <summary><span data-i18n="faq.q5">Родители увидят прогресс?</span><span class="plus" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
+        <p data-i18n="faq.a5">Только если ты их подключишь, и без доступа к твоим чатам с AI.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- 8. ФИНАЛ -->
+  <section class="section final" id="final" aria-labelledby="final-title">
+    <div>
+      <h2 id="final-title" class="rv" data-i18n-html="final.title">Твоя следующая глава <span>начинается здесь</span></h2>
+      <a class="ibtn ibtn--lg ibtn--on-blue" data-reg="final" href="https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-093"><span class="ibtn__dot"></span><span class="ibtn__txt" data-i18n="cta.free">Зарегистрироваться бесплатно</span><span class="ibtn__hov" aria-hidden="true"><span data-i18n="cta.free">Зарегистрироваться бесплатно</span><svg viewBox="0 0 20 20"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <p class="final__note" data-i18n="final.note">Регистрация за 10 секунд</p>
+    </div>
+    <img class="final__venti" src="https://ventorme.ai/figma/studentlanding/v4f/hero-venti-quiz.webp" alt="" width="960" height="1052" loading="lazy">
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <img src="https://ventorme.ai/figma/studentlanding/logo-ventorme-white.svg" alt="Ventorme" width="120" height="26" loading="lazy">
+    <nav aria-label="Ventorme">
+      <a href="https://ventorme.ai">ventorme.ai</a>
+      <a href="#folders" data-i18n="nav.features">Возможности</a>
+      <a href="#faq" data-i18n="nav.faq">Вопросы</a>
+    </nav>
+    <p data-i18n="footer.made">Страницу сделала команда хакатона HACKNEXT × Ventorme</p>
+  </div>
+</footer>
+
+<div class="dock" id="dock">
+  <a class="ibtn ibtn--block" data-reg="sticky" href="https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-093"><span class="ibtn__dot"></span><span class="ibtn__txt" data-i18n="cta.free">Зарегистрироваться бесплатно</span><span class="ibtn__hov" aria-hidden="true"><span data-i18n="cta.free">Зарегистрироваться бесплатно</span><svg viewBox="0 0 20 20"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+</div>
+
+<div class="sheet" id="sheet" aria-hidden="true">
+  <div class="sheet__bg" data-close></div>
+  <div class="sheet__box" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+    <h3 id="sheet-title" data-i18n="sheet.title">Сайт открыт внутри приложения — вход через Google тут может не работать</h3>
+    <p class="sheet__sub" data-i18n="sheet.sub">Открой страницу в обычном браузере или зарегистрируйся по почте прямо здесь.</p>
+    <div class="sheet__acts">
+      <a class="btn btn--blue" id="sheetChrome" href="#" hidden data-i18n="sheet.chrome">Открыть в Chrome</a>
+      <button class="btn btn--ghost" type="button" id="sheetCopy" data-i18n="sheet.copy">Скопировать ссылку</button>
+      <a class="btn btn--ghost" id="sheetHere" href="#" data-i18n="sheet.here">Продолжить здесь (по почте)</a>
+    </div>
+    <p class="sheet__msg" id="sheetMsg" aria-live="polite"></p>
+  </div>
+</div>
+
+<script>
+const TEAM = "093";
+const GA_ID = "G-VW4V9EX6QR"; // ← Google Analytics 4. Пусто — аналитика не грузится.
+
+/* ================= I18N =================
+ * ru — основной язык. en — перевод.
+ * kk — казахский, литературный, кириллица.
+ * ВНИМАНИЕ: казахские тексты переведены без носителя языка — их нужно вычитать носителю перед публикацией.
+ * Названия вузов и бренд Ventorme не переводятся. Отзывы на всех языках остаются на русском.
+ */
+var I18N = {
+  ru: {
+    "meta.title": "Ventorme — узнай, кем тебе быть, за 1 минуту",
+    "meta.desc": "5 вопросов — и ты увидишь своё направление и что сдавать. Бесплатно. Дальше — вузы и гранты в Ventorme.",
+    "logo.aria": "Ventorme, наверх", "nav.aria": "Разделы", "lang.aria": "Язык", "theme.aria": "Переключить тему",
+    "nav.features": "Возможности", "nav.reviews": "Отзывы", "nav.faq": "Вопросы",
+    "hdr.login": "Вход", "hdr.reg": "Регистрация",
+    "hero.l1": "Узнай, кем тебе быть. Поступи в",
+    "hero.sr": "HKU, UCL, Bocconi, NU или King's College",
+    "hero.sub": "5 вопросов, 1 минута, бесплатно. Дальше вузы и гранты в Ventorme.",
+    "hero.cta1": "Пройти тест за 1 минуту", "hero.cta2": "Зарегистрироваться",
+    "quiz.aria": "Мини-тест", "quiz.tag": "Мини-тест · 5 вопросов · 1 мин", "quiz.back": "Назад", "quiz.q": "Вопрос",
+    "q1": "Где планируешь поступать?", "q1.0": "В Казахстане, на грант по ЕНТ", "q1.1": "За рубежом", "q1.2": "Пока не решил(а)",
+    "q2": "Какие предметы даются легче всего?", "q2.0": "Математика, информатика", "q2.1": "Физика, техника", "q2.2": "Биология, химия", "q2.3": "История, языки, литература",
+    "q3": "Чем можешь заниматься часами?", "q3.0": "Разбираться в приложениях и коде", "q3.1": "Собирать, чинить, строить", "q3.2": "Придумывать бизнес, организовывать людей", "q3.3": "Писать, рисовать, снимать",
+    "q4": "Какая задача интереснее?", "q4.0": "Сделать бота, который отвечает на вопросы", "q4.1": "Понять, почему у человека болит голова", "q4.2": "Посчитать, как кофейне заработать больше", "q4.3": "Спроектировать мост или дрон",
+    "q5": "Где видишь себя через 10 лет?", "q5.0": "В IT-компании или своём стартапе", "q5.1": "В клинике или лаборатории", "q5.2": "В банке или большой компании", "q5.3": "В суде, медиа или международной организации",
+    "venti.0": "О, интересно!", "venti.1": "Так-так…", "venti.2": "Уже вижу направление", "venti.3": "Почти готово!",
+    "dir.it": "IT и технологии", "dir.eng": "Инженерия", "dir.biz": "Бизнес и экономика", "dir.med": "Медицина и науки о жизни", "dir.law": "Право, медиа и гуманитарное",
+    "ent.it": "Математика + Информатика", "ent.eng": "Математика + Физика", "ent.biz": "Математика + География", "ent.med": "Биология + Химия", "ent.law": "Всемирная история + Основы права",
+    "res.dir": "Твоё направление:", "res.exam": "Что сдавать",
+    "res.ent": "<b>ЕНТ:</b> профильные предметы — ", "res.abroad": "<b>За рубеж:</b> обычно нужен IELTS, для вузов США часто ещё SAT",
+    "res.hidden": "Профессия скрыта", "res.lock": "Полный результат — в бесплатном профтесте Ventorme",
+    "res.open": "Открыть полный результат", "res.cap": "Бесплатно · регистрация за 10 секунд",
+    "res.friend": "Отправь другу", "res.parents": "Отправить родителям", "res.tg": "или в Telegram", "res.retry": "Пройти заново",
+    "res.note": "Это быстрая подсказка. Точный результат даст профтест Ventorme из 8 вопросов.",
+    "share.friend": "Проверь, кем тебе быть — тест за минуту: ", "share.parents": "Мам/пап, вот где я планирую поступление: ", "share.tg": "Проверь, кем тебе быть — тест за минуту",
+    "unis.title": "Куда поступают наши ученики", "lz.aria": "Вузы, куда поступают ученики Ventorme", "lz.role": "карусель",
+    "lz.prev": "Предыдущий вуз", "lz.next": "Следующий вуз", "lz.photo": "Фото",
+    "city.hk": "Гонконг", "city.lon_uk": "Лондон, Великобритания", "city.lon": "Лондон", "city.milan": "Милан, Италия",
+    "city.astana": "Астана, Казахстан", "city.shanghai": "Шанхай, Китай", "city.usa": "США",
+    "facts.unis": "вузов", "facts.grants": "грантов и стипендий", "facts.free": "старт бесплатно",
+    "fold.title": "Что ты соберёшь в Ventorme", "fold.sub": "Открой папку — внутри то, что будет в твоём аккаунте",
+    "fold.open": "Открыть папку «{0}»", "fold.close": "Закрыть папку «{0}»", "fold.list": "Содержимое папки «{0}»",
+    "f.portfolio": "Портфолио", "f.unis": "Мои вузы", "f.grants": "Гранты",
+    "file.essay": "Эссе", "file.essay.s": "4 итерации с AI", "file.tests": "IELTS / SAT", "file.tests.s": "уровень и прогресс",
+    "file.awards": "Достижения и олимпиады", "file.recs": "Рекомендации",
+    "file.g5000": "5000+ грантов и стипендий", "file.gcalc": "Калькулятор гранта по ЕНТ", "file.gdead": "Дедлайны и напоминания",
+    "feat.tag": "Возможности", "feat.title": "Всё для поступления в одном месте",
+    "acc1.t": "Профтест", "acc1.p": "8 вопросов о том, что тебе нравится и что получается. В ответ получишь профессии с процентом совпадения.",
+    "acc2.t": "Подбор вузов", "acc2.p": "Вузы в Казахстане и за рубежом из базы 1000+ под твои оценки, английский и бюджет.",
+    "acc3.t": "Калькулятор гранта по ЕНТ", "acc3.p": "Введи баллы ЕНТ и посмотри, какие у тебя шансы на грант по выбранной специальности.",
+    "feat.more": "А ещё: подготовка к IELTS, SAT и ЕНТ, помощь с эссе, AI-ментор 24/7",
+    "scr.result": "Результат", "scr.p1": "Frontend-разработчик", "scr.p2": "Продуктовый дизайнер", "scr.p3": "Аналитик данных",
+    "scr.foryou": "Для тебя", "scr.usa": "США · Computer Science", "scr.grant": "Грант", "scr.yes": "есть", "scr.deadline": "Дедлайн", "scr.may1": "1 мая",
+    "scr.chance": "Шанс на грант", "scr.ent": "ЕНТ", "scr.points": "баллов ЕНТ", "scr.low": "низкий", "scr.mid": "средний", "scr.high": "высокий",
+    "scr.note": "Примеры экранов упрощены, цифры условные.",
+    "rev.tag": "Отзывы", "rev.title": "Твой путь — твой выбор.", "rev.note": "Отзывы опубликованы на ventorme.ai",
+    "rev.prev": "Предыдущий отзыв", "rev.next": "Следующий отзыв", "rev.status": "Отзыв {0} из {1}",
+    "faq.tag": "Вопросы", "faq.title": "Есть вопросы? Есть ответы.",
+    "faq.q1": "Это бесплатно?", "faq.a1": "Да, регистрация бесплатная. Сразу открываются мини-тест на профессию, уровень IELTS и SAT и портфолио. Есть платная подписка, но для старта платить не нужно.",
+    "faq.q2": "Что я получу после регистрации?", "faq.a2": "Тест на профессию, проверку уровня IELTS и SAT и портфолио: хватит, чтобы понять направление.",
+    "faq.q3": "У меня не идеальные оценки. Есть смысл?", "faq.a3": "Да, вузы подбираются под реальный профиль, видно, где шансы уже высокие и что подтянуть.",
+    "faq.q4": "Мои данные в безопасности?", "faq.a4": "Данные шифруются и не передаются третьим лицам без согласия.",
+    "faq.q5": "Родители увидят прогресс?", "faq.a5": "Только если ты их подключишь, и без доступа к твоим чатам с AI.",
+    "final.title": "Твоя следующая глава <span>начинается здесь</span>", "cta.free": "Зарегистрироваться бесплатно", "final.note": "Регистрация за 10 секунд",
+    "footer.made": "Страницу сделала команда хакатона HACKNEXT × Ventorme",
+    "sheet.title": "Сайт открыт внутри приложения — вход через Google тут может не работать",
+    "sheet.sub": "Открой страницу в обычном браузере или зарегистрируйся по почте прямо здесь.",
+    "sheet.chrome": "Открыть в Chrome", "sheet.copy": "Скопировать ссылку", "sheet.here": "Продолжить здесь (по почте)",
+    "sheet.copied": "Ссылка скопирована. Вставь её в Safari или Chrome."
+  },
+
+  // KZ: тексты нужно вычитать носителю казахского языка.
+  kk: {
+    "meta.title": "Ventorme — 1 минутта кім болатыныңды біл",
+    "meta.desc": "5 сұрақ — және сен өз бағытыңды әрі қандай пәндер тапсыратыныңды көресің. Тегін. Әрі қарай — Ventorme-дағы университеттер мен гранттар.",
+    "logo.aria": "Ventorme, жоғарыға", "nav.aria": "Бөлімдер", "lang.aria": "Тіл", "theme.aria": "Тақырыпты ауыстыру",
+    "nav.features": "Мүмкіндіктер", "nav.reviews": "Пікірлер", "nav.faq": "Сұрақтар",
+    "hdr.login": "Кіру", "hdr.reg": "Тіркелу",
+    "hero.l1": "Кім болатыныңды біл. Түсетін жерің —",
+    "hero.sr": "HKU, UCL, Bocconi, NU немесе King's College",
+    "hero.sub": "5 сұрақ, 1 минут, тегін. Әрі қарай — Ventorme-дағы университеттер мен гранттар.",
+    "hero.cta1": "Тестті 1 минутта тапсыр", "hero.cta2": "Тіркелу",
+    "quiz.aria": "Шағын тест", "quiz.tag": "Шағын тест · 5 сұрақ · 1 мин", "quiz.back": "Артқа", "quiz.q": "Сұрақ",
+    "q1": "Қай жерде оқуға түсуді жоспарлап жүрсің?", "q1.0": "Қазақстанда, ҰБТ бойынша грантқа", "q1.1": "Шетелде", "q1.2": "Әлі шешкен жоқпын",
+    "q2": "Қай пәндер саған оңай беріледі?", "q2.0": "Математика, информатика", "q2.1": "Физика, техника", "q2.2": "Биология, химия", "q2.3": "Тарих, тілдер, әдебиет",
+    "q3": "Немен сағаттап айналыса аласың?", "q3.0": "Қосымшалар мен кодты зерттеу", "q3.1": "Құрастыру, жөндеу, салу", "q3.2": "Бизнес ойлап табу, адамдарды ұйымдастыру", "q3.3": "Жазу, сурет салу, түсіру",
+    "q4": "Қай тапсырма қызығырақ?", "q4.0": "Сұрақтарға жауап беретін бот жасау", "q4.1": "Адамның басы неге ауыратынын түсіну", "q4.2": "Кофеханаға көбірек табыс табудың жолын есептеу", "q4.3": "Көпір немесе дрон жобалау",
+    "q5": "10 жылдан кейін өзіңді қайда көресің?", "q5.0": "IT-компанияда немесе өз стартапымда", "q5.1": "Клиникада немесе зертханада", "q5.2": "Банкте немесе ірі компанияда", "q5.3": "Сотта, медиада немесе халықаралық ұйымда",
+    "venti.0": "О, қызық!", "venti.1": "Солай ма…", "venti.2": "Бағытың көріне бастады", "venti.3": "Аз қалды!",
+    "dir.it": "IT және технологиялар", "dir.eng": "Инженерия", "dir.biz": "Бизнес және экономика", "dir.med": "Медицина және жаратылыстану ғылымдары", "dir.law": "Құқық, медиа және гуманитарлық ғылымдар",
+    "ent.it": "Математика + Информатика", "ent.eng": "Математика + Физика", "ent.biz": "Математика + География", "ent.med": "Биология + Химия", "ent.law": "Дүниежүзі тарихы + Құқық негіздері",
+    "res.dir": "Сенің бағытың:", "res.exam": "Не тапсыру керек",
+    "res.ent": "<b>ҰБТ:</b> бейіндік пәндер — ", "res.abroad": "<b>Шетелге:</b> әдетте IELTS керек, АҚШ университеттеріне көбіне SAT та қажет",
+    "res.hidden": "Мамандық жасырын", "res.lock": "Толық нәтиже — Ventorme-дың тегін кәсіби тестінде",
+    "res.open": "Толық нәтижені ашу", "res.cap": "Тегін · 10 секундта тіркелу",
+    "res.friend": "Досыңа жібер", "res.parents": "Ата-анаңа жібер", "res.tg": "немесе Telegram-да", "res.retry": "Қайта тапсыру",
+    "res.note": "Бұл жылдам кеңес қана. Нақты нәтижені Ventorme-дың 8 сұрақтан тұратын кәсіби тесті береді.",
+    "share.friend": "Кім болатыныңды тексер — бір минуттық тест: ", "share.parents": "Анашым, әкешім, оқуға түсуді осы жерде жоспарлап жүрмін: ", "share.tg": "Кім болатыныңды тексер — бір минуттық тест",
+    "unis.title": "Біздің оқушылар қайда түседі", "lz.aria": "Ventorme оқушылары түсетін университеттер", "lz.role": "карусель",
+    "lz.prev": "Алдыңғы университет", "lz.next": "Келесі университет", "lz.photo": "Фото",
+    "city.hk": "Гонконг", "city.lon_uk": "Лондон, Ұлыбритания", "city.lon": "Лондон", "city.milan": "Милан, Италия",
+    "city.astana": "Астана, Қазақстан", "city.shanghai": "Шанхай, Қытай", "city.usa": "АҚШ",
+    "facts.unis": "университет", "facts.grants": "грант пен стипендия", "facts.free": "тегін бастау",
+    "fold.title": "Ventorme-да не жинайсың", "fold.sub": "Папканы аш — ішінде аккаунтыңда болатын нәрселер",
+    "fold.open": "«{0}» папкасын ашу", "fold.close": "«{0}» папкасын жабу", "fold.list": "«{0}» папкасының ішіндегісі",
+    "f.portfolio": "Портфолио", "f.unis": "Менің университеттерім", "f.grants": "Гранттар",
+    "file.essay": "Эссе", "file.essay.s": "AI-мен 4 нұсқа", "file.tests": "IELTS / SAT", "file.tests.s": "деңгей мен прогресс",
+    "file.awards": "Жетістіктер мен олимпиадалар", "file.recs": "Ұсыным хаттар",
+    "file.g5000": "5000+ грант пен стипендия", "file.gcalc": "ҰБТ бойынша грант калькуляторы", "file.gdead": "Дедлайндар мен еске салғыштар",
+    "feat.tag": "Мүмкіндіктер", "feat.title": "Оқуға түсуге керектің бәрі бір жерде",
+    "acc1.t": "Кәсіби тест", "acc1.p": "Саған не ұнайтыны және не жақсы шығатыны туралы 8 сұрақ. Нәтижесінде сәйкестік пайызы көрсетілген мамандықтарды аласың.",
+    "acc2.t": "Университет таңдау", "acc2.p": "Қазақстандағы және шетелдегі 1000+ университет базасынан бағаларыңа, ағылшын тіліне және бюджетіңе сай таңдау.",
+    "acc3.t": "ҰБТ бойынша грант калькуляторы", "acc3.p": "ҰБТ балдарыңды енгізіп, таңдаған мамандығың бойынша грантқа мүмкіндігіңді көр.",
+    "feat.more": "Сонымен қатар: IELTS, SAT және ҰБТ-ға дайындық, эссе жазуға көмек, тәулік бойы AI-ментор",
+    "scr.result": "Нәтиже", "scr.p1": "Frontend-әзірлеуші", "scr.p2": "Өнім дизайнері", "scr.p3": "Деректер талдаушысы",
+    "scr.foryou": "Саған", "scr.usa": "АҚШ · Computer Science", "scr.grant": "Грант", "scr.yes": "бар", "scr.deadline": "Дедлайн", "scr.may1": "1 мамыр",
+    "scr.chance": "Грантқа мүмкіндік", "scr.ent": "ҰБТ", "scr.points": "ҰБТ балы", "scr.low": "төмен", "scr.mid": "орташа", "scr.high": "жоғары",
+    "scr.note": "Экран мысалдары жеңілдетілген, сандар шартты.",
+    "rev.tag": "Пікірлер", "rev.title": "Сенің жолың — сенің таңдауың.", "rev.note": "Пікірлер ventorme.ai сайтында орыс тілінде жарияланған",
+    "rev.prev": "Алдыңғы пікір", "rev.next": "Келесі пікір", "rev.status": "{1} пікірдің {0}-і",
+    "faq.tag": "Сұрақтар", "faq.title": "Сұрақ бар ма? Жауабы бар.",
+    "faq.q1": "Бұл тегін бе?", "faq.a1": "Иә, тіркелу тегін. Бірден мамандыққа арналған шағын тест, IELTS пен SAT деңгейін тексеру және портфолио ашылады. Ақылы жазылым бар, бірақ бастау үшін төлеудің қажеті жоқ.",
+    "faq.q2": "Тіркелгеннен кейін не аламын?", "faq.a2": "Мамандыққа арналған тест, IELTS пен SAT деңгейін тексеру және портфолио: бағытыңды түсінуге осы да жеткілікті.",
+    "faq.q3": "Бағаларым мінсіз емес. Мағынасы бар ма?", "faq.a3": "Иә, университеттер нақты профиліңе қарай таңдалады: қай жерде мүмкіндігің жоғары екені және нені жақсарту керегі көрінеді.",
+    "faq.q4": "Деректерім қауіпсіз бе?", "faq.a4": "Деректер шифрланады және келісіміңсіз үшінші тұлғаларға берілмейді.",
+    "faq.q5": "Ата-анам прогресімді көре ме?", "faq.a5": "Тек сен оларды қоссаң ғана, әрі AI-мен чаттарыңа қол жеткізбейді.",
+    "final.title": "Сенің келесі тарауың <span>осы жерден басталады</span>", "cta.free": "Тегін тіркелу", "final.note": "10 секундта тіркелу",
+    "footer.made": "Бетті HACKNEXT × Ventorme хакатонының командасы жасады",
+    "sheet.title": "Сайт қосымшаның ішінде ашылды — мұнда Google арқылы кіру жұмыс істемеуі мүмкін",
+    "sheet.sub": "Бетті кәдімгі браузерде аш немесе осы жерде пошта арқылы тіркел.",
+    "sheet.chrome": "Chrome-да ашу", "sheet.copy": "Сілтемені көшіру", "sheet.here": "Осы жерде жалғастыру (пошта арқылы)",
+    "sheet.copied": "Сілтеме көшірілді. Оны Safari немесе Chrome-ға қой."
+  },
+
+  en: {
+    "meta.title": "Ventorme — find out what you could be in 1 minute",
+    "meta.desc": "5 questions and you’ll see your direction and which exams to take. Free. Then universities and grants in Ventorme.",
+    "logo.aria": "Ventorme, back to top", "nav.aria": "Sections", "lang.aria": "Language", "theme.aria": "Toggle theme",
+    "nav.features": "Features", "nav.reviews": "Reviews", "nav.faq": "FAQ",
+    "hdr.login": "Log in", "hdr.reg": "Sign up",
+    "hero.l1": "Find out who you're meant to be. Get into",
+    "hero.sr": "HKU, UCL, Bocconi, NU or King's College",
+    "hero.sub": "5 questions, 1 minute, free. Then universities and grants in Ventorme.",
+    "hero.cta1": "Take the 1-minute test", "hero.cta2": "Sign up",
+    "quiz.aria": "Mini test", "quiz.tag": "Mini test · 5 questions · 1 min", "quiz.back": "Back", "quiz.q": "Question",
+    "q1": "Where do you plan to apply?", "q1.0": "In Kazakhstan, on a UNT grant", "q1.1": "Abroad", "q1.2": "Not sure yet",
+    "q2": "Which subjects come easiest to you?", "q2.0": "Math, computer science", "q2.1": "Physics, engineering", "q2.2": "Biology, chemistry", "q2.3": "History, languages, literature",
+    "q3": "What could you do for hours?", "q3.0": "Figuring out apps and code", "q3.1": "Building and fixing things", "q3.2": "Coming up with business ideas, organizing people", "q3.3": "Writing, drawing, filming",
+    "q4": "Which task sounds more interesting?", "q4.0": "Build a bot that answers questions", "q4.1": "Figure out why someone has a headache", "q4.2": "Work out how a coffee shop can earn more", "q4.3": "Design a bridge or a drone",
+    "q5": "Where do you see yourself in 10 years?", "q5.0": "At a tech company or my own startup", "q5.1": "In a clinic or a lab", "q5.2": "At a bank or a big company", "q5.3": "In a court, the media or an international organization",
+    "venti.0": "Oh, interesting!", "venti.1": "Hmm…", "venti.2": "I can see a direction", "venti.3": "Almost done!",
+    "dir.it": "IT and technology", "dir.eng": "Engineering", "dir.biz": "Business and economics", "dir.med": "Medicine and life sciences", "dir.law": "Law, media and humanities",
+    "ent.it": "Math + Computer Science", "ent.eng": "Math + Physics", "ent.biz": "Math + Geography", "ent.med": "Biology + Chemistry", "ent.law": "World History + Fundamentals of Law",
+    "res.dir": "Your direction:", "res.exam": "What to take",
+    "res.ent": "<b>UNT:</b> profile subjects — ", "res.abroad": "<b>Abroad:</b> you usually need IELTS, and US universities often ask for the SAT too",
+    "res.hidden": "Profession hidden", "res.lock": "The full result is in Ventorme’s free career test",
+    "res.open": "See the full result", "res.cap": "Free · sign up in 10 seconds",
+    "res.friend": "Send to a friend", "res.parents": "Send to parents", "res.tg": "or via Telegram", "res.retry": "Retake",
+    "res.note": "This is a quick hint. Ventorme’s 8-question career test gives the exact result.",
+    "share.friend": "Find out what you could be — a 1-minute test: ", "share.parents": "Mom, Dad, here’s where I’m planning my university applications: ", "share.tg": "Find out what you could be — a 1-minute test",
+    "unis.title": "Where our students get in", "lz.aria": "Universities Ventorme students get into", "lz.role": "carousel",
+    "lz.prev": "Previous university", "lz.next": "Next university", "lz.photo": "Photo",
+    "city.hk": "Hong Kong", "city.lon_uk": "London, UK", "city.lon": "London", "city.milan": "Milan, Italy",
+    "city.astana": "Astana, Kazakhstan", "city.shanghai": "Shanghai, China", "city.usa": "USA",
+    "facts.unis": "universities", "facts.grants": "grants and scholarships", "facts.free": "free to start",
+    "fold.title": "What you’ll build in Ventorme", "fold.sub": "Open a folder to see what will be in your account",
+    "fold.open": "Open folder “{0}”", "fold.close": "Close folder “{0}”", "fold.list": "Contents of folder “{0}”",
+    "f.portfolio": "Portfolio", "f.unis": "My universities", "f.grants": "Grants",
+    "file.essay": "Essay", "file.essay.s": "4 drafts with AI", "file.tests": "IELTS / SAT", "file.tests.s": "level and progress",
+    "file.awards": "Achievements and olympiads", "file.recs": "Recommendation letters",
+    "file.g5000": "5000+ grants and scholarships", "file.gcalc": "UNT grant calculator", "file.gdead": "Deadlines and reminders",
+    "feat.tag": "Features", "feat.title": "Everything for applying in one place",
+    "acc1.t": "Career test", "acc1.p": "8 questions about what you enjoy and what you’re good at. You get professions with a match percentage.",
+    "acc2.t": "University matching", "acc2.p": "Universities in Kazakhstan and abroad from a database of 1000+, matched to your grades, English and budget.",
+    "acc3.t": "UNT grant calculator", "acc3.p": "Enter your UNT score and see your chances of a grant for your chosen major.",
+    "feat.more": "Plus: IELTS, SAT and UNT prep, essay help, a 24/7 AI mentor",
+    "scr.result": "Result", "scr.p1": "Frontend developer", "scr.p2": "Product designer", "scr.p3": "Data analyst",
+    "scr.foryou": "For you", "scr.usa": "USA · Computer Science", "scr.grant": "Grant", "scr.yes": "yes", "scr.deadline": "Deadline", "scr.may1": "May 1",
+    "scr.chance": "Grant chance", "scr.ent": "UNT", "scr.points": "UNT points", "scr.low": "low", "scr.mid": "medium", "scr.high": "high",
+    "scr.note": "Screens are simplified, numbers are illustrative.",
+    "rev.tag": "Reviews", "rev.title": "Your path, your choice.", "rev.note": "Reviews are published on ventorme.ai in Russian",
+    "rev.prev": "Previous review", "rev.next": "Next review", "rev.status": "Review {0} of {1}",
+    "faq.tag": "FAQ", "faq.title": "Questions? We’ve got answers.",
+    "faq.q1": "Is it free?", "faq.a1": "Yes, signing up is free. You immediately get the mini career test, IELTS and SAT level checks and a portfolio. There is a paid subscription, but you don’t need to pay to start.",
+    "faq.q2": "What do I get after signing up?", "faq.a2": "A career test, IELTS and SAT level checks and a portfolio: enough to find your direction.",
+    "faq.q3": "My grades aren’t perfect. Is it worth it?", "faq.a3": "Yes. Universities are matched to your real profile, so you can see where your chances are already high and what to improve.",
+    "faq.q4": "Is my data safe?", "faq.a4": "Your data is encrypted and isn’t shared with third parties without your consent.",
+    "faq.q5": "Will my parents see my progress?", "faq.a5": "Only if you add them, and without access to your AI chats.",
+    "final.title": "Your next chapter <span>starts here</span>", "cta.free": "Sign up for free", "final.note": "Sign up in 10 seconds",
+    "footer.made": "Page made by a HACKNEXT × Ventorme hackathon team",
+    "sheet.title": "This site is open inside an app — Google sign-in may not work here",
+    "sheet.sub": "Open the page in a regular browser or sign up with email right here.",
+    "sheet.chrome": "Open in Chrome", "sheet.copy": "Copy link", "sheet.here": "Continue here (with email)",
+    "sheet.copied": "Link copied. Paste it into Safari or Chrome."
+  }
+};
+
+
+(function(){
+  var REG = "https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-" + TEAM;
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var ARROW = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var html = document.documentElement;
+
+  /* ---------- language ---------- */
+  var LANGS = ["ru", "kk", "en"];
+  var lang = (function(){
+    var q = (location.search.match(/[?&]lang=([a-z]{2})/i) || [])[1];
+    if (q) q = q.toLowerCase() === "kz" ? "kk" : q.toLowerCase();
+    if (LANGS.indexOf(q) > -1) return q;
+    var saved = null;
+    try { saved = localStorage.getItem("vt-lang"); } catch (e) {}
+    return LANGS.indexOf(saved) > -1 ? saved : "ru";
+  })();
+  function t(key){
+    var s = (I18N[lang] && I18N[lang][key]);
+    if (s == null) s = I18N.ru[key];
+    if (s == null) return key;
+    for (var i = 1; i < arguments.length; i++) s = s.split("{" + (i - 1) + "}").join(arguments[i]);
+    return s;
+  }
+  function filesCount(n){
+    if (lang === "en") return n + (n === 1 ? " file" : " files");
+    if (lang === "kk") return n + " файл";
+    var a = n % 10, b = n % 100;
+    return n + (a === 1 && b !== 11 ? " файл" : a >= 2 && a <= 4 && (b < 12 || b > 14) ? " файла" : " файлов");
+  }
+
+  /* ---------- Google Analytics 4 ---------- */
+  var GA_ON = /^G-[A-Z0-9]{6,}$/.test(GA_ID) && GA_ID !== "G-XXXXXXXXXX";
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ window.dataLayer.push(arguments); }
+  if (GA_ON) {
+    gtag("js", new Date());
+    var gaCfg = { anonymize_ip: true };
+    if (/[?&]ga_debug=1/.test(location.search)) gaCfg.debug_mode = true;
+    gtag("config", GA_ID, gaCfg);
+    // gtag.js грузим после загрузки страницы: события ждут в dataLayer и уходят, как только скрипт готов
+    var loadGa = function(){
+      var gs = document.createElement("script");
+      gs.async = true;
+      gs.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+      document.head.appendChild(gs);
+    };
+    var idle = function(){ (window.requestIdleCallback || function(f){ setTimeout(f, 1200); })(loadGa, { timeout: 3000 }); };
+    if (document.readyState === "complete") idle(); else window.addEventListener("load", idle);
+  }
+  // every event carries the site language. Not "language": gtag treats that name as the browser-language field (ul)
+  // and would overwrite it, so the custom parameter is site_language (register it as a custom dimension in GA).
+  function goal(name, params){
+    if (!GA_ON) return;
+    try { gtag("event", name, Object.assign({ transport_type: "beacon", site_language: lang }, params || {})); } catch (e) {}
+  }
+
+  /* ---------- registration links ---------- */
+  function setRegLinks(root){ (root || document).querySelectorAll("[data-reg]").forEach(function(a){ a.href = REG; }); }
+  setRegLinks();
+
+  /* ---------- share links (point to this landing, not ventorme.ai) ---------- */
+  // the landing's own address, including a sub-folder (GitHub Pages serves it at /<repo>/)
+  var SITE = location.origin && location.origin !== "null"
+    ? location.origin + location.pathname.replace(/index\.html$/, "")
+    : location.href.split("#")[0];
+  function shareHref(kind){
+    if (kind === "friend") return "https://wa.me/?text=" + encodeURIComponent(t("share.friend") + SITE);
+    if (kind === "parents") return "https://wa.me/?text=" + encodeURIComponent(t("share.parents") + SITE);
+    return "https://t.me/share/url?url=" + encodeURIComponent(SITE) + "&text=" + encodeURIComponent(t("share.tg"));
+  }
+  function setShareLinks(root){ (root || document).querySelectorAll("[data-share]").forEach(function(a){ a.href = shareHref(a.dataset.share); }); }
+
+  /* ---------- theme: every visit starts light; a choice lives only for this tab ---------- */
+  var tgl = document.getElementById("themeToggle");
+  function syncToggle(){ tgl.setAttribute("aria-checked", html.getAttribute("data-theme") === "dark"); }
+  syncToggle();
+  tgl.addEventListener("click", function(){
+    var next = html.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    html.setAttribute("data-theme", next);
+    try { sessionStorage.setItem("vt-theme", next); } catch (e) {}
+    syncToggle();
+  });
+
+  /* ---------- quiz ---------- */
+  var ORDER = ["it", "eng", "biz", "med", "law"];
+  var QUIZ = [
+    { o: ["kz", "abroad", "both"] },
+    { o: [{ it: 2, biz: 1 }, { eng: 2, it: 1 }, { med: 2 }, { law: 2 }] },
+    { o: [{ it: 2 }, { eng: 2 }, { biz: 2 }, { law: 2 }] },
+    { o: [{ it: 2 }, { med: 2 }, { biz: 2 }, { eng: 2 }] },
+    { o: [{ it: 2, biz: 1 }, { med: 2 }, { biz: 2 }, { law: 2 }] }
+  ];
+  var body = document.getElementById("quizBody");
+  var answers = [], started = false, barPct = 0;
+
+  /* Venti reacts: hop, speech bubble, confetti */
+  var venti = document.getElementById("venti"), ventiImg = venti.querySelector("img"), bubble = document.getElementById("ventiBubble");
+  var bubbleTimer = null;
+  function restart(el, cls){ el.classList.remove("is-hop", "is-hop2", "is-party"); void el.offsetWidth; el.classList.add(cls); }
+  function hop(twice){ restart(ventiImg, twice ? "is-hop2" : "is-hop"); }
+  function say(text){
+    clearTimeout(bubbleTimer);
+    bubble.textContent = text;
+    bubble.classList.add("is-on");
+    bubbleTimer = setTimeout(function(){ bubble.classList.remove("is-on"); }, 1200);
+  }
+  function party(){ restart(venti, "is-party"); }
+
+  function primary(map){ var best = null; for (var k in map) if (!best || map[k] > map[best]) best = k; return best; }
+
+  function renderQuestion(noFade){
+    var i = answers.length, n = i + 1, Q = QUIZ[i];
+    var h = '<div class="qtop">' +
+      '<button class="qback" type="button" aria-label="' + t("quiz.back") + '"' + (i === 0 ? " disabled" : "") + '>' +
+      '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16 10H5M9 5l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>' +
+      '<div class="qprog"><div class="qprog__l"><span>' + t("quiz.q") + " " + n + "/" + QUIZ.length + '</span><span>' + n + "/" + QUIZ.length + '</span></div>' +
+      '<div class="qprog__bar"><i style="width:' + barPct + '%"></i></div></div></div>' +
+      '<p class="qq" tabindex="-1">' + t("q" + n) + '</p><div class="qopts" role="group">';
+    Q.o.forEach(function(o, k){ h += '<button class="qopt" type="button" data-k="' + k + '"><i></i>' + t("q" + n + "." + k) + '</button>'; });
+    h += '</div>';
+    body.innerHTML = h;
+    if (!noFade) body.firstElementChild.classList.add("fade-in");
+    // fill the bar from the previous value with the same spring curve
+    var bar = body.querySelector(".qprog__bar i");
+    barPct = n / QUIZ.length * 100;
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ bar.style.width = barPct + "%"; }); });
+  }
+
+  function direction(){
+    var score = { it: 0, eng: 0, biz: 0, med: 0, law: 0 };
+    for (var i = 1; i < answers.length; i++) {
+      var m = QUIZ[i].o[answers[i]];
+      for (var k in m) score[k] += m[k];
+    }
+    var top = Math.max.apply(null, ORDER.map(function(d){ return score[d]; }));
+    var tied = ORDER.filter(function(d){ return score[d] === top; });
+    var last = primary(QUIZ[4].o[answers[4]]);
+    return tied.indexOf(last) > -1 ? last : tied[0];
+  }
+
+  function renderResult(track){
+    var dir = direction(), where = QUIZ[0].o[answers[0]];
+    var entLine = '<p>' + t("res.ent") + t("ent." + dir) + '</p>';
+    var abroadLine = '<p>' + t("res.abroad") + '</p>';
+    var exam = where === "kz" ? entLine : where === "abroad" ? abroadLine : entLine + abroadLine;
+    var row = '<div class="locked__row"><span>' + t("res.hidden") + '</span><span>00%</span></div>';
+    body.innerHTML =
+      '<div class="res' + (track ? " fade-in" : "") + '">' +
+        '<p class="res__dir" tabindex="-1">' + t("res.dir") + ' <b>' + t("dir." + dir) + '</b></p>' +
+        '<div class="res__exam"><small style="margin-bottom:4px">' + t("res.exam") + '</small>' + exam + '</div>' +
+        '<div class="locked">' +
+          '<div class="locked__rows" aria-hidden="true">' + row + '<i></i>' + row + '<i style="width:80%"></i>' + row + '<i style="width:65%"></i></div>' +
+          '<div class="locked__over"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2" fill="currentColor" stroke="none"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>' +
+          '<span>' + t("res.lock") + '</span></div>' +
+        '</div>' +
+        '<a class="ibtn ibtn--block" data-reg="result" href="#"><span class="ibtn__dot"></span><span class="ibtn__txt">' + t("res.open") + '</span><span class="ibtn__hov" aria-hidden="true">' + t("res.open") + ARROW + '</span></a>' +
+        '<p class="res__cap">' + t("res.cap") + '</p>' +
+        '<div class="share">' +
+          '<a class="sbtn" data-share="friend" href="#" target="_blank" rel="noopener">' + t("res.friend") + '</a>' +
+          '<a class="sbtn" data-share="parents" href="#" target="_blank" rel="noopener">' + t("res.parents") + '</a>' +
+        '</div>' +
+        '<div class="share-alt"><a data-share="tg" href="#" target="_blank" rel="noopener">' + t("res.tg") + '</a>' +
+          '<button type="button" class="qretry">' + t("res.retry") + '</button></div>' +
+        '<p class="res__note">' + t("res.note") + '</p>' +
+      '</div>';
+    setRegLinks(body); setShareLinks(body);
+    if (track) goal("quiz_done", { direction: dir });
+  }
+
+  function render(focus, track){
+    if (answers.length < QUIZ.length) renderQuestion(!focus); else renderResult(track);
+    if (focus) { var f = body.querySelector("[tabindex='-1']"); if (f) f.focus({ preventScroll: true }); }
+  }
+
+  body.addEventListener("click", function(e){
+    var opt = e.target.closest(".qopt");
+    if (opt) {
+      if (body.dataset.busy) return;
+      body.dataset.busy = "1";
+      opt.classList.add("is-picked");
+      if (answers.length === 0 && !started) { started = true; goal("quiz_start"); }
+      answers.push(+opt.dataset.k);
+      goal("quiz_step", { step: answers.length });
+      if (answers.length < QUIZ.length) { hop(false); say(t("venti." + (answers.length - 1))); }
+      else { hop(true); party(); }
+      setTimeout(function(){ delete body.dataset.busy; render(true, true); }, reduce ? 0 : 180);
+      return;
+    }
+    if (e.target.closest(".qback")) { answers.pop(); render(true); return; }
+    if (e.target.closest(".qretry")) { answers = []; barPct = 0; render(true); }
+  });
+
+  /* ---------- hero: rotating university + matching campus photo ---------- */
+  var heroRot = (function(){
+    var rot = document.getElementById("heroRot");
+    var words = Array.prototype.slice.call(rot.children);
+    var layers = [document.getElementById("hbgA"), document.getElementById("hbgB")];
+    var credit = document.getElementById("hbgCredit");
+    var phone = window.matchMedia("(max-width: 767px)").matches;
+    var CREDIT = {
+      hku: ["Ka-Fai So", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Main_Building_HKU_20100926_03.JPG"],
+      ucl: ["Tony Hisgett", "CC BY 2.0", "https://commons.wikimedia.org/wiki/File:UCL_3_Wilkins_building_(32410942845).jpg"],
+      bocconi: ["Paolo Gamba", "CC BY 2.0", "https://commons.wikimedia.org/wiki/File:Bocconi_Grafton_Building_Milan.jpg"],
+      nu: ["Кондуктор-контролёр", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:Nazarbaev_University_Astana.JPG"],
+      kcl: ["KiloCharlieLima", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:King%27s_Building_and_Strand_quad.jpg"]
+    };
+    function photo(k){ return "universities/" + k + (phone ? "-800" : "") + ".webp"; }
+    var n = 0, front = 0, timer = null, shownKey = "hku";
+    function setCredit(k){
+      var c = CREDIT[k];
+      credit.innerHTML = t("lz.photo") + ': <a href="' + c[2] + '" target="_blank" rel="noopener">' + c[0] + "</a>, " + c[1];
+    }
+    // the other campus photos load after the page itself
+    var warm = function(){ words.forEach(function(w){ var im = new Image(); im.src = photo(w.dataset.k); }); };
+    if (document.readyState === "complete") warm(); else window.addEventListener("load", warm);
+
+    function showPhoto(k){
+      if (reduce || k === shownKey) return;      // reduced motion: the first photo stays
+      var next = layers[1 - front], cur = layers[front];
+      var src = photo(k);
+      var swap = function(){
+        next.classList.add("is-on"); cur.classList.remove("is-on");
+        front = 1 - front; shownKey = k; setCredit(k);
+      };
+      var pic = next.parentNode.tagName === "PICTURE" ? next.parentNode.querySelector("source") : null;
+      if (pic) pic.remove();                      // the <source> would otherwise win over src
+      if (next.getAttribute("src") !== src) {
+        next.onload = swap; next.src = src;
+        if (next.complete) { next.onload = null; swap(); }
+      } else swap();
+    }
+    function tick(){
+      if (document.hidden) return;
+      var prev = n;
+      n = (n + 1) % words.length;
+      words.forEach(function(w, i){
+        if (i === prev) { w.classList.remove("is-on"); w.classList.add("is-past"); return; }
+        if (w.classList.contains("is-past")) { w.classList.add("is-reset"); w.classList.remove("is-past"); void w.offsetWidth; w.classList.remove("is-reset"); }
+        w.classList.toggle("is-on", i === n);
+      });
+      showPhoto(words[n].dataset.k);
+    }
+    function start(){
+      clearInterval(timer);
+      n = 0;
+      words.forEach(function(w, i){
+        w.classList.add("is-reset"); w.classList.remove("is-past"); w.classList.toggle("is-on", i === 0);
+        void w.offsetWidth; w.classList.remove("is-reset");
+      });
+      showPhoto(words[0].dataset.k);
+      setCredit(shownKey);
+      timer = setInterval(tick, 2400);
+    }
+    start();
+    return { restart: start, relabel: function(){ setCredit(shownKey); } };
+  })();
+
+  /* ---------- universities: zoom blur carousel (порт lens-zoom-carousel) ---------- */
+  var carousel = (function(){
+    var lz = document.getElementById("lz");
+    var SLIDES = [
+      { k: "hku",     t: "The University of Hong Kong", c: "city.hk",       a: "Ka-Fai So",        l: "CC BY-SA 3.0", u: "https://commons.wikimedia.org/wiki/File:Main_Building_HKU_20100926_03.JPG" },
+      { k: "cuhk",    t: "CUHK",                        c: "city.hk",       a: "Citobun",          l: "CC BY-SA 3.0", u: "https://commons.wikimedia.org/wiki/File:Chinese_University_of_Hong_Kong_%E9%A6%99%E6%B8%AF%E4%B8%AD%E6%96%87%E5%A4%A7%E5%AD%B8.JPG" },
+      { k: "kcl",     t: "King's College London",       c: "city.lon_uk",   a: "KiloCharlieLima",  l: "CC BY-SA 4.0", u: "https://commons.wikimedia.org/wiki/File:King%27s_Building_and_Strand_quad.jpg" },
+      { k: "ucl",     t: "UCL",                         c: "city.lon",      a: "Tony Hisgett",     l: "CC BY 2.0",    u: "https://commons.wikimedia.org/wiki/File:UCL_3_Wilkins_building_(32410942845).jpg" },
+      { k: "bocconi", t: "Bocconi University",          c: "city.milan",    a: "Paolo Gamba",      l: "CC BY 2.0",    u: "https://commons.wikimedia.org/wiki/File:Bocconi_Grafton_Building_Milan.jpg" },
+      { k: "nu",      t: "Nazarbayev University",       c: "city.astana",   a: "Кондуктор-контролёр", l: "CC BY-SA 4.0", u: "https://commons.wikimedia.org/wiki/File:Nazarbaev_University_Astana.JPG" },
+      { k: "nyush",   t: "NYU Shanghai",                c: "city.shanghai", a: "JACK728",          l: "CC BY-SA 4.0", u: "https://commons.wikimedia.org/wiki/File:NYUSH_Lujiazui_Building.jpg" },
+      { k: "uiuc",    t: "University of Illinois",      c: "city.usa",      a: "Daniel Schwen",    l: "CC BY-SA 4.0", u: "https://commons.wikimedia.org/wiki/File:Altgeld_Hall.jpg" }
+    ];
+    var N = SLIDES.length, DELAY = 4000;
+    var stage = document.getElementById("lzStage"), bar = document.getElementById("lzBar");
+    var text = document.getElementById("lzText"), idxEl = document.getElementById("lzIdx");
+    var titleEl = document.getElementById("lzTitle"), subEl = document.getElementById("lzSub"), credit = document.getElementById("lzCredit");
+    var idx = 0, cur = null, timer = null, started = false, inView = false, hover = false, focusIn = false, busy = false;
+    var pad = function(x){ return (x < 10 ? "0" : "") + x; };
+
+    function img(s, ghost){
+      var i = new Image();
+      i.decoding = "async";
+      i.sizes = "(max-width: 1280px) 100vw, 1200px";
+      i.srcset = "universities/" + s.k + "-800.webp 800w, universities/" + s.k + ".webp 1600w";
+      i.src = "universities/" + s.k + "-800.webp";
+      i.alt = ghost ? "" : s.t + ", " + t(s.c);
+      if (ghost) { i.className = "lz__ghost"; i.setAttribute("aria-hidden", "true"); }
+      return i;
+    }
+    function preload(n){ img(SLIDES[(n + N) % N]); }
+
+    function caption(animate){
+      var s = SLIDES[idx];
+      idxEl.innerHTML = "<b>" + pad(idx + 1) + "</b> / " + pad(N);
+      titleEl.textContent = s.t;
+      subEl.textContent = t(s.c);
+      credit.innerHTML = t("lz.photo") + ': <a href="' + s.u + '" target="_blank" rel="noopener">' + s.a + "</a>, " + s.l;
+      if (animate) { text.classList.remove("is-new"); void text.offsetWidth; text.classList.add("is-new"); }
+    }
+
+    function show(n, dir, trigger){
+      n = (n + N) % N;
+      var s = SLIDES[n], slide = document.createElement("div"), main = img(s), old = cur;
+      slide.className = "lz__slide";
+      slide.appendChild(main);
+      var ghosts = [];
+      if (old && !reduce) for (var g = 0; g < 2; g++) { ghosts.push(img(s, true)); slide.appendChild(ghosts[g]); }
+      stage.appendChild(slide);
+      cur = slide; idx = n; busy = true;
+      caption(true);
+      var run = function(){
+        if (old && !reduce && main.animate) {
+          var fwd = dir >= 0, ease = "cubic-bezier(.2,.8,.2,1)";
+          main.animate([
+            { transform: fwd ? "scale(1.32)" : "scale(.78)", filter: "blur(18px)", opacity: 0 },
+            { transform: "scale(1)", filter: "blur(0px)", opacity: 1 }
+          ], { duration: 950, easing: ease, fill: "both" });
+          ghosts.forEach(function(gh, i){
+            var a = gh.animate([
+              { transform: "scale(" + (fwd ? 1.12 + i * .1 : .9 - i * .08) + ")", opacity: .38, filter: "blur(4px)" },
+              { transform: "scale(" + (fwd ? 1.45 + i * .15 : .68 - i * .06) + ")", opacity: 0, filter: "blur(12px)" }
+            ], { duration: 800 + i * 160, easing: "ease-out", fill: "forwards" });
+            a.onfinish = function(){ gh.remove(); };
+          });
+          var out = old.animate([
+            { transform: "scale(1)", filter: "blur(0px)", opacity: 1 },
+            { transform: fwd ? "scale(1.25)" : "scale(.85)", filter: "blur(12px)", opacity: 0 }
+          ], { duration: 900, easing: "cubic-bezier(.4,0,.2,1)", fill: "forwards" });
+          out.onfinish = function(){ old.remove(); busy = false; };
+        } else {
+          if (old) old.remove();
+          busy = false;
+        }
+      };
+      (main.decode ? main.decode() : Promise.resolve()).catch(function(){}).then(run);
+      preload(n + 1); preload(n - 1);
+      if (trigger) goal("carousel_slide", { university: s.t, trigger: trigger });
+      schedule();
+    }
+
+    function canPlay(){ return !reduce && inView && !hover && !focusIn && !document.hidden; }
+    function schedule(){
+      clearTimeout(timer);
+      bar.style.transition = "none"; bar.style.transform = "scaleX(0)";
+      if (!canPlay()) return;
+      void bar.offsetWidth;
+      bar.style.transition = "transform " + DELAY + "ms linear"; bar.style.transform = "scaleX(1)";
+      timer = setTimeout(function(){ show(idx + 1, 1, "auto"); }, DELAY);
+    }
+    function go(d){ if (busy) return; show(idx + d, d, "user"); }
+
+    document.getElementById("lzNext").addEventListener("click", function(){ go(1); });
+    document.getElementById("lzPrev").addEventListener("click", function(){ go(-1); });
+    lz.addEventListener("keydown", function(e){
+      if (e.key === "ArrowRight") { e.preventDefault(); go(1); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); go(-1); }
+    });
+    lz.addEventListener("pointerenter", function(e){ if (e.pointerType === "mouse") { hover = true; schedule(); } });
+    lz.addEventListener("pointerleave", function(){ if (hover) { hover = false; schedule(); } });
+    lz.addEventListener("focusin", function(){ focusIn = true; schedule(); });
+    lz.addEventListener("focusout", function(){ focusIn = false; schedule(); });
+    document.addEventListener("visibilitychange", schedule);
+    var sx = null, sy = null;
+    lz.addEventListener("touchstart", function(e){ sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive: true });
+    lz.addEventListener("touchend", function(e){
+      if (sx === null) return;
+      var dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) go(dx < 0 ? 1 : -1);
+      sx = null;
+    });
+
+    // first photo only when the carousel is close to the screen
+    var start = function(){ if (!started) { started = true; stage.innerHTML = ""; show(0, 0, null); } };
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function(es){ if (es[0].isIntersecting) start(); }, { rootMargin: "400px 0px" }).observe(lz);
+      new IntersectionObserver(function(es){ inView = es[0].isIntersecting; schedule(); }, { threshold: 0.35 }).observe(lz);
+    } else { start(); inView = true; schedule(); }
+
+    return {
+      relabel: function(){
+        caption(false);
+        var im = cur && cur.querySelector("img:not(.lz__ghost)");
+        if (im) im.alt = SLIDES[idx].t + ", " + t(SLIDES[idx].c);
+      }
+    };
+  })();
+
+  /* ---------- folders: calm paper design, motion of the glass-folder component ---------- */
+  var folders = (function(){
+    var wrap = document.getElementById("fds"), dots = document.getElementById("fdsDots");
+    var W = 340, H = 272, HEADROOM = 76;
+    var DATA = [
+      { id: "portfolio", label: "f.portfolio", tab: "#3B47FF", files: [
+        { mock: "test", n: "acc1.t", m: "scr.result" },
+        { n: "file.essay", m: "file.essay.s" }, { n: "file.tests", m: "file.tests.s" }, { n: "file.awards" } ] },
+      { id: "unis", label: "f.unis", tab: "#6EE7F5", files: [
+        { name: "The University of Hong Kong", m: "city.hk", img: "hku" },
+        { name: "UCL", m: "city.lon", img: "ucl" },
+        { name: "Bocconi University", m: "city.milan", img: "bocconi" },
+        { name: "Nazarbayev University", m: "city.astana", img: "nu" } ] },
+      { id: "grants", label: "f.grants", tab: "#C6F432", files: [
+        { mock: "grant", n: "scr.chance", m: "scr.ent" },
+        { n: "file.g5000" }, { n: "file.gcalc" }, { n: "file.gdead" } ] }
+    ];
+    function rng(seed){ var a = seed >>> 0; return function(){ a = (a + 0x6d2b79f5) >>> 0; var x = a; x = Math.imul(x ^ (x >>> 15), x | 1); x ^= x + Math.imul(x ^ (x >>> 7), x | 61); return ((x ^ (x >>> 14)) >>> 0) / 4294967296; }; }
+    function sheetInner(file){
+      var head = '<span class="fd__head"><span class="fd__name"></span><span class="fd__meta"></span></span>';
+      if (file.img) return '<img src="universities/' + file.img + '-800.webp" alt="" width="272" height="184" loading="lazy" decoding="async">' + head;
+      if (file.mock === "test") return head + '<span class="fd__mock">' +
+        '<span class="fd__bar"><div><span data-i18n="scr.p1"></span><span>92%</span></div><i><b style="width:92%"></b></i></span>' +
+        '<span class="fd__bar"><div><span data-i18n="scr.p2"></span><span>85%</span></div><i><b style="width:85%"></b></i></span>' +
+        '<span class="fd__bar"><div><span data-i18n="scr.p3"></span><span>78%</span></div><i><b style="width:78%"></b></i></span></span>';
+      if (file.mock === "grant") return head + '<span class="fd__mock"><span class="fd__big">118 <small data-i18n="scr.points"></small></span>' +
+        '<span class="fd__scale"></span><span class="fd__scale-l"><span data-i18n="scr.low"></span><span data-i18n="scr.mid"></span><span data-i18n="scr.high"></span></span></span>';
+      return head + '<span class="fd__lines" aria-hidden="true"><i style="width:60%"></i><i style="width:92%"></i><i style="width:84%"></i><i style="width:66%"></i></span>';
+    }
+    var items = [];
+    DATA.forEach(function(f, fi){
+      var el = document.createElement("div");
+      el.className = "fd";
+      el.style.setProperty("--tab", f.tab);
+      var n = f.files.length, sheets = "";
+      f.files.forEach(function(file, v){
+        var r = rng(fi * 97 + v * 13 + 7), slot = n <= 1 ? 0 : (v / (n - 1)) * 2 - 1;
+        sheets += '<a class="fd__sheet' + (file.img ? " fd__sheet--photo" : "") + '" data-reg="folder" href="' + REG + '" role="listitem" style="' +
+          '--slot:' + slot.toFixed(3) + ';--depth:' + (n - 1 - v) + ';--order:' + v + ';--jx:' + ((r() - .5) * 10).toFixed(2) + 'px;--jr:' + ((r() - .5) * 3.2).toFixed(2) + 'deg;z-index:' + (v + 1) + '">' +
+          sheetInner(file) + '</a>';
+      });
+      el.innerHTML =
+        '<div class="fd__stage"><div class="fd__tilt">' +
+          '<div class="fd__shadow" aria-hidden="true"></div>' +
+          '<div class="fd__back" aria-hidden="true"></div>' +
+          '<div class="fd__sheets" role="list">' + sheets + '</div>' +
+          '<div class="fd__front"><button class="fd__hit" type="button" aria-expanded="false"></button>' +
+            '<span class="fd__label"><span class="fd__title"><i aria-hidden="true"></i><span></span></span><span class="fd__count"></span></span>' +
+            '<span class="fd__chev" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>' +
+          '</div>' +
+        '</div></div>';
+      wrap.appendChild(el);
+      var it = { el: el, f: f, hit: el.querySelector(".fd__hit"), list: el.querySelector(".fd__sheets") };
+      // the button is named by the visible folder title and file count
+      el.querySelector(".fd__title span").id = "fd-t-" + f.id;
+      el.querySelector(".fd__count").id = "fd-c-" + f.id;
+      it.hit.setAttribute("aria-labelledby", "fd-t-" + f.id + " fd-c-" + f.id);
+      it.list.setAttribute("inert", "");
+      it.hit.addEventListener("click", function(){ setOpen(it, !el.hasAttribute("data-open")); });
+      // light and parallax follow the cursor (desktop), no re-layout
+      var raf = 0, px = 0, py = 0;
+      var write = function(){ raf = 0; el.style.setProperty("--px", px.toFixed(3)); el.style.setProperty("--py", py.toFixed(3)); };
+      el.addEventListener("pointermove", function(e){
+        if (e.pointerType !== "mouse" || reduce) return;
+        var b = el.getBoundingClientRect();
+        px = ((e.clientX - b.left) / b.width) * 2 - 1; py = ((e.clientY - b.top) / b.height) * 2 - 1;
+        if (!raf) raf = requestAnimationFrame(write);
+      });
+      el.addEventListener("pointerleave", function(){ px = 0; py = 0; if (!raf) raf = requestAnimationFrame(write); });
+      items.push(it);
+    });
+
+    function setOpen(it, open){
+      if (open) items.forEach(function(o){ if (o !== it) setOpen(o, false); });   // one folder at a time
+      if (open) it.el.setAttribute("data-open", ""); else it.el.removeAttribute("data-open");
+      it.hit.setAttribute("aria-expanded", open);
+      if (open) it.list.removeAttribute("inert"); else it.list.setAttribute("inert", "");
+      if (open) goal("folder_open", { folder: it.f.id });
+    }
+    document.addEventListener("keydown", function(e){ if (e.key === "Escape") items.forEach(function(o){ if (o.el.hasAttribute("data-open")) { setOpen(o, false); o.hit.focus(); } }); });
+    document.addEventListener("pointerdown", function(e){ items.forEach(function(o){ if (o.el.hasAttribute("data-open") && !o.el.contains(e.target)) setOpen(o, false); }); });
+
+    // the stage is drawn at 340 × 272 and scaled to the folder's width
+    function size(){
+      items.forEach(function(it){
+        var k = it.el.clientWidth / W;
+        it.el.querySelector(".fd__stage").style.transform = "translateY(" + HEADROOM * k + "px) scale(" + k + ")";
+        it.el.style.height = Math.round((H + HEADROOM) * k) + "px";
+      });
+    }
+    size();
+    window.addEventListener("resize", size);
+
+    function relabel(){
+      items.forEach(function(it){
+        var f = it.f, name = t(f.label);
+        it.el.querySelector(".fd__title span").textContent = name;
+        it.el.querySelector(".fd__count").textContent = filesCount(f.files.length);
+        it.list.setAttribute("aria-label", t("fold.list", name));
+        var sh = it.el.querySelectorAll(".fd__sheet");
+        f.files.forEach(function(file, k){
+          sh[k].querySelector(".fd__name").textContent = file.name || t(file.n);
+          sh[k].querySelector(".fd__meta").textContent = file.m ? t(file.m) : "";
+          sh[k].setAttribute("aria-label", (file.name || t(file.n)) + (file.m ? " · " + t(file.m) : ""));
+          sh[k].querySelectorAll("[data-i18n]").forEach(function(x){ x.textContent = t(x.getAttribute("data-i18n")); });
+        });
+      });
+    }
+    relabel();
+
+    // entrance: sheets drop into the folders once the section is a quarter on screen
+    var enter = function(){ items.forEach(function(it, i){ setTimeout(function(){ it.el.setAttribute("data-entered", ""); }, i * 120); }); };
+    if (reduce || !("IntersectionObserver" in window)) items.forEach(function(it){ it.el.setAttribute("data-entered", ""); });
+    else {
+      var io = new IntersectionObserver(function(es){ if (es[0].isIntersecting) { io.disconnect(); enter(); } }, { threshold: 0.25 });
+      // start observing after the first frame, so the hidden state is painted before it animates away
+      requestAnimationFrame(function(){ io.observe(document.getElementById("folders")); });
+    }
+
+    // phone ribbon dots
+    var dotEls = dots.querySelectorAll("i"), dr = 0;
+    wrap.addEventListener("scroll", function(){
+      if (dr) return;
+      dr = requestAnimationFrame(function(){
+        dr = 0;
+        var w = items[0].el.getBoundingClientRect().width + 16;
+        var k = Math.min(items.length - 1, Math.max(0, Math.round(wrap.scrollLeft / w)));
+        dotEls.forEach(function(d, i){ d.classList.toggle("is-on", i === k); });
+      });
+    }, { passive: true });
+
+    return { relabel: relabel, size: size };
+  })();
+
+  /* ---------- universities marquee: duplicate for a seamless loop ---------- */
+  document.querySelectorAll(".mq__track").forEach(function(tr){
+    Array.prototype.slice.call(tr.children).forEach(function(n){
+      var c = n.cloneNode(true); c.setAttribute("aria-hidden", "true");
+      c.querySelectorAll("img").forEach(function(im){ im.alt = ""; });
+      tr.appendChild(c);
+    });
+  });
+
+  /* ---------- reveal ---------- */
+  var rv = document.querySelectorAll(".rv");
+  if ("IntersectionObserver" in window && !reduce) {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -8% 0px" });
+    rv.forEach(function(el){ io.observe(el); });
+  } else {
+    rv.forEach(function(el){ el.classList.add("is-in"); });
+  }
+
+  /* ---------- sticky mobile CTA: hidden while the hero or the quiz is on screen, and at the final block ---------- */
+  var dock = document.getElementById("dock");
+  var seen = { hero: true, quizsec: true, final: false };
+  function upd(){ dock.classList.toggle("is-on", !seen.hero && !seen.quizsec && !seen.final); }
+  if ("IntersectionObserver" in window) {
+    var dio = new IntersectionObserver(function(es){ es.forEach(function(e){ seen[e.target.id] = e.isIntersecting; }); upd(); });
+    ["hero", "quizsec", "final"].forEach(function(id){ dio.observe(document.getElementById(id)); });
+  }
+
+  /* ---------- stagger testimonials ---------- */
+  var stg = document.getElementById("stg");
+  var cards = Array.prototype.slice.call(stg.querySelectorAll(".stg__card"));
+  var status = document.getElementById("stgStatus");
+  var center = 0, nCards = cards.length;
+  function fit(){
+    var h = 0;
+    cards.forEach(function(c){ c.style.height = ""; h = Math.max(h, c.offsetHeight); });
+    cards.forEach(function(c){ c.style.height = h + "px"; });
+    stg.style.height = Math.ceil(h * 1.06 + (window.innerWidth < 640 ? 24 : 64)) + "px";
+  }
+  function layout(){
+    var w = cards[0].offsetWidth, narrow = window.innerWidth < 640;
+    var step = w * (narrow ? 0.92 : 1.02);
+    cards.forEach(function(c, i){
+      var off = ((i - center) % nCards + nCards + Math.floor(nCards / 2)) % nCards - Math.floor(nCards / 2);
+      var odd = Math.abs(off) % 2 === 1;
+      var y = off === 0 ? 0 : (odd ? 28 : -28);
+      var rot = off === 0 ? 0 : (off > 0 ? 1 : -1) * (odd ? 2.5 : -2.5);
+      var s = off === 0 ? 1.06 : 0.94;
+      c.style.transform = "translate(-50%,-50%) translate(" + (off * step) + "px," + y + "px) rotate(" + rot + "deg) scale(" + s + ")";
+      c.style.zIndex = 10 - Math.abs(off);
+      c.classList.toggle("is-center", off === 0);
+      c.setAttribute("aria-hidden", off === 0 ? "false" : "true");
+    });
+    status.textContent = t("rev.status", center + 1, nCards);
+  }
+  function go(d){ center = (center + d + nCards) % nCards; layout(); }
+  cards.forEach(function(c, i){ c.addEventListener("click", function(){ if (i !== center) { center = i; layout(); } }); });
+  document.getElementById("stgPrev").addEventListener("click", function(){ go(-1); });
+  document.getElementById("stgNext").addEventListener("click", function(){ go(1); });
+  var tsx = null, tsy = null;
+  stg.addEventListener("touchstart", function(e){ tsx = e.touches[0].clientX; tsy = e.touches[0].clientY; }, { passive: true });
+  stg.addEventListener("touchend", function(e){
+    if (tsx === null) return;
+    var dx = e.changedTouches[0].clientX - tsx, dy = e.changedTouches[0].clientY - tsy;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) go(dx < 0 ? 1 : -1);
+    tsx = null;
+  });
+  window.addEventListener("resize", function(){ fit(); layout(); });
+  fit(); layout();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ fit(); layout(); });
+
+  /* ---------- faq: one open at a time ---------- */
+  var dets = document.querySelectorAll(".faq details");
+  dets.forEach(function(d){ d.addEventListener("toggle", function(){ if (d.open) dets.forEach(function(o){ if (o !== d) o.open = false; }); }); });
+
+  /* ---------- apply language ---------- */
+  var langBtns = document.querySelectorAll(".lang__btn");
+  var heroEl = document.getElementById("hero");
+  function applyLang(){
+    heroEl.style.height = heroEl.offsetHeight + "px";   // no jump while the words change
+    html.setAttribute("lang", lang);
+    document.title = t("meta.title");
+    var md = document.querySelector('meta[name="description"]');
+    if (md) md.setAttribute("content", t("meta.desc"));
+    document.querySelectorAll("[data-i18n]").forEach(function(el){ el.textContent = t(el.getAttribute("data-i18n")); });
+    document.querySelectorAll("[data-i18n-html]").forEach(function(el){ el.innerHTML = t(el.getAttribute("data-i18n-html")); });
+    document.querySelectorAll("[data-i18n-attr]").forEach(function(el){
+      el.getAttribute("data-i18n-attr").split(";").forEach(function(pair){
+        var p = pair.split(":");
+        if (p.length === 2) el.setAttribute(p[0].trim(), t(p[1].trim()));
+      });
+    });
+    langBtns.forEach(function(b){ b.setAttribute("aria-pressed", b.getAttribute("data-lang") === lang); });
+    setShareLinks();
+    render(false, false);          // the quiz keeps its progress, only the words change
+    carousel.relabel();
+    folders.relabel();
+    heroRot.relabel();
+    fit(); layout();
+    heroRot.restart();
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ heroEl.style.height = ""; }); });
+  }
+  var langBox = document.querySelector(".lang"), phoneLang = window.matchMedia("(max-width: 560px)");
+  document.addEventListener("click", function(e){ if (!langBox.contains(e.target)) langBox.classList.remove("is-open"); });
+  langBtns.forEach(function(b){
+    b.addEventListener("click", function(){
+      var next = b.getAttribute("data-lang");
+      // on phones only the active language shows; tapping it opens the short list
+      if (next === lang) { if (phoneLang.matches) langBox.classList.toggle("is-open"); return; }
+      langBox.classList.remove("is-open");
+      lang = next;
+      try { localStorage.setItem("vt-lang", lang); } catch (e) {}
+      applyLang();
+      goal("lang_switch");
+    });
+  });
+  applyLang();
+
+  /* ---------- clicks: goals + in-app browser sheet ---------- */
+  var ua = navigator.userAgent || "";
+  var inApp = /Instagram|FBAN|FBAV|musical_ly|BytedanceWebview/i.test(ua);
+  var android = /Android/i.test(ua);
+  var sheet = document.getElementById("sheet"), msg = document.getElementById("sheetMsg"), lastFocus = null;
+
+  function openSheet(){
+    lastFocus = document.activeElement; msg.textContent = "";
+    sheet.classList.add("is-open"); sheet.setAttribute("aria-hidden", "false");
+    sheet.querySelector(".sheet__acts .btn:not([hidden])").focus();
+  }
+  function closeSheet(){
+    sheet.classList.remove("is-open"); sheet.setAttribute("aria-hidden", "true");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.addEventListener("click", function(e){
+    var reg = e.target.closest("[data-reg]");
+    if (reg) {
+      goal("reg_click", { place: reg.dataset.reg || "other" });
+      if (inApp) { e.preventDefault(); openSheet(); }
+      return;
+    }
+    var sh = e.target.closest("[data-share]");
+    if (sh) goal(sh.dataset.share === "parents" ? "share_parents" : "share_friend", { channel: sh.dataset.share === "tg" ? "telegram" : "whatsapp" });
+  });
+
+  if (inApp) {
+    var chrome = document.getElementById("sheetChrome");
+    if (android) {
+      chrome.hidden = false;
+      chrome.href = "intent://" + REG.replace(/^https:\/\//, "") + "#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=" + encodeURIComponent(REG) + ";end";
+    }
+    document.getElementById("sheetHere").href = REG;
+    sheet.querySelectorAll("[data-close]").forEach(function(el){ el.addEventListener("click", closeSheet); });
+    document.addEventListener("keydown", function(e){ if (e.key === "Escape" && sheet.classList.contains("is-open")) closeSheet(); });
+    document.getElementById("sheetCopy").addEventListener("click", function(){
+      var done = function(){ msg.textContent = t("sheet.copied"); };
+      function fallback(){
+        var ta = document.createElement("textarea");
+        ta.value = REG; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0";
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand("copy"); done(); } catch (err) { msg.textContent = REG; }
+        document.body.removeChild(ta);
+      }
+      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(REG).then(done, fallback);
+      else fallback();
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
