@@ -490,9 +490,6 @@ h1,h2{font-family:var(--display);font-weight:600;letter-spacing:-.02em;line-heig
 .lz__nav svg{width:20px;height:20px}
 .lz__bar{position:absolute;left:0;right:0;top:0;z-index:2;height:3px;background:rgba(255,255,255,.18)}
 .lz__bar i{display:block;height:100%;width:100%;background:var(--lime);transform-origin:0 50%;transform:scaleX(0)}
-.lz__credit{position:absolute;right:12px;top:12px;z-index:2;max-width:60%;font-size:11px;line-height:1.3;color:rgba(255,255,255,.82);text-align:right;
-  background:rgba(13,15,21,.45);padding:4px 8px;border-radius:8px}
-.lz__credit a{text-decoration:underline;text-underline-offset:2px}
 .logos-row{margin-top:16px}
 .logos-row .logo-pill{height:48px;padding:0 16px}
 .logos-row .logo-pill img{height:28px;width:auto}
@@ -504,7 +501,6 @@ h1,h2{font-family:var(--display);font-weight:600;letter-spacing:-.02em;line-heig
   .lz{height:60vh;min-height:360px}
   .lz__ui{flex-direction:column;align-items:flex-start}
   .lz__nav{align-self:flex-end;margin-top:-8px}
-  .lz__credit{max-width:80%;font-size:10px}
 }
 @media (prefers-reduced-motion: reduce){
   .ahero__rot > span{transition:none}
@@ -565,16 +561,13 @@ main{padding-top:0}
 .hbg picture{position:absolute;inset:0}
 .hbg__img.is-on{opacity:1}
 .hbg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(13,15,21,.55) 0%, rgba(13,15,21,.75) 70%, var(--bg) 100%)}
-.hbg__credit{position:absolute;right:var(--pad);bottom:14px;z-index:1;margin:0;font-size:11px;line-height:1.3;opacity:.7;color:#F4F5F8;
-  background:rgba(13,15,21,.6);padding:3px 8px;border-radius:6px;max-width:70%;text-align:right}
-.hbg__credit a{text-decoration:underline;text-underline-offset:2px}
 .ahero h1{font-size:clamp(36px, 6vw, 84px);line-height:1.08;max-width:none;margin:0 auto;color:#F4F5F8;text-wrap:balance}
 html[lang="kk"] .ahero h1,html[lang="en"] .ahero h1{font-size:clamp(32.4px, 5.4vw, 75.6px)}
 /* every university sits in one grid cell: the box is always as wide as the longest name, so the title never reflows */
 .ahero__rot{display:grid;width:max-content;max-width:100%;margin:0 auto;justify-items:center;color:#C6F432;overflow:hidden;line-height:1.08;padding:0 .04em}
 .ahero__rot > span{position:static;left:auto;right:auto;grid-area:1 / 1;justify-self:center;white-space:nowrap;opacity:0;transform:translateY(.45em);
-  transition:opacity .45s ease, transform .55s cubic-bezier(.34,1.25,.5,1)}
-.ahero__rot > span.is-on{opacity:1;transform:none}
+  transition:opacity .18s ease, transform .3s ease}
+.ahero__rot > span.is-on{opacity:1;transform:none;transition:opacity .35s ease .16s, transform .55s cubic-bezier(.34,1.25,.5,1) .16s}
 .ahero__rot > span.is-past{opacity:0;transform:translateY(-.45em)}
 .ahero__rot > span.is-reset{transition:none}
 .ahero__sub{color:rgba(244,245,248,.88);max-width:42ch}
@@ -697,7 +690,6 @@ html[lang="kk"] .ahero h1,html[lang="en"] .ahero h1{font-size:clamp(32.4px, 5.4v
   html[lang="kk"] .ahero h1{font-size:min(32.4px, 7.6vw)}
   .ahero__btns{flex-direction:column;align-self:stretch}
   .abtn{width:100%}
-  .hbg__credit{bottom:10px;max-width:calc(100% - 2 * var(--pad))}
   /* language: one compact button with a dropdown */
   .lang__btn[aria-pressed="true"]::after{content:" ▾";font-size:10px}
   .lang.is-open .lang__btn[aria-pressed="true"]::after{content:""}
@@ -708,6 +700,31 @@ html[lang="kk"] .ahero h1,html[lang="en"] .ahero h1{font-size:clamp(32.4px, 5.4v
   .fd *,.fd{transition:none !important;animation:none !important}
   .fd__tilt{transform:none}
 }
+
+/* ================= folders v4: every file has its own colour ================= */
+.fd{--stack:27px}
+@media (hover: hover){ .fd:hover{--stack:25px} }
+.fd:focus-within{--stack:25px}
+.fd[data-open]{--stack:22px}
+.fd__sheet{background:color-mix(in srgb, var(--c) 10%, #FFFFFF);border-color:color-mix(in srgb, var(--c) 45%, #E4E6EC);color:#111322}
+[data-theme="dark"] .fd__sheet{background:color-mix(in srgb, var(--c) 14%, #262A36);border-color:color-mix(in srgb, var(--c) 40%, #343849);color:#F4F5F8}
+.fd__head{left:0;right:0;top:0;height:27px;padding:0 11px;gap:7px;align-items:center;background:var(--c);color:var(--cink)}
+.fd__ic{flex:none;width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.fd__name{flex:1;min-width:0;font-size:13px}
+.fd__meta{font-size:10.5px;opacity:.8}
+.fd__lines{top:42px}
+.fd__lines i{background:var(--c);opacity:.35}
+.fd__lines i:first-child{opacity:.55}
+.fd__mock{top:38px}
+.fd__sheet--photo{background:#0D0F15}
+.fd__sheet--photo::after{content:none}
+.fd__sheet--photo img{top:27px;height:calc(100% - 27px)}
+.fd__front::before{content:"";position:absolute;left:22px;right:22px;top:0;height:3px;border-radius:0 0 3px 3px;background:var(--tab)}
+.fd__chips{display:flex;gap:4px;margin-top:9px}
+.fd__chips i{display:block;width:20px;height:6px;border-radius:3px}
+.fd__label{bottom:18px}
+.footer__credits{font-size:12px;opacity:.75;border-top:0 !important;padding-top:0 !important}
+.footer__credits a{text-decoration:underline}
 </style>
 </head>
 <body>
@@ -765,7 +782,6 @@ html[lang="kk"] .ahero h1,html[lang="en"] .ahero h1{font-size:clamp(32.4px, 5.4v
         <a class="abtn abtn--outline" data-reg="hero" href="https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-093" data-i18n="hero.cta2">Зарегистрироваться</a>
       </div>
     </div>
-    <p class="hbg__credit" id="hbgCredit"></p>
   </section>
 
   <!-- 2. QUIZ — сразу под hero -->
@@ -794,7 +810,6 @@ html[lang="kk"] .ahero h1,html[lang="en"] .ahero h1{font-size:clamp(32.4px, 5.4v
         <noscript><img src="universities/hku-800.webp" alt="The University of Hong Kong" style="width:100%;height:100%;object-fit:cover"></noscript>
       </div>
       <div class="lz__bar" aria-hidden="true"><i id="lzBar"></i></div>
-      <p class="lz__credit" id="lzCredit"></p>
       <div class="lz__ui">
         <div class="lz__text" id="lzText" aria-live="polite">
           <span class="lz__idx" id="lzIdx"><b>01</b> / 08</span>
@@ -915,6 +930,7 @@ html[lang="kk"] .ahero h1,html[lang="en"] .ahero h1{font-size:clamp(32.4px, 5.4v
       <a href="#faq" data-i18n="nav.faq">Вопросы</a>
     </nav>
     <p data-i18n="footer.made">Страницу сделала команда хакатона HACKNEXT × Ventorme</p>
+    <p class="footer__credits"><span data-i18n="footer.photos">Фото кампусов: Wikimedia Commons, лицензии CC BY и CC BY-SA. Авторы —</span> <a href="https://github.com/dujsembaevalihan636-coder/ventorme-landing#фото-и-лицензии" target="_blank" rel="noopener">README</a></p>
   </div>
 </footer>
 
@@ -1002,7 +1018,7 @@ var I18N = {
     "faq.q4": "Мои данные в безопасности?", "faq.a4": "Данные шифруются и не передаются третьим лицам без согласия.",
     "faq.q5": "Родители увидят прогресс?", "faq.a5": "Только если ты их подключишь, и без доступа к твоим чатам с AI.",
     "final.title": "Твоя следующая глава <span>начинается здесь</span>", "cta.free": "Зарегистрироваться бесплатно", "final.note": "Регистрация за 10 секунд",
-    "footer.made": "Страницу сделала команда хакатона HACKNEXT × Ventorme",
+    "footer.made": "Страницу сделала команда хакатона HACKNEXT × Ventorme", "footer.photos": "Фото кампусов: Wikimedia Commons, лицензии CC BY и CC BY-SA. Авторы —",
     "sheet.title": "Сайт открыт внутри приложения — вход через Google тут может не работать",
     "sheet.sub": "Открой страницу в обычном браузере или зарегистрируйся по почте прямо здесь.",
     "sheet.chrome": "Открыть в Chrome", "sheet.copy": "Скопировать ссылку", "sheet.here": "Продолжить здесь (по почте)",
@@ -1065,7 +1081,7 @@ var I18N = {
     "faq.q4": "Деректерім қауіпсіз бе?", "faq.a4": "Деректер шифрланады және келісіміңсіз үшінші тұлғаларға берілмейді.",
     "faq.q5": "Ата-анам прогресімді көре ме?", "faq.a5": "Тек сен оларды қоссаң ғана, әрі AI-мен чаттарыңа қол жеткізбейді.",
     "final.title": "Сенің келесі тарауың <span>осы жерден басталады</span>", "cta.free": "Тегін тіркелу", "final.note": "10 секундта тіркелу",
-    "footer.made": "Бетті HACKNEXT × Ventorme хакатонының командасы жасады",
+    "footer.made": "Бетті HACKNEXT × Ventorme хакатонының командасы жасады", "footer.photos": "Кампус фотолары: Wikimedia Commons, CC BY және CC BY-SA лицензиялары. Авторлары —",
     "sheet.title": "Сайт қосымшаның ішінде ашылды — мұнда Google арқылы кіру жұмыс істемеуі мүмкін",
     "sheet.sub": "Бетті кәдімгі браузерде аш немесе осы жерде пошта арқылы тіркел.",
     "sheet.chrome": "Chrome-да ашу", "sheet.copy": "Сілтемені көшіру", "sheet.here": "Осы жерде жалғастыру (пошта арқылы)",
@@ -1127,7 +1143,7 @@ var I18N = {
     "faq.q4": "Is my data safe?", "faq.a4": "Your data is encrypted and isn’t shared with third parties without your consent.",
     "faq.q5": "Will my parents see my progress?", "faq.a5": "Only if you add them, and without access to your AI chats.",
     "final.title": "Your next chapter <span>starts here</span>", "cta.free": "Sign up for free", "final.note": "Sign up in 10 seconds",
-    "footer.made": "Page made by a HACKNEXT × Ventorme hackathon team",
+    "footer.made": "Page made by a HACKNEXT × Ventorme hackathon team", "footer.photos": "Campus photos: Wikimedia Commons, CC BY and CC BY-SA licences. Authors —",
     "sheet.title": "This site is open inside an app — Google sign-in may not work here",
     "sheet.sub": "Open the page in a regular browser or sign up with email right here.",
     "sheet.chrome": "Open in Chrome", "sheet.copy": "Copy link", "sheet.here": "Continue here (with email)",
@@ -1328,69 +1344,69 @@ var I18N = {
     if (e.target.closest(".qretry")) { answers = []; barPct = 0; render(true); }
   });
 
-  /* ---------- hero: rotating university + matching campus photo ---------- */
+  /* ---------- hero: rotating university + matching campus photo, always switched together ---------- */
   var heroRot = (function(){
     var rot = document.getElementById("heroRot");
     var words = Array.prototype.slice.call(rot.children);
     var layers = [document.getElementById("hbgA"), document.getElementById("hbgB")];
-    var credit = document.getElementById("hbgCredit");
     var phone = window.matchMedia("(max-width: 767px)").matches;
-    var CREDIT = {
-      hku: ["Ka-Fai So", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Main_Building_HKU_20100926_03.JPG"],
-      ucl: ["Tony Hisgett", "CC BY 2.0", "https://commons.wikimedia.org/wiki/File:UCL_3_Wilkins_building_(32410942845).jpg"],
-      bocconi: ["Paolo Gamba", "CC BY 2.0", "https://commons.wikimedia.org/wiki/File:Bocconi_Grafton_Building_Milan.jpg"],
-      nu: ["Кондуктор-контролёр", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:Nazarbaev_University_Astana.JPG"],
-      kcl: ["KiloCharlieLima", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:King%27s_Building_and_Strand_quad.jpg"]
-    };
     function photo(k){ return "universities/" + k + (phone ? "-800" : "") + ".webp"; }
-    var n = 0, front = 0, timer = null, shownKey = "hku";
-    function setCredit(k){
-      var c = CREDIT[k];
-      credit.innerHTML = t("lz.photo") + ': <a href="' + c[2] + '" target="_blank" rel="noopener">' + c[0] + "</a>, " + c[1];
+    var n = 0, front = 0, timer = null, busy = false, gen = 0;
+    // a photo counts as ready once it is downloaded and decoded
+    var ready = {};
+    function load(k){
+      if (!ready[k]) ready[k] = new Promise(function(done){
+        var im = new Image();
+        im.onload = function(){ (im.decode ? im.decode() : Promise.resolve()).catch(function(){}).then(done); };
+        im.onerror = done;
+        im.src = photo(k);
+      });
+      return ready[k];
     }
     // the other campus photos load after the page itself
-    var warm = function(){ words.forEach(function(w){ var im = new Image(); im.src = photo(w.dataset.k); }); };
+    var warm = function(){ words.forEach(function(w){ load(w.dataset.k); }); };
     if (document.readyState === "complete") warm(); else window.addEventListener("load", warm);
 
-    function showPhoto(k){
-      if (reduce || k === shownKey) return;      // reduced motion: the first photo stays
+    function setWord(i){
+      words.forEach(function(w, j){
+        if (j === i) { w.classList.remove("is-past"); w.classList.add("is-on"); return; }
+        if (w.classList.contains("is-on")) { w.classList.remove("is-on"); w.classList.add("is-past"); return; }
+        if (w.classList.contains("is-past")) { w.classList.add("is-reset"); w.classList.remove("is-past"); void w.offsetWidth; w.classList.remove("is-reset"); }
+      });
+    }
+    function setPhoto(k){
       var next = layers[1 - front], cur = layers[front];
-      var src = photo(k);
-      var swap = function(){
-        next.classList.add("is-on"); cur.classList.remove("is-on");
-        front = 1 - front; shownKey = k; setCredit(k);
-      };
       var pic = next.parentNode.tagName === "PICTURE" ? next.parentNode.querySelector("source") : null;
-      if (pic) pic.remove();                      // the <source> would otherwise win over src
-      if (next.getAttribute("src") !== src) {
-        next.onload = swap; next.src = src;
-        if (next.complete) { next.onload = null; swap(); }
-      } else swap();
+      if (pic) pic.remove();                       // the <source> would otherwise win over src
+      next.src = photo(k);
+      next.classList.add("is-on"); cur.classList.remove("is-on");
+      front = 1 - front;
     }
     function tick(){
-      if (document.hidden) return;
-      var prev = n;
-      n = (n + 1) % words.length;
-      words.forEach(function(w, i){
-        if (i === prev) { w.classList.remove("is-on"); w.classList.add("is-past"); return; }
-        if (w.classList.contains("is-past")) { w.classList.add("is-reset"); w.classList.remove("is-past"); void w.offsetWidth; w.classList.remove("is-reset"); }
-        w.classList.toggle("is-on", i === n);
+      if (document.hidden || busy) return;
+      var i = (n + 1) % words.length, k = words[i].dataset.k, g = gen;
+      if (reduce) { n = i; setWord(i); return; }  // reduced motion: the first photo stays
+      busy = true;
+      // wait for the photo, then change the word and the photo in the same frame
+      load(k).then(function(){
+        busy = false;
+        if (g !== gen) return;
+        n = i;
+        requestAnimationFrame(function(){ setWord(i); setPhoto(k); });
       });
-      showPhoto(words[n].dataset.k);
     }
     function start(){
       clearInterval(timer);
-      n = 0;
-      words.forEach(function(w, i){
-        w.classList.add("is-reset"); w.classList.remove("is-past"); w.classList.toggle("is-on", i === 0);
-        void w.offsetWidth; w.classList.remove("is-reset");
-      });
-      showPhoto(words[0].dataset.k);
-      setCredit(shownKey);
+      gen++; busy = false;
+      if (n !== 0) {
+        words.forEach(function(w, j){ w.classList.add("is-reset"); w.classList.remove("is-past"); w.classList.toggle("is-on", j === 0); void w.offsetWidth; w.classList.remove("is-reset"); });
+        if (!reduce) load("hku").then(function(){ setPhoto("hku"); });
+        n = 0;
+      }
       timer = setInterval(tick, 2400);
     }
     start();
-    return { restart: start, relabel: function(){ setCredit(shownKey); } };
+    return { restart: start, relabel: function(){} };
   })();
 
   /* ---------- universities: zoom blur carousel (порт lens-zoom-carousel) ---------- */
@@ -1409,7 +1425,7 @@ var I18N = {
     var N = SLIDES.length, DELAY = 4000;
     var stage = document.getElementById("lzStage"), bar = document.getElementById("lzBar");
     var text = document.getElementById("lzText"), idxEl = document.getElementById("lzIdx");
-    var titleEl = document.getElementById("lzTitle"), subEl = document.getElementById("lzSub"), credit = document.getElementById("lzCredit");
+    var titleEl = document.getElementById("lzTitle"), subEl = document.getElementById("lzSub");
     var idx = 0, cur = null, timer = null, started = false, inView = false, hover = false, focusIn = false, busy = false;
     var pad = function(x){ return (x < 10 ? "0" : "") + x; };
 
@@ -1430,7 +1446,6 @@ var I18N = {
       idxEl.innerHTML = "<b>" + pad(idx + 1) + "</b> / " + pad(N);
       titleEl.textContent = s.t;
       subEl.textContent = t(s.c);
-      credit.innerHTML = t("lz.photo") + ': <a href="' + s.u + '" target="_blank" rel="noopener">' + s.a + "</a>, " + s.l;
       if (animate) { text.classList.remove("is-new"); void text.offsetWidth; text.classList.add("is-new"); }
     }
 
@@ -1527,20 +1542,35 @@ var I18N = {
     var W = 340, H = 272, HEADROOM = 76;
     var DATA = [
       { id: "portfolio", label: "f.portfolio", tab: "#3B47FF", files: [
-        { mock: "test", n: "acc1.t", m: "scr.result" },
-        { n: "file.essay", m: "file.essay.s" }, { n: "file.tests", m: "file.tests.s" }, { n: "file.awards" } ] },
+        { mock: "test", n: "acc1.t", m: "scr.result", c: "#3B47FF", ink: "#FFFFFF", ic: "chart" },
+        { n: "file.essay", m: "file.essay.s", c: "#B9A2FF", ink: "#111322", ic: "pen" },
+        { n: "file.tests", m: "file.tests.s", c: "#6EE7F5", ink: "#111322", ic: "cap" },
+        { n: "file.awards", c: "#FFC56B", ink: "#111322", ic: "medal" } ] },
       { id: "unis", label: "f.unis", tab: "#6EE7F5", files: [
-        { name: "The University of Hong Kong", m: "city.hk", img: "hku" },
-        { name: "UCL", m: "city.lon", img: "ucl" },
-        { name: "Bocconi University", m: "city.milan", img: "bocconi" },
-        { name: "Nazarbayev University", m: "city.astana", img: "nu" } ] },
+        { name: "The University of Hong Kong", m: "city.hk", img: "hku", c: "#FF9DB8", ink: "#111322", ic: "pin" },
+        { name: "UCL", m: "city.lon", img: "ucl", c: "#B9A2FF", ink: "#111322", ic: "pin" },
+        { name: "Bocconi University", m: "city.milan", img: "bocconi", c: "#FFC56B", ink: "#111322", ic: "pin" },
+        { name: "Nazarbayev University", m: "city.astana", img: "nu", c: "#6EE7F5", ink: "#111322", ic: "pin" } ] },
       { id: "grants", label: "f.grants", tab: "#C6F432", files: [
-        { mock: "grant", n: "scr.chance", m: "scr.ent" },
-        { n: "file.g5000" }, { n: "file.gcalc" }, { n: "file.gdead" } ] }
+        { mock: "grant", n: "scr.chance", m: "scr.ent", c: "#C6F432", ink: "#111322", ic: "gauge" },
+        { n: "file.g5000", c: "#FFC56B", ink: "#111322", ic: "coins" },
+        { n: "file.gcalc", c: "#6EE7F5", ink: "#111322", ic: "calc" },
+        { n: "file.gdead", c: "#FF9DB8", ink: "#111322", ic: "clock" } ] }
     ];
     function rng(seed){ var a = seed >>> 0; return function(){ a = (a + 0x6d2b79f5) >>> 0; var x = a; x = Math.imul(x ^ (x >>> 15), x | 1); x ^= x + Math.imul(x ^ (x >>> 7), x | 61); return ((x ^ (x >>> 14)) >>> 0) / 4294967296; }; }
+    var ICON = {
+      chart: '<path d="M3 13V8M8 13V3M13 13V6"/>',
+      pen: '<path d="M10.5 2.5l3 3L6 13H3v-3z"/>',
+      cap: '<path d="M1.5 6L8 3l6.5 3L8 9z"/><path d="M4.5 7.5v3c1 1 2.2 1.5 3.5 1.5s2.5-.5 3.5-1.5v-3"/>',
+      medal: '<circle cx="8" cy="10" r="3.5"/><path d="M5.5 1.5L8 6.5l2.5-5"/>',
+      pin: '<path d="M8 14s4.5-4.2 4.5-7.5a4.5 4.5 0 0 0-9 0C3.5 9.8 8 14 8 14z"/><circle cx="8" cy="6.5" r="1.6"/>',
+      gauge: '<path d="M2.5 11a5.5 5.5 0 1 1 11 0"/><path d="M8 11l2.5-3"/>',
+      coins: '<ellipse cx="8" cy="4.5" rx="5" ry="2"/><path d="M3 4.5v3.5c0 1.1 2.2 2 5 2s5-.9 5-2V4.5M3 8v3.5c0 1.1 2.2 2 5 2s5-.9 5-2V8"/>',
+      calc: '<rect x="3" y="1.5" width="10" height="13" rx="2"/><path d="M5.5 4.5h5M5.5 8h1M9.5 8h1M5.5 11h1M9.5 11h1"/>',
+      clock: '<circle cx="8" cy="8" r="6"/><path d="M8 4.5V8l2.5 1.5"/>'
+    };
     function sheetInner(file){
-      var head = '<span class="fd__head"><span class="fd__name"></span><span class="fd__meta"></span></span>';
+      var head = '<span class="fd__head"><svg class="fd__ic" viewBox="0 0 16 16" aria-hidden="true">' + ICON[file.ic] + '</svg><span class="fd__name"></span><span class="fd__meta"></span></span>';
       if (file.img) return '<img src="universities/' + file.img + '-800.webp" alt="" width="272" height="184" loading="lazy" decoding="async">' + head;
       if (file.mock === "test") return head + '<span class="fd__mock">' +
         '<span class="fd__bar"><div><span data-i18n="scr.p1"></span><span>92%</span></div><i><b style="width:92%"></b></i></span>' +
@@ -1559,7 +1589,7 @@ var I18N = {
       f.files.forEach(function(file, v){
         var r = rng(fi * 97 + v * 13 + 7), slot = n <= 1 ? 0 : (v / (n - 1)) * 2 - 1;
         sheets += '<a class="fd__sheet' + (file.img ? " fd__sheet--photo" : "") + '" data-reg="folder" href="' + REG + '" role="listitem" style="' +
-          '--slot:' + slot.toFixed(3) + ';--depth:' + (n - 1 - v) + ';--order:' + v + ';--jx:' + ((r() - .5) * 10).toFixed(2) + 'px;--jr:' + ((r() - .5) * 3.2).toFixed(2) + 'deg;z-index:' + (v + 1) + '">' +
+          '--c:' + file.c + ';--cink:' + file.ink + ';--slot:' + slot.toFixed(3) + ';--depth:' + (n - 1 - v) + ';--order:' + v + ';--jx:' + ((r() - .5) * 10).toFixed(2) + 'px;--jr:' + ((r() - .5) * 3.2).toFixed(2) + 'deg;z-index:' + (v + 1) + '">' +
           sheetInner(file) + '</a>';
       });
       el.innerHTML =
@@ -1568,7 +1598,8 @@ var I18N = {
           '<div class="fd__back" aria-hidden="true"></div>' +
           '<div class="fd__sheets" role="list">' + sheets + '</div>' +
           '<div class="fd__front"><button class="fd__hit" type="button" aria-expanded="false"></button>' +
-            '<span class="fd__label"><span class="fd__title"><i aria-hidden="true"></i><span></span></span><span class="fd__count"></span></span>' +
+            '<span class="fd__label"><span class="fd__title"><i aria-hidden="true"></i><span></span></span><span class="fd__count"></span>' +
+              '<span class="fd__chips" aria-hidden="true">' + f.files.map(function(file){ return '<i style="background:' + file.c + '"></i>'; }).join("") + '</span></span>' +
             '<span class="fd__chev" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>' +
           '</div>' +
         '</div></div>';
