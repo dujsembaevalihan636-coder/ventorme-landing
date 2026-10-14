@@ -22,4 +22,3 @@ a{color:var(--blue);text-underline-offset:3px}
 .lg ul{margin:0 0 12px;padding-left:20px}
 .lg code{font-size:.92em;background:var(--bg);padding:1px 6px;border-radius:6px}
 .lg-date{color:var(--muted) !important;font-size:14px}
-.lg-note{font-size:14px;padding:10px 14px;border-radius:12px;background:var(--bg)}
