@@ -38,9 +38,14 @@ https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-093
 ## Структура
 
 ```
-index.html               страница целиком: разметка, стили, скрипты, переводы
+index.html               главная: разметка, стили, скрипты, переводы
+privacy.html             политика конфиденциальности (RU, KZ, EN)
+terms.html               условия использования (RU, KZ, EN)
+legal.css, legal.js      оформление и переключение языка для этих двух страниц
+favicon.svg, favicon-32.png, apple-touch-icon.png, icon-512.png   иконки сайта
 universities/            фото кампусов (*.webp и *-800.webp)
 universities/CREDITS.json   авторы и лицензии фото
+reviews/                 фото авторов отзывов (с ventorme.ai)
 .nojekyll                отключает обработку Jekyll на GitHub Pages
 ```
 
@@ -128,7 +133,7 @@ const GA_ID = "G-VW4V9EX6QR";  // Google Analytics 4
 
 Фото уменьшены и пересохранены в WebP.
 
-Остальное взято с [ventorme.ai](https://ventorme.ai): логотипы Ventorme и вузов, маскот Venti, картинка для превью ссылки. Отзывы тоже опубликованы на ventorme.ai.
+Остальное взято с [ventorme.ai](https://ventorme.ai): логотипы Ventorme и вузов, маскот Venti, картинка для превью ссылки. Отзывы и фото их авторов опубликованы на ventorme.ai. У Айбека и Даны фото там нет, поэтому у них инициалы, как и на ventorme.ai.
 
 ## Авторы
 

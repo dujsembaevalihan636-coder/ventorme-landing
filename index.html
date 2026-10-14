@@ -3,20 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Ventorme — узнай, кем тебе быть, за 1 минуту</title>
-<meta name="description" content="5 вопросов — и ты увидишь своё направление и что сдавать. Бесплатно. Дальше — вузы и гранты в Ventorme.">
+<title>Ventorme: узнай, кем тебе быть, за 1 минуту</title>
+<meta name="description" content="Ответь на 5 вопросов и узнай своё направление и что сдавать. Бесплатно. Потом подбери вузы и гранты в Ventorme.">
 <link rel="canonical" href="https://ventorme-six.vercel.app/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ventorme-six.vercel.app/">
 <meta property="og:title" content="Узнай, кем тебе быть, за 1 минуту">
-<meta property="og:description" content="5 вопросов — и ты увидишь своё направление и что сдавать. Бесплатно. Дальше — вузы и гранты в Ventorme.">
+<meta property="og:description" content="Ответь на 5 вопросов и узнай своё направление и что сдавать. Бесплатно. Потом подбери вузы и гранты в Ventorme.">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:image" content="https://ventorme.ai/opengraph-image">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Узнай, кем тебе быть, за 1 минуту">
-<meta name="twitter:description" content="5 вопросов — и ты увидишь своё направление и что сдавать. Бесплатно. Дальше — вузы и гранты в Ventorme.">
+<meta name="twitter:description" content="Ответь на 5 вопросов и узнай своё направление и что сдавать. Бесплатно. Потом подбери вузы и гранты в Ventorme.">
 <meta name="twitter:image" content="https://ventorme.ai/opengraph-image">
 <meta name="theme-color" content="#F5F6F8">
 <script>
@@ -33,7 +33,9 @@
   d.classList.add("js");
 })();
 </script>
-<link rel="icon" href="https://ventorme.ai/figma/studentlanding/logo-ventorme.svg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://ventorme.ai">
@@ -691,7 +693,9 @@ html[lang="kk"] .ahero h1,html[lang="en"] .ahero h1{font-size:clamp(32.4px, 5.4v
   .ahero__btns{flex-direction:column;align-self:stretch}
   .abtn{width:100%}
   /* language: one compact button with a dropdown */
-  .lang__btn[aria-pressed="true"]::after{content:" ▾";font-size:10px}
+  .lang__btn[aria-pressed="true"]::after{content:"";display:inline-block;width:9px;height:9px;margin-left:4px;vertical-align:1px;background:currentColor;
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M2 3.5l3 3 3-3' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+            mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M2 3.5l3 3 3-3' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
   .lang.is-open .lang__btn[aria-pressed="true"]::after{content:""}
 }
 @media (prefers-reduced-motion: reduce){
@@ -725,6 +729,44 @@ html[lang="kk"] .ahero h1,html[lang="en"] .ahero h1{font-size:clamp(32.4px, 5.4v
 .fd__label{bottom:18px}
 .footer__credits{font-size:12px;opacity:.75;border-top:0 !important;padding-top:0 !important}
 .footer__credits a{text-decoration:underline}
+
+/* ================= quiz block v5: intro on the left, the card on the right ================= */
+.qsec{display:grid;grid-template-columns:minmax(0, 1fr) minmax(0, 520px);gap:clamp(28px, 5vw, 72px);align-items:center;justify-items:stretch;
+  text-align:left;padding:clamp(28px, 5vw, 64px);border-radius:28px}
+.qsec__intro{max-width:460px}
+.qsec__kicker{display:flex;align-items:center;gap:10px;margin:0 0 14px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-text)}
+.qsec__kicker::before{content:"";width:22px;height:2px;border-radius:1px;background:currentColor}
+[data-theme="dark"] .qsec__kicker{color:var(--accent)}
+.qsec h2{font-size:clamp(26px, 3.2vw, 40px);line-height:1.12;margin:0 0 14px;text-wrap:balance}
+.qsec__lead{margin:0 0 22px;font-size:17px;line-height:1.55;color:var(--ink-2)}
+.qsec__facts{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.qsec__facts li{display:flex;align-items:center;gap:12px;font-size:15px;font-weight:600;color:var(--ink)}
+.qsec__facts svg{flex:none;width:36px;height:36px;padding:8px;border-radius:10px;background:var(--card);border:1px solid var(--line);
+  fill:none;stroke:var(--blue-text);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+[data-theme="dark"] .qsec__facts svg{stroke:var(--accent)}
+.qsec__facts svg circle[r="1"]{fill:currentColor}
+.qsec .qwrap{max-width:none;width:100%}
+@media (max-width: 960px){
+  .qsec{grid-template-columns:1fr;gap:22px}
+  .qsec__intro{max-width:none}
+  .qsec__facts{grid-template-columns:repeat(3, auto);justify-content:start;gap:10px 18px}
+  .qsec__facts li{font-size:14px;gap:8px}
+  .qsec__facts svg{width:30px;height:30px;padding:6px}
+}
+@media (max-width: 560px){
+  .qsec{padding:24px 16px 20px;border-radius:24px;margin-left:calc(-1 * var(--pad) + 8px);margin-right:calc(-1 * var(--pad) + 8px)}
+  .qsec h2{font-size:24px}
+  .qsec__lead{font-size:15.5px;margin-bottom:16px}
+  .qsec__facts{display:flex;flex-wrap:wrap;gap:8px 14px}
+  .qsec__facts li{font-size:13px;gap:6px}
+  .qsec__facts svg{width:26px;height:26px;padding:5px;border-radius:8px}
+}
+
+/* ================= reviews: rating and real photos ================= */
+.stars{display:flex;gap:3px;margin-bottom:-6px}
+.stars svg{width:16px;height:16px;fill:#FFB020}
+.ava--img{width:46px;height:46px;border-radius:50%;object-fit:cover;flex:none;background:var(--surface)}
+.ava:not(.ava--img){background:linear-gradient(135deg, #3B47FF, #8B93FF);color:#FFFFFF}
 </style>
 </head>
 <body>
@@ -785,8 +827,17 @@ html[lang="kk"] .ahero h1,html[lang="en"] .ahero h1{font-size:clamp(32.4px, 5.4v
   </section>
 
   <!-- 2. QUIZ — сразу под hero -->
-  <section class="qsec" id="quizsec" data-i18n-attr="aria-label:quiz.aria" aria-label="Мини-тест">
-    <span class="qsec__tag"><i aria-hidden="true"></i><span data-i18n="quiz.tag">Мини-тест · 5 вопросов · 1 мин</span></span>
+  <section class="qsec" id="quizsec" aria-labelledby="quiz-title">
+    <div class="qsec__intro">
+      <p class="qsec__kicker" data-i18n="quiz.kicker">Мини-тест</p>
+      <h2 id="quiz-title" data-i18n="quiz.title">Какое направление тебе подходит?</h2>
+      <p class="qsec__lead" data-i18n="quiz.lead">Пять коротких вопросов. В конце покажем направление и предметы, которые нужно сдавать.</p>
+      <ul class="qsec__facts">
+        <li><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.5"/><path d="M10 5.8V10l2.8 1.8"/></svg><span data-i18n="quiz.f1">Около минуты</span></li>
+        <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 5.5h9M7.5 10h9M7.5 14.5h9"/><circle cx="4" cy="5.5" r="1"/><circle cx="4" cy="10" r="1"/><circle cx="4" cy="14.5" r="1"/></svg><span data-i18n="quiz.f2">5 вопросов, ответ в одно касание</span></li>
+        <li><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="9" width="12" height="8.5" rx="2"/><path d="M6.8 9V6.6a3.2 3.2 0 0 1 6.4 0V9"/></svg><span data-i18n="quiz.f3">Без регистрации и почты</span></li>
+      </ul>
+    </div>
     <div class="qwrap">
       <div class="venti" id="venti" aria-hidden="true">
         <span class="venti__bubble" id="ventiBubble"></span>
@@ -856,7 +907,7 @@ html[lang="kk"] .ahero h1,html[lang="en"] .ahero h1{font-size:clamp(32.4px, 5.4v
   <!-- 4. ПАПКИ -->
   <section class="section folders" id="folders" aria-labelledby="fold-title">
     <h2 id="fold-title" class="rv" data-i18n="fold.title">Что ты соберёшь в Ventorme</h2>
-    <p class="folders__sub" data-i18n="fold.sub">Открой папку — внутри то, что будет в твоём аккаунте</p>
+    <p class="folders__sub" data-i18n="fold.sub">Открой папку и посмотри, что будет в твоём аккаунте</p>
     <div class="fds" id="fds"></div>
     <div class="fds__dots" id="fdsDots" aria-hidden="true"><i class="is-on"></i><i></i><i></i></div>
     <p class="note fds__note" data-i18n="scr.note">Примеры экранов упрощены, цифры условные.</p>
@@ -865,14 +916,15 @@ html[lang="kk"] .ahero h1,html[lang="en"] .ahero h1{font-size:clamp(32.4px, 5.4v
   <!-- 6. ОТЗЫВЫ (публикуются на русском на всех языках) -->
   <section class="section" id="reviews" aria-labelledby="rev-title">
     <div class="head-row">
-      <div><span class="tag" data-i18n="rev.tag">Отзывы</span><h2 id="rev-title" class="rv" data-i18n="rev.title">Твой путь — твой выбор.</h2></div>
+      <div><span class="tag" data-i18n="rev.tag">Отзывы</span><h2 id="rev-title" class="rv" data-i18n="rev.title">Твой путь, твой выбор.</h2></div>
     </div>
     <div class="stg" id="stg" lang="ru">
-      <figure class="stg__card"><blockquote>Сначала сомневался, но после первого шага стало ясно, что тут реально помогают выстроить план, а не дают общие советы.</blockquote><figcaption class="who"><span class="ava" aria-hidden="true">А</span><span><b>Айбек</b><small>ученик</small></span></figcaption></figure>
-      <figure class="stg__card"><blockquote>Все дедлайны и документы собраны в одном месте. Раньше я держала это в заметках и постоянно что-то теряла.</blockquote><figcaption class="who"><span class="ava" aria-hidden="true">Д</span><span><b>Дана</b><small>ученица</small></span></figcaption></figure>
-      <figure class="stg__card"><blockquote>Подготовка к IELTS, SAT и даже ЕНТ, подборка вузов со всеми данными — всё в одном месте.</blockquote><figcaption class="who"><span class="ava" aria-hidden="true">А</span><span><b>Айдана</b><small>мама выпускника</small></span></figcaption></figure>
-      <figure class="stg__card"><blockquote>Профтест стал для нас маяком, куда двигаться. Особенно понравилось, что показывает, что ребёнку не подойдёт.</blockquote><figcaption class="who"><span class="ava" aria-hidden="true">А</span><span><b>Айым</b><small>мама</small></span></figcaption></figure>
-      <figure class="stg__card"><blockquote>Понравилось, что есть карта развития и путь подготовки.</blockquote><figcaption class="who"><span class="ava" aria-hidden="true">А</span><span><b>Айгуль</b><small>мама</small></span></figcaption></figure>
+      <figure class="stg__card"><div class="stars" role="img" aria-label="Оценка 5 из 5" data-i18n-attr="aria-label:rev.stars"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg></div><blockquote>Сначала сомневался, но после первого шага стало ясно, что тут реально помогают выстроить план, а не дают общие советы.</blockquote><figcaption class="who"><span class="ava" aria-hidden="true">А</span><span><b>Айбек</b><small>ученик</small></span></figcaption></figure>
+      <figure class="stg__card"><div class="stars" role="img" aria-label="Оценка 5 из 5" data-i18n-attr="aria-label:rev.stars"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg></div><blockquote>Все дедлайны и документы собраны в одном месте. Раньше я держала это в заметках и постоянно что-то теряла.</blockquote><figcaption class="who"><span class="ava" aria-hidden="true">Д</span><span><b>Дана</b><small>ученица</small></span></figcaption></figure>
+      <figure class="stg__card"><div class="stars" role="img" aria-label="Оценка 5 из 5" data-i18n-attr="aria-label:rev.stars"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg></div><blockquote>Столько информации, и всё в одном месте. Есть подготовка к IELTS, SAT и даже ЕНТ, подборка университетов со всеми данными.</blockquote><figcaption class="who"><img class="ava ava--img" src="reviews/parent.webp" alt="" width="46" height="46" loading="lazy" decoding="async"><span><b>Айдана</b><small>мама выпускника</small></span></figcaption></figure>
+      <figure class="stg__card"><div class="stars" role="img" aria-label="Оценка 5 из 5" data-i18n-attr="aria-label:rev.stars"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg></div><blockquote>Профтест стал для нас маяком, куда двигаться. Особенно понравилось, что показывает, что ребёнку не подойдёт.</blockquote><figcaption class="who"><img class="ava ava--img" src="reviews/ayim.webp" alt="" width="46" height="46" loading="lazy" decoding="async"><span><b>Айым</b><small>мама</small></span></figcaption></figure>
+      <figure class="stg__card"><div class="stars" role="img" aria-label="Оценка 5 из 5" data-i18n-attr="aria-label:rev.stars"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg></div><blockquote>Моя дочь тоже прошла. Рекомендованный университет на первом месте, прямо 100% попадание в наши с мужем планы.</blockquote><figcaption class="who"><img class="ava ava--img" src="reviews/olga.webp" alt="" width="46" height="46" loading="lazy" decoding="async"><span><b>Ольга</b><small>мама</small></span></figcaption></figure>
+      <figure class="stg__card"><div class="stars" role="img" aria-label="Оценка 5 из 5" data-i18n-attr="aria-label:rev.stars"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg></div><blockquote>Понравилось, что есть карта развития и путь подготовки.</blockquote><figcaption class="who"><img class="ava ava--img" src="reviews/aigul.webp" alt="" width="46" height="46" loading="lazy" decoding="async"><span><b>Айгуль</b><small>мама</small></span></figcaption></figure>
     </div>
     <div class="stg__nav">
       <button type="button" id="stgPrev" aria-label="Предыдущий отзыв" data-i18n-attr="aria-label:rev.prev"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16 10H5M9 5l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -928,9 +980,11 @@ html[lang="kk"] .ahero h1,html[lang="en"] .ahero h1{font-size:clamp(32.4px, 5.4v
       <a href="https://ventorme.ai">ventorme.ai</a>
       <a href="#folders" data-i18n="nav.features">Возможности</a>
       <a href="#faq" data-i18n="nav.faq">Вопросы</a>
+      <a href="privacy.html" data-i18n="footer.privacy">Политика конфиденциальности</a>
+      <a href="terms.html" data-i18n="footer.terms">Условия использования</a>
     </nav>
     <p data-i18n="footer.made">Страницу сделала команда хакатона HACKNEXT × Ventorme</p>
-    <p class="footer__credits"><span data-i18n="footer.photos">Фото кампусов: Wikimedia Commons, лицензии CC BY и CC BY-SA. Авторы —</span> <a href="https://github.com/dujsembaevalihan636-coder/ventorme-landing#фото-и-лицензии" target="_blank" rel="noopener">README</a></p>
+    <p class="footer__credits"><span data-i18n="footer.photos">Фото кампусов: Wikimedia Commons, лицензии CC BY и CC BY-SA. Список авторов:</span> <a href="https://github.com/dujsembaevalihan636-coder/ventorme-landing#фото-и-лицензии" target="_blank" rel="noopener">README</a></p>
   </div>
 </footer>
 
@@ -941,12 +995,12 @@ html[lang="kk"] .ahero h1,html[lang="en"] .ahero h1{font-size:clamp(32.4px, 5.4v
 <div class="sheet" id="sheet" aria-hidden="true">
   <div class="sheet__bg" data-close></div>
   <div class="sheet__box" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
-    <h3 id="sheet-title" data-i18n="sheet.title">Сайт открыт внутри приложения — вход через Google тут может не работать</h3>
+    <h3 id="sheet-title" data-i18n="sheet.title">Сайт открыт внутри приложения, поэтому вход через Google может не работать</h3>
     <p class="sheet__sub" data-i18n="sheet.sub">Открой страницу в обычном браузере или зарегистрируйся по почте прямо здесь.</p>
     <div class="sheet__acts">
-      <a class="btn btn--blue" id="sheetChrome" href="#" hidden data-i18n="sheet.chrome">Открыть в Chrome</a>
+      <a class="btn btn--blue" id="sheetChrome" href="https://ventorme.ai/register?utm_source=hacknext&amp;utm_campaign=team-093" hidden data-i18n="sheet.chrome">Открыть в Chrome</a>
       <button class="btn btn--ghost" type="button" id="sheetCopy" data-i18n="sheet.copy">Скопировать ссылку</button>
-      <a class="btn btn--ghost" id="sheetHere" href="#" data-i18n="sheet.here">Продолжить здесь (по почте)</a>
+      <a class="btn btn--ghost" id="sheetHere" href="https://ventorme.ai/register?utm_source=hacknext&amp;utm_campaign=team-093" data-i18n="sheet.here">Продолжить здесь (по почте)</a>
     </div>
     <p class="sheet__msg" id="sheetMsg" aria-live="polite"></p>
   </div>
@@ -964,8 +1018,9 @@ const GA_ID = "G-VW4V9EX6QR"; // ← Google Analytics 4. Пусто — анал
  */
 var I18N = {
   ru: {
-    "meta.title": "Ventorme — узнай, кем тебе быть, за 1 минуту",
-    "meta.desc": "5 вопросов — и ты увидишь своё направление и что сдавать. Бесплатно. Дальше — вузы и гранты в Ventorme.",
+    "quiz.kicker": "Мини-тест", "quiz.title": "Какое направление тебе подходит?", "quiz.lead": "Пять коротких вопросов. В конце покажем направление и предметы, которые нужно сдавать.", "quiz.f1": "Около минуты", "quiz.f2": "5 вопросов, ответ в одно касание", "quiz.f3": "Без регистрации и почты", "footer.privacy": "Политика конфиденциальности", "footer.terms": "Условия использования", "rev.stars": "Оценка 5 из 5",
+    "meta.title": "Ventorme: узнай, кем тебе быть, за 1 минуту",
+    "meta.desc": "Ответь на 5 вопросов и узнай своё направление и что сдавать. Бесплатно. Потом подбери вузы и гранты в Ventorme.",
     "logo.aria": "Ventorme, наверх", "nav.aria": "Разделы", "lang.aria": "Язык", "theme.aria": "Переключить тему",
     "nav.features": "Возможности", "nav.reviews": "Отзывы", "nav.faq": "Вопросы",
     "hdr.login": "Вход", "hdr.reg": "Регистрация",
@@ -983,18 +1038,18 @@ var I18N = {
     "dir.it": "IT и технологии", "dir.eng": "Инженерия", "dir.biz": "Бизнес и экономика", "dir.med": "Медицина и науки о жизни", "dir.law": "Право, медиа и гуманитарное",
     "ent.it": "Математика + Информатика", "ent.eng": "Математика + Физика", "ent.biz": "Математика + География", "ent.med": "Биология + Химия", "ent.law": "Всемирная история + Основы права",
     "res.dir": "Твоё направление:", "res.exam": "Что сдавать",
-    "res.ent": "<b>ЕНТ:</b> профильные предметы — ", "res.abroad": "<b>За рубеж:</b> обычно нужен IELTS, для вузов США часто ещё SAT",
-    "res.hidden": "Профессия скрыта", "res.lock": "Полный результат — в бесплатном профтесте Ventorme",
+    "res.ent": "<b>ЕНТ.</b> Профильные предметы: ", "res.abroad": "<b>За рубеж:</b> обычно нужен IELTS, для вузов США часто ещё SAT",
+    "res.hidden": "Профессия скрыта", "res.lock": "Полный результат откроется в бесплатном профтесте Ventorme",
     "res.open": "Открыть полный результат", "res.cap": "Бесплатно · регистрация за 10 секунд",
     "res.friend": "Отправь другу", "res.parents": "Отправить родителям", "res.tg": "или в Telegram", "res.retry": "Пройти заново",
     "res.note": "Это быстрая подсказка. Точный результат даст профтест Ventorme из 8 вопросов.",
-    "share.friend": "Проверь, кем тебе быть — тест за минуту: ", "share.parents": "Мам/пап, вот где я планирую поступление: ", "share.tg": "Проверь, кем тебе быть — тест за минуту",
+    "share.friend": "Проверь, кем тебе быть. Тест на одну минуту: ", "share.parents": "Мам/пап, вот где я планирую поступление: ", "share.tg": "Проверь, кем тебе быть. Тест на одну минуту",
     "unis.title": "Куда поступают наши ученики", "lz.aria": "Вузы, куда поступают ученики Ventorme", "lz.role": "карусель",
     "lz.prev": "Предыдущий вуз", "lz.next": "Следующий вуз", "lz.photo": "Фото",
     "city.hk": "Гонконг", "city.lon_uk": "Лондон, Великобритания", "city.lon": "Лондон", "city.milan": "Милан, Италия",
     "city.astana": "Астана, Казахстан", "city.shanghai": "Шанхай, Китай", "city.usa": "США",
     "facts.unis": "вузов", "facts.grants": "грантов и стипендий", "facts.free": "старт бесплатно",
-    "fold.title": "Что ты соберёшь в Ventorme", "fold.sub": "Открой папку — внутри то, что будет в твоём аккаунте",
+    "fold.title": "Что ты соберёшь в Ventorme", "fold.sub": "Открой папку и посмотри, что будет в твоём аккаунте",
     "fold.open": "Открыть папку «{0}»", "fold.close": "Закрыть папку «{0}»", "fold.list": "Содержимое папки «{0}»",
     "f.portfolio": "Портфолио", "f.unis": "Мои вузы", "f.grants": "Гранты",
     "file.essay": "Эссе", "file.essay.s": "4 итерации с AI", "file.tests": "IELTS / SAT", "file.tests.s": "уровень и прогресс",
@@ -1009,7 +1064,7 @@ var I18N = {
     "scr.foryou": "Для тебя", "scr.usa": "США · Computer Science", "scr.grant": "Грант", "scr.yes": "есть", "scr.deadline": "Дедлайн", "scr.may1": "1 мая",
     "scr.chance": "Шанс на грант", "scr.ent": "ЕНТ", "scr.points": "баллов ЕНТ", "scr.low": "низкий", "scr.mid": "средний", "scr.high": "высокий",
     "scr.note": "Примеры экранов упрощены, цифры условные.",
-    "rev.tag": "Отзывы", "rev.title": "Твой путь — твой выбор.", "rev.note": "Отзывы опубликованы на ventorme.ai",
+    "rev.tag": "Отзывы", "rev.title": "Твой путь, твой выбор.", "rev.note": "Отзывы опубликованы на ventorme.ai",
     "rev.prev": "Предыдущий отзыв", "rev.next": "Следующий отзыв", "rev.status": "Отзыв {0} из {1}",
     "faq.tag": "Вопросы", "faq.title": "Есть вопросы? Есть ответы.",
     "faq.q1": "Это бесплатно?", "faq.a1": "Да, регистрация бесплатная. Сразу открываются мини-тест на профессию, уровень IELTS и SAT и портфолио. Есть платная подписка, но для старта платить не нужно.",
@@ -1018,8 +1073,8 @@ var I18N = {
     "faq.q4": "Мои данные в безопасности?", "faq.a4": "Данные шифруются и не передаются третьим лицам без согласия.",
     "faq.q5": "Родители увидят прогресс?", "faq.a5": "Только если ты их подключишь, и без доступа к твоим чатам с AI.",
     "final.title": "Твоя следующая глава <span>начинается здесь</span>", "cta.free": "Зарегистрироваться бесплатно", "final.note": "Регистрация за 10 секунд",
-    "footer.made": "Страницу сделала команда хакатона HACKNEXT × Ventorme", "footer.photos": "Фото кампусов: Wikimedia Commons, лицензии CC BY и CC BY-SA. Авторы —",
-    "sheet.title": "Сайт открыт внутри приложения — вход через Google тут может не работать",
+    "footer.made": "Страницу сделала команда хакатона HACKNEXT × Ventorme", "footer.photos": "Фото кампусов: Wikimedia Commons, лицензии CC BY и CC BY-SA. Список авторов:",
+    "sheet.title": "Сайт открыт внутри приложения, поэтому вход через Google может не работать",
     "sheet.sub": "Открой страницу в обычном браузере или зарегистрируйся по почте прямо здесь.",
     "sheet.chrome": "Открыть в Chrome", "sheet.copy": "Скопировать ссылку", "sheet.here": "Продолжить здесь (по почте)",
     "sheet.copied": "Ссылка скопирована. Вставь её в Safari или Chrome."
@@ -1027,14 +1082,15 @@ var I18N = {
 
   // KZ: тексты нужно вычитать носителю казахского языка.
   kk: {
-    "meta.title": "Ventorme — 1 минутта кім болатыныңды біл",
-    "meta.desc": "5 сұрақ — және сен өз бағытыңды әрі қандай пәндер тапсыратыныңды көресің. Тегін. Әрі қарай — Ventorme-дағы университеттер мен гранттар.",
+    "quiz.kicker": "Шағын тест", "quiz.title": "Саған қай бағыт сай келеді?", "quiz.lead": "Бес қысқа сұрақ. Соңында бағытыңды және тапсыратын пәндеріңді көрсетеміз.", "quiz.f1": "Шамамен бір минут", "quiz.f2": "5 сұрақ, жауап бір басумен", "quiz.f3": "Тіркелусіз, поштасыз", "footer.privacy": "Құпиялық саясаты", "footer.terms": "Пайдалану шарттары", "rev.stars": "Бағасы 5-тен 5",
+    "meta.title": "Ventorme: 1 минутта кім болатыныңды біл",
+    "meta.desc": "5 сұраққа жауап беріп, бағытыңды және қандай пәндер тапсыратыныңды біл. Тегін. Кейін Ventorme-да университеттер мен гранттарды таңда.",
     "logo.aria": "Ventorme, жоғарыға", "nav.aria": "Бөлімдер", "lang.aria": "Тіл", "theme.aria": "Тақырыпты ауыстыру",
     "nav.features": "Мүмкіндіктер", "nav.reviews": "Пікірлер", "nav.faq": "Сұрақтар",
     "hdr.login": "Кіру", "hdr.reg": "Тіркелу",
-    "hero.l1": "Кім болатыныңды біл. Түсетін жерің —",
+    "hero.l1": "Кім болатыныңды біл. Түсетін жерің:",
     "hero.sr": "HKU, UCL, Bocconi, NU немесе King's College",
-    "hero.sub": "5 сұрақ, 1 минут, тегін. Әрі қарай — Ventorme-дағы университеттер мен гранттар.",
+    "hero.sub": "5 сұрақ, 1 минут, тегін. Кейін Ventorme-да университеттер мен гранттар.",
     "hero.cta1": "Тестті 1 минутта тапсыр", "hero.cta2": "Тіркелу",
     "quiz.aria": "Шағын тест", "quiz.tag": "Шағын тест · 5 сұрақ · 1 мин", "quiz.back": "Артқа", "quiz.q": "Сұрақ",
     "q1": "Қай жерде оқуға түсуді жоспарлап жүрсің?", "q1.0": "Қазақстанда, ҰБТ бойынша грантқа", "q1.1": "Шетелде", "q1.2": "Әлі шешкен жоқпын",
@@ -1046,18 +1102,18 @@ var I18N = {
     "dir.it": "IT және технологиялар", "dir.eng": "Инженерия", "dir.biz": "Бизнес және экономика", "dir.med": "Медицина және жаратылыстану ғылымдары", "dir.law": "Құқық, медиа және гуманитарлық ғылымдар",
     "ent.it": "Математика + Информатика", "ent.eng": "Математика + Физика", "ent.biz": "Математика + География", "ent.med": "Биология + Химия", "ent.law": "Дүниежүзі тарихы + Құқық негіздері",
     "res.dir": "Сенің бағытың:", "res.exam": "Не тапсыру керек",
-    "res.ent": "<b>ҰБТ:</b> бейіндік пәндер — ", "res.abroad": "<b>Шетелге:</b> әдетте IELTS керек, АҚШ университеттеріне көбіне SAT та қажет",
-    "res.hidden": "Мамандық жасырын", "res.lock": "Толық нәтиже — Ventorme-дың тегін кәсіби тестінде",
+    "res.ent": "<b>ҰБТ.</b> Бейіндік пәндер: ", "res.abroad": "<b>Шетелге:</b> әдетте IELTS керек, АҚШ университеттеріне көбіне SAT та қажет",
+    "res.hidden": "Мамандық жасырын", "res.lock": "Толық нәтиже Ventorme-дың тегін кәсіби тестінде ашылады",
     "res.open": "Толық нәтижені ашу", "res.cap": "Тегін · 10 секундта тіркелу",
     "res.friend": "Досыңа жібер", "res.parents": "Ата-анаңа жібер", "res.tg": "немесе Telegram-да", "res.retry": "Қайта тапсыру",
     "res.note": "Бұл жылдам кеңес қана. Нақты нәтижені Ventorme-дың 8 сұрақтан тұратын кәсіби тесті береді.",
-    "share.friend": "Кім болатыныңды тексер — бір минуттық тест: ", "share.parents": "Анашым, әкешім, оқуға түсуді осы жерде жоспарлап жүрмін: ", "share.tg": "Кім болатыныңды тексер — бір минуттық тест",
+    "share.friend": "Кім болатыныңды тексер. Бір минуттық тест: ", "share.parents": "Анашым, әкешім, оқуға түсуді осы жерде жоспарлап жүрмін: ", "share.tg": "Кім болатыныңды тексер. Бір минуттық тест",
     "unis.title": "Біздің оқушылар қайда түседі", "lz.aria": "Ventorme оқушылары түсетін университеттер", "lz.role": "карусель",
     "lz.prev": "Алдыңғы университет", "lz.next": "Келесі университет", "lz.photo": "Фото",
     "city.hk": "Гонконг", "city.lon_uk": "Лондон, Ұлыбритания", "city.lon": "Лондон", "city.milan": "Милан, Италия",
     "city.astana": "Астана, Қазақстан", "city.shanghai": "Шанхай, Қытай", "city.usa": "АҚШ",
     "facts.unis": "университет", "facts.grants": "грант пен стипендия", "facts.free": "тегін бастау",
-    "fold.title": "Ventorme-да не жинайсың", "fold.sub": "Папканы аш — ішінде аккаунтыңда болатын нәрселер",
+    "fold.title": "Ventorme-да не жинайсың", "fold.sub": "Папканы ашып, аккаунтыңда не болатынын көр",
     "fold.open": "«{0}» папкасын ашу", "fold.close": "«{0}» папкасын жабу", "fold.list": "«{0}» папкасының ішіндегісі",
     "f.portfolio": "Портфолио", "f.unis": "Менің университеттерім", "f.grants": "Гранттар",
     "file.essay": "Эссе", "file.essay.s": "AI-мен 4 нұсқа", "file.tests": "IELTS / SAT", "file.tests.s": "деңгей мен прогресс",
@@ -1072,7 +1128,7 @@ var I18N = {
     "scr.foryou": "Саған", "scr.usa": "АҚШ · Computer Science", "scr.grant": "Грант", "scr.yes": "бар", "scr.deadline": "Дедлайн", "scr.may1": "1 мамыр",
     "scr.chance": "Грантқа мүмкіндік", "scr.ent": "ҰБТ", "scr.points": "ҰБТ балы", "scr.low": "төмен", "scr.mid": "орташа", "scr.high": "жоғары",
     "scr.note": "Экран мысалдары жеңілдетілген, сандар шартты.",
-    "rev.tag": "Пікірлер", "rev.title": "Сенің жолың — сенің таңдауың.", "rev.note": "Пікірлер ventorme.ai сайтында орыс тілінде жарияланған",
+    "rev.tag": "Пікірлер", "rev.title": "Сенің жолың, сенің таңдауың.", "rev.note": "Пікірлер ventorme.ai сайтында орыс тілінде жарияланған",
     "rev.prev": "Алдыңғы пікір", "rev.next": "Келесі пікір", "rev.status": "{1} пікірдің {0}-і",
     "faq.tag": "Сұрақтар", "faq.title": "Сұрақ бар ма? Жауабы бар.",
     "faq.q1": "Бұл тегін бе?", "faq.a1": "Иә, тіркелу тегін. Бірден мамандыққа арналған шағын тест, IELTS пен SAT деңгейін тексеру және портфолио ашылады. Ақылы жазылым бар, бірақ бастау үшін төлеудің қажеті жоқ.",
@@ -1081,15 +1137,16 @@ var I18N = {
     "faq.q4": "Деректерім қауіпсіз бе?", "faq.a4": "Деректер шифрланады және келісіміңсіз үшінші тұлғаларға берілмейді.",
     "faq.q5": "Ата-анам прогресімді көре ме?", "faq.a5": "Тек сен оларды қоссаң ғана, әрі AI-мен чаттарыңа қол жеткізбейді.",
     "final.title": "Сенің келесі тарауың <span>осы жерден басталады</span>", "cta.free": "Тегін тіркелу", "final.note": "10 секундта тіркелу",
-    "footer.made": "Бетті HACKNEXT × Ventorme хакатонының командасы жасады", "footer.photos": "Кампус фотолары: Wikimedia Commons, CC BY және CC BY-SA лицензиялары. Авторлары —",
-    "sheet.title": "Сайт қосымшаның ішінде ашылды — мұнда Google арқылы кіру жұмыс істемеуі мүмкін",
+    "footer.made": "Бетті HACKNEXT × Ventorme хакатонының командасы жасады", "footer.photos": "Кампус фотолары: Wikimedia Commons, CC BY және CC BY-SA лицензиялары. Авторлар тізімі:",
+    "sheet.title": "Сайт қосымшаның ішінде ашылды, сондықтан Google арқылы кіру жұмыс істемеуі мүмкін",
     "sheet.sub": "Бетті кәдімгі браузерде аш немесе осы жерде пошта арқылы тіркел.",
     "sheet.chrome": "Chrome-да ашу", "sheet.copy": "Сілтемені көшіру", "sheet.here": "Осы жерде жалғастыру (пошта арқылы)",
     "sheet.copied": "Сілтеме көшірілді. Оны Safari немесе Chrome-ға қой."
   },
 
   en: {
-    "meta.title": "Ventorme — find out what you could be in 1 minute",
+    "quiz.kicker": "Mini test", "quiz.title": "Which direction suits you?", "quiz.lead": "Five short questions. At the end you will see your direction and the subjects to take.", "quiz.f1": "About a minute", "quiz.f2": "5 questions, one tap each", "quiz.f3": "No sign-up, no email", "footer.privacy": "Privacy policy", "footer.terms": "Terms of use", "rev.stars": "Rated 5 out of 5",
+    "meta.title": "Ventorme: find out who you're meant to be in 1 minute",
     "meta.desc": "5 questions and you’ll see your direction and which exams to take. Free. Then universities and grants in Ventorme.",
     "logo.aria": "Ventorme, back to top", "nav.aria": "Sections", "lang.aria": "Language", "theme.aria": "Toggle theme",
     "nav.features": "Features", "nav.reviews": "Reviews", "nav.faq": "FAQ",
@@ -1108,12 +1165,12 @@ var I18N = {
     "dir.it": "IT and technology", "dir.eng": "Engineering", "dir.biz": "Business and economics", "dir.med": "Medicine and life sciences", "dir.law": "Law, media and humanities",
     "ent.it": "Math + Computer Science", "ent.eng": "Math + Physics", "ent.biz": "Math + Geography", "ent.med": "Biology + Chemistry", "ent.law": "World History + Fundamentals of Law",
     "res.dir": "Your direction:", "res.exam": "What to take",
-    "res.ent": "<b>UNT:</b> profile subjects — ", "res.abroad": "<b>Abroad:</b> you usually need IELTS, and US universities often ask for the SAT too",
+    "res.ent": "<b>UNT.</b> Profile subjects: ", "res.abroad": "<b>Abroad:</b> you usually need IELTS, and US universities often ask for the SAT too",
     "res.hidden": "Profession hidden", "res.lock": "The full result is in Ventorme’s free career test",
     "res.open": "See the full result", "res.cap": "Free · sign up in 10 seconds",
     "res.friend": "Send to a friend", "res.parents": "Send to parents", "res.tg": "or via Telegram", "res.retry": "Retake",
     "res.note": "This is a quick hint. Ventorme’s 8-question career test gives the exact result.",
-    "share.friend": "Find out what you could be — a 1-minute test: ", "share.parents": "Mom, Dad, here’s where I’m planning my university applications: ", "share.tg": "Find out what you could be — a 1-minute test",
+    "share.friend": "Find out who you're meant to be. A 1-minute test: ", "share.parents": "Mom, Dad, here’s where I’m planning my university applications: ", "share.tg": "Find out who you're meant to be. A 1-minute test",
     "unis.title": "Where our students get in", "lz.aria": "Universities Ventorme students get into", "lz.role": "carousel",
     "lz.prev": "Previous university", "lz.next": "Next university", "lz.photo": "Photo",
     "city.hk": "Hong Kong", "city.lon_uk": "London, UK", "city.lon": "London", "city.milan": "Milan, Italy",
@@ -1143,8 +1200,8 @@ var I18N = {
     "faq.q4": "Is my data safe?", "faq.a4": "Your data is encrypted and isn’t shared with third parties without your consent.",
     "faq.q5": "Will my parents see my progress?", "faq.a5": "Only if you add them, and without access to your AI chats.",
     "final.title": "Your next chapter <span>starts here</span>", "cta.free": "Sign up for free", "final.note": "Sign up in 10 seconds",
-    "footer.made": "Page made by a HACKNEXT × Ventorme hackathon team", "footer.photos": "Campus photos: Wikimedia Commons, CC BY and CC BY-SA licences. Authors —",
-    "sheet.title": "This site is open inside an app — Google sign-in may not work here",
+    "footer.made": "Page made by a HACKNEXT × Ventorme hackathon team", "footer.photos": "Campus photos: Wikimedia Commons, CC BY and CC BY-SA licences. List of authors:",
+    "sheet.title": "This site is open inside an app, so Google sign-in may not work here",
     "sheet.sub": "Open the page in a regular browser or sign up with email right here.",
     "sheet.chrome": "Open in Chrome", "sheet.copy": "Copy link", "sheet.here": "Continue here (with email)",
     "sheet.copied": "Link copied. Paste it into Safari or Chrome."
